@@ -398,6 +398,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    bdl_system
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    bdl_target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bdlprovider" class="md-nav__link">
     BdlProvider
   </a>
@@ -565,44 +579,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2" tabindex="0" aria-expanded="false">
-          Core
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Core" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          Core
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../../../../../cc/bzd/core/async/index.html" class="md-nav__link">
         Async
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -648,6 +628,20 @@
         <li class="md-nav__item">
   <a href="#bdl_library" class="md-nav__link">
     bdl_library
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    bdl_system
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    bdl_target
   </a>
   
 </li>
@@ -776,12 +770,111 @@ bdl_library(<a href="#bdl_library-name">name</a>, <a href="#bdl_library-deps">de
 </tr>
 </tbody>
 </table>
+<p><a id="bdl_system"></a></p>
+<h2 id="bdl_system">bdl_system</h2>
+<pre>
+bdl_system(<a href="#bdl_system-name">name</a>, <a href="#bdl_system-deps">deps</a>, <a href="#bdl_system-targets">targets</a>)
+</pre>
+
+<p>Generate a system from targets.</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_system-name"></a>name</td>
+<td align="left">A unique name for this target.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system-deps"></a>deps</td>
+<td align="left">List of dependencies.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system-targets"></a>targets</td>
+<td align="left">Targets to be included for the system definition.</td>
+<td align="left"><a href="https://bazel.build/rules/lib/dict">Dictionary: Label -&gt; String</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_target"></a></p>
+<h2 id="bdl_target">bdl_target</h2>
+<pre>
+bdl_target(<a href="#bdl_target-name">name</a>, <a href="#bdl_target-compositions">compositions</a>, <a href="#bdl_target-deps">deps</a>, <a href="#bdl_target-language">language</a>, <a href="#bdl_target-platform">platform</a>)
+</pre>
+
+<p>Target definition for the bzd framework.</p>
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Type</th>
+<th align="left">Mandatory</th>
+<th align="left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_target-name"></a>name</td>
+<td align="left">A unique name for this target.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target-compositions"></a>compositions</td>
+<td align="left">List of composition bdl source files for this target.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target-deps"></a>deps</td>
+<td align="left">List of dependencies.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td align="left">optional</td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target-language"></a>language</td>
+<td align="left">Compilation language for this rule.</td>
+<td align="left">String</td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target-platform"></a>platform</td>
+<td align="left">The target platform for which this target should be compiled against.</td>
+<td align="left"><a href="https://bazel.build/concepts/labels">Label</a></td>
+<td align="left">required</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <p><a id="BdlProvider"></a></p>
 <h2 id="bdlprovider">BdlProvider</h2>
 <pre>
-BdlProvider(<a href="#BdlProvider-bdls">bdls</a>, <a href="#BdlProvider-files">files</a>)
+BdlProvider(<a href="#BdlProvider-sources">sources</a>, <a href="#BdlProvider-files">files</a>)
 </pre>
 
+<p>Provider for bdl files.</p>
 <p><strong>FIELDS</strong></p>
 <table>
 <thead>
@@ -792,12 +885,12 @@ BdlProvider(<a href="#BdlProvider-bdls">bdls</a>, <a href="#BdlProvider-files">f
 </thead>
 <tbody>
 <tr>
-<td align="left"><a id="BdlProvider-bdls"></a>bdls</td>
-<td align="left">(Undocumented)</td>
+<td align="left"><a id="BdlProvider-sources"></a>sources</td>
+<td align="left">Pair of input and preprocessed bdl files.</td>
 </tr>
 <tr>
 <td align="left"><a id="BdlProvider-files"></a>files</td>
-<td align="left">(Undocumented)</td>
+<td align="left">All files, containts the same set of files as in <code>sources</code>, but uses a different format for convenience.</td>
 </tr>
 </tbody>
 </table>

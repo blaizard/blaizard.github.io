@@ -24,8 +24,7 @@ nav:
     - package: bazel-out/k8-fastbuild/bin/docs/api/bazel/package.md
   - C++:
     - Directory Layout: cc/README.md
-    - Core:
-      - Async: cc/bzd/core/async/README.md
+    - Async: cc/bzd/core/async/README.md
 
 theme:
   name: material
