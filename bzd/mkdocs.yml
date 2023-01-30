@@ -25,11 +25,15 @@ nav:
   - C++:
     - Directory Layout: cc/README.md
     - Async: cc/bzd/core/async/README.md
+  - Python:
+    - Parser: python/bzd/parser/README.md
+    - Template: python/bzd/template/README.md
+    - Validation: python/bzd/validation/README.md
 
 theme:
   name: material
   palette:
-    primary: "blue grey"
+    primary: "teal"
     accent: "light blue"
 
 plugins:
