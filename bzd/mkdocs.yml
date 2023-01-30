@@ -33,6 +33,7 @@ theme:
     accent: "light blue"
 
 plugins:
+  - offline
   - exclude:
       glob:
         - external/*
