@@ -398,13 +398,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bdl_system" class="md-nav__link">
-    bdl_system
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bdl_target" class="md-nav__link">
     bdl_target
   </a>
@@ -428,6 +421,13 @@
         <li class="md-nav__item">
   <a href="#cccompositionprovider" class="md-nav__link">
     CcCompositionProvider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    bdl_system
   </a>
   
 </li>
@@ -710,13 +710,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bdl_system" class="md-nav__link">
-    bdl_system
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bdl_target" class="md-nav__link">
     bdl_target
   </a>
@@ -740,6 +733,13 @@
         <li class="md-nav__item">
   <a href="#cccompositionprovider" class="md-nav__link">
     CcCompositionProvider
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    bdl_system
   </a>
   
 </li>
@@ -842,48 +842,6 @@ bdl_library(<a href="#bdl_library-name">name</a>, <a href="#bdl_library-deps">de
 <td align="left"><a id="bdl_library-srcs"></a>srcs</td>
 <td align="left">List of Bzd Description Language (bdl) files to be included.</td>
 <td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-<p><a id="bdl_system"></a></p>
-<h2 id="bdl_system">bdl_system</h2>
-<pre>
-bdl_system(<a href="#bdl_system-name">name</a>, <a href="#bdl_system-deps">deps</a>, <a href="#bdl_system-targets">targets</a>)
-</pre>
-
-<p>Generate a system from targets.</p>
-<p><strong>ATTRIBUTES</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Description</th>
-<th align="left">Type</th>
-<th align="left">Mandatory</th>
-<th align="left">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a id="bdl_system-name"></a>name</td>
-<td align="left">A unique name for this target.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_system-deps"></a>deps</td>
-<td align="left">List of dependencies.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_system-targets"></a>targets</td>
-<td align="left">Targets to be included for the system definition.</td>
-<td align="left"><a href="https://bazel.build/rules/lib/dict">Dictionary: Label -&gt; String</a></td>
 <td align="left">required</td>
 <td align="left"></td>
 </tr>
@@ -996,6 +954,34 @@ CcCompositionProvider(<a href="#CcCompositionProvider-hdrs">hdrs</a>)
 <tr>
 <td align="left"><a id="CcCompositionProvider-hdrs"></a>hdrs</td>
 <td align="left">(Undocumented)</td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_system"></a></p>
+<h2 id="bdl_system">bdl_system</h2>
+<pre>
+bdl_system(<a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-kwargs">kwargs</a>)
+</pre>
+
+<p><strong>PARAMETERS</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_system-targets"></a>targets</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system-kwargs"></a>kwargs</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
 </tr>
 </tbody>
 </table>
