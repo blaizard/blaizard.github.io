@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bdl_composition" class="md-skip">
+        <a href="#bdl_library" class="md-skip">
           Skip to content
         </a>
       
@@ -384,22 +384,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bdl_composition" class="md-nav__link">
-    bdl_composition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bdl_library" class="md-nav__link">
     bdl_library
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bdl_target" class="md-nav__link">
-    bdl_target
   </a>
   
 </li>
@@ -428,6 +414,27 @@
         <li class="md-nav__item">
   <a href="#bdl_system" class="md-nav__link">
     bdl_system
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system_test" class="md-nav__link">
+    bdl_system_test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    bdl_target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target_platform" class="md-nav__link">
+    bdl_target_platform
   </a>
   
 </li>
@@ -696,22 +703,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bdl_composition" class="md-nav__link">
-    bdl_composition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bdl_library" class="md-nav__link">
     bdl_library
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bdl_target" class="md-nav__link">
-    bdl_target
   </a>
   
 </li>
@@ -744,6 +737,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bdl_system_test" class="md-nav__link">
+    bdl_system_test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    bdl_target
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target_platform" class="md-nav__link">
+    bdl_target_platform
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -767,42 +781,6 @@
 
 <!-- Generated with Stardoc: http://skydoc.bazel.build -->
 
-<p><a id="bdl_composition"></a></p>
-<h2 id="bdl_composition">bdl_composition</h2>
-<pre>
-bdl_composition(<a href="#bdl_composition-name">name</a>, <a href="#bdl_composition-deps">deps</a>)
-</pre>
-
-<p>Bzd Description Language generator rule for binaries.
-    This generates all the glue to pull in bdl pieces together in a final binary.</p>
-<p><strong>ATTRIBUTES</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Description</th>
-<th align="left">Type</th>
-<th align="left">Mandatory</th>
-<th align="left">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a id="bdl_composition-name"></a>name</td>
-<td align="left">A unique name for this target.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_composition-deps"></a>deps</td>
-<td align="left">List of dependencies.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
 <p><a id="bdl_library"></a></p>
 <h2 id="bdl_library">bdl_library</h2>
 <pre>
@@ -842,62 +820,6 @@ bdl_library(<a href="#bdl_library-name">name</a>, <a href="#bdl_library-deps">de
 <td align="left"><a id="bdl_library-srcs"></a>srcs</td>
 <td align="left">List of Bzd Description Language (bdl) files to be included.</td>
 <td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-<p><a id="bdl_target"></a></p>
-<h2 id="bdl_target">bdl_target</h2>
-<pre>
-bdl_target(<a href="#bdl_target-name">name</a>, <a href="#bdl_target-compositions">compositions</a>, <a href="#bdl_target-deps">deps</a>, <a href="#bdl_target-language">language</a>, <a href="#bdl_target-platform">platform</a>)
-</pre>
-
-<p>Target definition for the bzd framework.</p>
-<p><strong>ATTRIBUTES</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">Name</th>
-<th align="left">Description</th>
-<th align="left">Type</th>
-<th align="left">Mandatory</th>
-<th align="left">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a id="bdl_target-name"></a>name</td>
-<td align="left">A unique name for this target.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_target-compositions"></a>compositions</td>
-<td align="left">List of composition bdl source files for this target.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_target-deps"></a>deps</td>
-<td align="left">List of dependencies.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
-<td align="left">optional</td>
-<td align="left"><code>[]</code></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_target-language"></a>language</td>
-<td align="left">Compilation language for this rule.</td>
-<td align="left">String</td>
-<td align="left">required</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left"><a id="bdl_target-platform"></a>platform</td>
-<td align="left">The target platform for which this target should be compiled against.</td>
-<td align="left"><a href="https://bazel.build/concepts/labels">Label</a></td>
 <td align="left">required</td>
 <td align="left"></td>
 </tr>
@@ -960,7 +882,7 @@ CcCompositionProvider(<a href="#CcCompositionProvider-hdrs">hdrs</a>)
 <p><a id="bdl_system"></a></p>
 <h2 id="bdl_system">bdl_system</h2>
 <pre>
-bdl_system(<a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-kwargs">kwargs</a>)
+bdl_system(<a href="#bdl_system-name">name</a>, <a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-deps">deps</a>, <a href="#bdl_system-testonly">testonly</a>, <a href="#bdl_system-kwargs">kwargs</a>)
 </pre>
 
 <p><strong>PARAMETERS</strong></p>
@@ -974,14 +896,143 @@ bdl_system(<a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-kwarg
 </thead>
 <tbody>
 <tr>
+<td align="left"><a id="bdl_system-name"></a>name</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
 <td align="left"><a id="bdl_system-targets"></a>targets</td>
 <td align="left"><p align="center"> - </p></td>
 <td align="left">none</td>
 </tr>
 <tr>
+<td align="left"><a id="bdl_system-deps"></a>deps</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>None</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system-testonly"></a>testonly</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>None</code></td>
+</tr>
+<tr>
 <td align="left"><a id="bdl_system-kwargs"></a>kwargs</td>
 <td align="left"><p align="center"> - </p></td>
 <td align="left">none</td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_system_test"></a></p>
+<h2 id="bdl_system_test">bdl_system_test</h2>
+<pre>
+bdl_system_test(<a href="#bdl_system_test-name">name</a>, <a href="#bdl_system_test-targets">targets</a>, <a href="#bdl_system_test-deps">deps</a>, <a href="#bdl_system_test-testonly">testonly</a>, <a href="#bdl_system_test-kwargs">kwargs</a>)
+</pre>
+
+<p><strong>PARAMETERS</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_system_test-name"></a>name</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system_test-targets"></a>targets</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system_test-deps"></a>deps</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>None</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system_test-testonly"></a>testonly</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>True</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_system_test-kwargs"></a>kwargs</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_target"></a></p>
+<h2 id="bdl_target">bdl_target</h2>
+<pre>
+bdl_target(<a href="#bdl_target-name">name</a>, <a href="#bdl_target-kwargs">kwargs</a>)
+</pre>
+
+<p><strong>PARAMETERS</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_target-name"></a>name</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target-kwargs"></a>kwargs</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_target_platform"></a></p>
+<h2 id="bdl_target_platform">bdl_target_platform</h2>
+<pre>
+bdl_target_platform(<a href="#bdl_target_platform-name">name</a>, <a href="#bdl_target_platform-target">target</a>, <a href="#bdl_target_platform-platform">platform</a>, <a href="#bdl_target_platform-visibility">visibility</a>, <a href="#bdl_target_platform-tags">tags</a>)
+</pre>
+
+<p><strong>PARAMETERS</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Description</th>
+<th align="left">Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a id="bdl_target_platform-name"></a>name</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target_platform-target"></a>target</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target_platform-platform"></a>platform</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left">none</td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target_platform-visibility"></a>visibility</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>None</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bdl_target_platform-tags"></a>tags</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>None</code></td>
 </tr>
 </tbody>
 </table>
