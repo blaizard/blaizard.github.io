@@ -689,9 +689,11 @@
 <h2 id="directory-layout">Directory Layout</h2>
 <ul>
 <li>bzd: contains the standard library providing building blocks for more complex applications.</li>
-<li>components: contains generic and platform specific components that can be composed via the <code>bdl</code> language.</li>
+<li>components: contains generic and platform specific components that can be composed via the <code>bdl</code> language.
+  Note that platform specific libraries can only be linked to a target but not to the application level.</li>
 <li>libs: 3rd party and own library to build complex generic functionalities.</li>
-<li>targets: Target platform supported containing for example startup files and composition layout.</li>
+<li>targets: Target platform supported containing for example startup files and composition layout.
+  This is where the device specific dependencies come from.</li>
 </ul>
 
 
