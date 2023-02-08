@@ -9,24 +9,24 @@
       
       
       
-        <link rel="prev" href="gateway.html">
+        <link rel="prev" href="syntax.html">
       
       
-        <link rel="next" href="../api/bazel/bdl.html">
+        <link rel="next" href="composition.html">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.7">
     
     
       
-        <title>System - Documentation</title>
+        <title>Components - Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
       
       
 
@@ -42,7 +42,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#system" class="md-skip">
+        <a href="#components" class="md-skip">
           Skip to content
         </a>
       
@@ -81,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="../../../index.html" title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              System
+              Components
             
           </span>
         </div>
@@ -146,7 +146,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+    <a href="../../../index.html" title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -177,7 +177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../../../index.html" class="md-nav__link">
         Home
       </a>
     </li>
@@ -247,11 +247,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="components.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="components.html" class="md-nav__link md-nav__link--active">
         Components
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sub-components" class="md-nav__link">
+    Sub-components
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -303,66 +344,25 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          System
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="system.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="system.html" class="md-nav__link">
         System
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
-    Process
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="tool.html" class="md-nav__link">
+        Tool
+      </a>
     </li>
   
 
@@ -409,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/bdl.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/bdl.html" class="md-nav__link">
         bdl
       </a>
     </li>
@@ -423,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/cc.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/cc.html" class="md-nav__link">
         cc
       </a>
     </li>
@@ -437,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/docker.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/docker.html" class="md-nav__link">
         docker
       </a>
     </li>
@@ -451,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/documentation.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/documentation.html" class="md-nav__link">
         documentation
       </a>
     </li>
@@ -465,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/nodejs.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/nodejs.html" class="md-nav__link">
         nodejs
       </a>
     </li>
@@ -479,7 +479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/nodejs_web.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/nodejs_web.html" class="md-nav__link">
         nodejs_web
       </a>
     </li>
@@ -493,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/bazel/package.html" class="md-nav__link">
+      <a href="../../../docs/api/bazel/package.html" class="md-nav__link">
         package
       </a>
     </li>
@@ -542,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cc/index.html" class="md-nav__link">
+      <a href="../../../cc/index.html" class="md-nav__link">
         Directory Layout
       </a>
     </li>
@@ -556,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cc/bzd/core/async/index.html" class="md-nav__link">
+      <a href="../../../cc/bzd/core/async/index.html" class="md-nav__link">
         Async
       </a>
     </li>
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/bzd/parser/index.html" class="md-nav__link">
+      <a href="../../../python/bzd/parser/index.html" class="md-nav__link">
         Parser
       </a>
     </li>
@@ -619,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/bzd/template/index.html" class="md-nav__link">
+      <a href="../../../python/bzd/template/index.html" class="md-nav__link">
         Template
       </a>
     </li>
@@ -633,7 +633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/bzd/validation/index.html" class="md-nav__link">
+      <a href="../../../python/bzd/validation/index.html" class="md-nav__link">
         Validation
       </a>
     </li>
@@ -674,22 +674,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#process" class="md-nav__link">
-    Process
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    Parameters
+  <a href="#sub-components" class="md-nav__link">
+    Sub-components
   </a>
   
 </li>
@@ -713,109 +699,63 @@
 
 
 
-<h1 id="system">System</h1>
-<p>TO BE IMPLEMENTED! Only a concept for the moment.</p>
-<p>A system is a group or targets. It consitutes one or multiple binaries that are ready for deployment.
-It is the most top level view of the composition.</p>
-<h2 id="definition">Definition</h2>
-<p>Defining a system is done with Bazel through a rule, as follow:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bdl_system(
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    nae = &quot;application&quot;,
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    targets = {
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        &quot;esp32&quot;: &quot;//cc/targets/esp32_xtensa_lx6&quot;,
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        &quot;hpc&quot;: &quot;//cc/targets/linux:x86_64_clang&quot;,
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        &quot;script&quot;: &quot;//python/targets/linux&quot;,
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    },
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    deps = [
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        &quot;//:lib&quot;
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    ],
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>)
-</code></pre></div></p>
-<p>This tells that this system contains 3 binaries, the first one runs on a C++ <code>esp32_xtensa_lx6</code> target platform and which
-executors are refered under the namespace <code>esp32</code>. Similarly the second one runs on a C++ <code>linux</code> platform and is defined
-under the namespace <code>hpc</code>. The third one, is a python binary that runs under <code>linux</code> and defined under <code>script</code> namespace.</p>
-<p>Under the hood, this rule will invoke 1 composition process and 3 binary rules that uses the same composition BDL files.</p>
-<p>To describe a target, the user should use the following rule:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bdl_target(
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    name = &quot;x86_64_clang&quot;,
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    compositions = [
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        &quot;composition.bdl&quot;,
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    ],
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    platform = &quot;//platform:linux_x86_64_clang&quot;,
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    language = &quot;cc&quot;,
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    deps = [
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        &quot;:lib&quot;,
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    ]
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>)
-</code></pre></div></p>
-<h2 id="process">Process</h2>
-<p>A system rule will perform the following operations to generate the various binaries for the system.
-Givien the following targets:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bdl_target(
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    name = &quot;a&quot;,
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    compositions = [
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        &quot;a_composition.bdl&quot;,
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    ],
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    deps = [
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        &quot;//:a_lib&quot;,
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    ],
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    platform = &quot;@target_platform//:linux&quot;
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>)
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>bdl_target(
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    name = &quot;b&quot;,
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    compositions = [
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        &quot;b_composition.bdl&quot;,
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    ],
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    deps = [
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        &quot;//:b_lib&quot;,
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    ],
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    platform = &quot;@target_platform//:windows&quot;
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>)
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>bdl_system(
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    nae = &quot;app&quot;,
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    targets = {
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>        &quot;hpc&quot;: &quot;:a&quot;,
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>        &quot;win&quot;: &quot;:b&quot;,
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    },
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    deps = [
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        &quot;//:lib&quot;
-<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    ],
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>)
-</code></pre></div></p>
-<pre class="mermaid"><code>flowchart TB
-    subgraph ide1 [Precompile targets compositions]
-    direction TB
-    A[`a_composition`\nassociate the namespace `hpc`]
-    B[`b_composition`\nassociate the namespace `win`]
-    end
-    C[Compose all bdl files\n`a_composition`, `:a_lib`, `b_composition`, `:b_lib` and `:lib`]
-    D[Generate all C++/Python/etc. files for the composition.]
-    subgraph ide2 [Compile]
-    direction TB
-    E[Compile `hpc` with platform `:linux`\n`a`, `app` and `hpc.*` executors from composition]
-    F[Compile `win` with platform `:windows`\n`b`, `app` and `win.*` executors from composition]
-    end
-    G[Binary for `hpc`]
-    H[Binary for `win`]
-    A &amp; B --&gt; C
-    C --&gt; D
-    D --&gt; E &amp; F
-    E --&gt; G
-    F --&gt; H</code></pre>
-<h2 id="parameters">Parameters</h2>
-<p>Some attributes might require parametrization, for example when defining a gateway for a specific platform, the IP address
-might be needed for an ethernet-based gateway.
-This can be done via composition using the contract <code>override</code> to tell that this symbol is overriding an exisiting symbol.
-Not adding this contract will result into a symbol conflict and raise an error.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// How it might be defined.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>composition gateway.ethernet {
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    ip = String;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>}
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>// How it might be overwritten.
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>composition {
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    esp32.gateway.ethernet.ip = &quot;192.168.0.12&quot; [override];
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>}
+<h1 id="components">Components</h1>
+<p>This framework offers component based development. Components comes at various level of the development and can be asociated to become a larger component. Components can also contains sub-components. It defines a composable entity which roles can vary from a driver to a functional component.</p>
+<p>A component contains 2 entities, an interface, that is shared between all components of the same type and an implementation specific configuration.</p>
+<p>For exampe, we will define a square which interface is a generic shape.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>interface Shape
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    using Area = Integer [min(0)];
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    method surface() -&gt; Area;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>component Square : Shape
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>{
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>config:
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    width = Integer;
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>}
+</code></pre></div>
+<p>A square is defined by its border width. Such component is instantiated from a composable scope:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>composition
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    square = Square(width = 12);
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
+</code></pre></div>
+<p>This component exposes the <code>Shape</code> interface.</p>
+<h2 id="sub-components">Sub-components</h2>
+<p>Components can be made from other components. The syntax is similar to a top level component, except that everything takes part in the component definition.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>component ComplexShape : Shape
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>config:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    width1 = Integer;
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    width2 = Integer;
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>composition:
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    square1 = Square(width = width1);
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    square2 = Square(width = width2);
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>}
+</code></pre></div>
+<p>The C++ implementation of the complex component could be something like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Area</span><span class="w"> </span><span class="nf">ComplexShape::surface</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">square1</span><span class="p">.</span><span class="n">surface</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">square2</span><span class="p">.</span><span class="n">surface</span><span class="p">();</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>Sub-components helps for encapsulation and hence reduce the complexity and composability while improving re-usability.
+For example, imagine a complex sub-system:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>component RobotLeg : Kinematics
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>{
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>config:
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    actuator1 = Actuator;
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    actuator2 = Actuator;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    actuator3 = Actuator;
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    logger = Logger;
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>composition:
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    connect(actuator1.error, logger);
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    connect(actuator2.error, logger);
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    connect(actuator3.error, logger);
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>}
 </code></pre></div>
 
 
@@ -854,10 +794,10 @@ Not adding this contract will result into a symbol conflict and raise an error.<
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
       
     
   </body>

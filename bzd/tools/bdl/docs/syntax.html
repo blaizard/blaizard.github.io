@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../../../cc/bzd/core/async/index.html">
+        <link rel="prev" href="overview.html">
       
       
-        <link rel="next" href="../template/index.html">
+        <link rel="next" href="components.html">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.7">
     
     
       
-        <title>Parser - Documentation</title>
+        <title>Syntax - Documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parser-visitor" class="md-skip">
+        <a href="#syntax" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parser
+              Syntax
             
           </span>
         </div>
@@ -190,14 +190,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -206,7 +208,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           BDL
@@ -219,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/overview.html" class="md-nav__link">
+      <a href="overview.html" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -231,11 +233,148 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/syntax.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Syntax
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="syntax.html" class="md-nav__link md-nav__link--active">
         Syntax
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-types" class="md-nav__link">
+    Built-in Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong-types" class="md-nav__link">
+    Strong Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composition" class="md-nav__link">
+    Composition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -247,7 +386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/components.html" class="md-nav__link">
+      <a href="components.html" class="md-nav__link">
         Components
       </a>
     </li>
@@ -261,7 +400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/composition.html" class="md-nav__link">
+      <a href="composition.html" class="md-nav__link">
         Composition
       </a>
     </li>
@@ -275,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/executors.html" class="md-nav__link">
+      <a href="executors.html" class="md-nav__link">
         Executors
       </a>
     </li>
@@ -289,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/gateway.html" class="md-nav__link">
+      <a href="gateway.html" class="md-nav__link">
         Gateway
       </a>
     </li>
@@ -303,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/system.html" class="md-nav__link">
+      <a href="system.html" class="md-nav__link">
         System
       </a>
     </li>
@@ -317,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tools/bdl/docs/tool.html" class="md-nav__link">
+      <a href="tool.html" class="md-nav__link">
         Tool
       </a>
     </li>
@@ -533,16 +672,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -551,7 +688,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Python
@@ -562,59 +699,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Parser
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../python/bzd/parser/index.html" class="md-nav__link">
         Parser
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parser" class="md-nav__link">
-    Parser
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visitor" class="md-nav__link">
-    Visitor
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -626,7 +715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../template/index.html" class="md-nav__link">
+      <a href="../../../python/bzd/template/index.html" class="md-nav__link">
         Template
       </a>
     </li>
@@ -640,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/index.html" class="md-nav__link">
+      <a href="../../../python/bzd/validation/index.html" class="md-nav__link">
         Validation
       </a>
     </li>
@@ -681,16 +770,105 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parser" class="md-nav__link">
-    Parser
+  <a href="#types" class="md-nav__link">
+    Types
+  </a>
+  
+    <nav class="md-nav" aria-label="Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#built-in-types" class="md-nav__link">
+    Built-in Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structures" class="md-nav__link">
+    Structures
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enumeration" class="md-nav__link">
+    Enumeration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong-types" class="md-nav__link">
+    Strong Types
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#visitor" class="md-nav__link">
-    Visitor
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expressions" class="md-nav__link">
+    Expressions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfaces" class="md-nav__link">
+    Interfaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav" aria-label="Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composition" class="md-nav__link">
+    Composition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -713,13 +891,130 @@
 
 
 
-<h1 id="parser-visitor">Parser / Visitor</h1>
-<p>This library provides helpers to parse and visit text-based documents.</p>
-<h2 id="parser">Parser</h2>
-<p>The parser uses a state machine of regular expression to match entities and generates metadata that can then be used together with the visitor class.</p>
-<p>Parsed data can also be serialized.</p>
-<h2 id="visitor">Visitor</h2>
-<p>The visitor takes a parsed <code>sequence</code> into argument and goes through all entities to return an object.</p>
+<h1 id="syntax">Syntax</h1>
+<p>The following describes the syntax of the Bzd Description Language (BDL) used to describe interfaces to communicate between components.</p>
+<h2 id="types">Types</h2>
+<h3 id="built-in-types">Built-in Types</h3>
+<p>The following built-in types are made available by the implementation as built-in types.</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Void</td>
+<td>Empty type, usually used for return statements.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Binary type evaluating to <code>true</code> or <code>false</code>.</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>Represents an arithmetic integer. Its size can be defined with contracts.</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Represents an arithmetic floating point. Its size can be defined with contracts.</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>Type representing a byte.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>Type representing a string.</td>
+</tr>
+<tr>
+<td>Result<T></td>
+<td>Templated type that contains either a value of type <code>T</code> or an error.</td>
+</tr>
+<tr>
+<td>Async<T></td>
+<td>Templated type that contains an asynchronous prommise returning a value of type <code>T</code> or an error.</td>
+</tr>
+<tr>
+<td>Array<T></td>
+<td>A fixed length array of type <code>T</code>. Its capacity may be defined with contracts.</td>
+</tr>
+<tr>
+<td>Vector<T></td>
+<td>A resizable and sequential container of type <code>T</code>. Its capacity may be defined with contracts.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="structures">Structures</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>struct Coord
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    x = Float;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    y = Integer;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+</code></pre></div>
+<h3 id="enumeration">Enumeration</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>enum MyEnum
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    first,
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    second
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>}
+</code></pre></div>
+<h3 id="strong-types">Strong Types</h3>
+<p>Strong typing is supported with the <code>using</code> keyword. For example, to define an integer with strong typing, this can be done as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>using MyStrongType = Integer [min(0), max(23)];
+</code></pre></div>
+<h2 id="namespaces">Namespaces</h2>
+<p>To prevent symbol leakage, files can be defined to be under a specific namespace, with the following keyword:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>namespace bzd.dummy;
+</code></pre></div>
+<p>In this example, all entities declared in this file will be accessed prepended by the <code>bzd.dummy</code> namespace.
+Only one namespace can be declared within a file and the namespace statement must be at the top of the file.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>All BDL dependencies should be imported at the top of the file, referenced by their path.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>use &quot;cc/bzd/core/my_interface.bdl&quot;
+</code></pre></div>
+<h2 id="expressions">Expressions</h2>
+<p>An expression is defined as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[const] &lt;type&gt; &lt;name&gt; [= &lt;value&gt;] [[&lt;contracts&gt;...]];
+</code></pre></div>
+<h2 id="methods">Methods</h2>
+<p>A function is defined as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>method &lt;name&gt;(&lt;expression1&gt;, ...) [-&gt; &lt;type&gt;] [[&lt;contracts&gt;...]];
+</code></pre></div>
+<h2 id="interfaces">Interfaces</h2>
+<p>Interfaces are used by components to expose their public interfaces, they are defined with the keywork <code>interface</code>.
+Note that the defintition does not imply a specific interface implementation.</p>
+<h2 id="components">Components</h2>
+<p>A component is the implementation of one or multiple interfaces. It can be instantiated and exposes
+the functionality of the interface it inherits from.
+In addition it describes its configuration and compisition to the description language.</p>
+<h3 id="configuration">Configuration</h3>
+<p>A component should tell how it is instancited during composition, this is done under the <code>config</code> scope as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>component MyModule
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>config:
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    channel = String;
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    capacity = Integer(100) [min(1)];
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>}
+</code></pre></div>
+<p>The composition will then instanciate this component by requiring a string as its <code>channel</code> argument and an optional <code>capacity</code> argument.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>composition {
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    module = MyModule(channel = &quot;channel1&quot;);
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>}
+</code></pre></div>
+<h3 id="composition">Composition</h3>
+<p>Similarly a predefined composition can be described for a component when instantiated. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>component MyModule
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>interface:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    method run();
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>composition:
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    this.run();
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>}
+</code></pre></div>
+<p>This will create a workload from the <code>run</code> method when the component <code>MyModule</code> is instantiated.
+Note that this workload will be a service because it was not explicitly declared by the user.</p>
 
 
 
