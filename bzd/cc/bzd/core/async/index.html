@@ -631,6 +631,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#executor" class="md-nav__link">
+    Executor
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -837,6 +844,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#executor" class="md-nav__link">
+    Executor
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -994,6 +1008,23 @@ returns a valid result, otherwise the error will be propagate to the caller.</p>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1">// or</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()).</span><span class="n">assertHasValue</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div>
+<h3 id="executor">Executor</h3>
+<p>The executors are used to run and schedule asyncs (aka coroutines).</p>
+<p>This is what the executor flowchart looks like;</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Queue.pop()"] --&gt;|Executable| B
+    B["isCanceled?"] --&gt;|yes| C
+    B --&gt;|no| E
+    C["cancel(context)"] --&gt; D
+    E["resume(context)"] --&gt; D
+    D["context.popContinuation()"] --&gt;|Executable| B
+    D --&gt;|null| A</code></pre>
+<p>The executor context, is unique to the instance of the executor, it is passed to the current coroutine being executed or cancelled.
+It has for role to contain the continuation if any, that will be used for the next coroutine to be executed. This could be done
+directly by returning it in the <code>await_suspend</code>, this would work fine in a single threaded system. Here we want to allow parallel
+execution on different cores if available, and for branching (<code>async::all</code> or <code>async::any</code>), we would have a race if multiple
+continuation are called concurrently. Having it after the completion of the coroutine helps with that effect, because it ensures that
+the parent is completed before the execution of the continuation.</p>
 
 
 
