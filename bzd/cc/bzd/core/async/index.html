@@ -632,6 +632,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#suspend" class="md-nav__link">
+    Suspend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executor" class="md-nav__link">
     Executor
   </a>
@@ -845,6 +852,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#suspend" class="md-nav__link">
+    Suspend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#executor" class="md-nav__link">
     Executor
   </a>
@@ -1008,6 +1022,13 @@ returns a valid result, otherwise the error will be propagate to the caller.</p>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c1">// or</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()).</span><span class="n">assertHasValue</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">();</span>
 </code></pre></div>
+<h3 id="suspend">Suspend</h3>
+<p>Suspending the execution of an async can be done with <code>bzd::async::suspend(...)</code>. This function takes 2 callables as arguments,
+the first, that is guaranteed to be called, contains a movable-only suspended executable object as argument.
+The user needs to dispose it from this callback.
+The second argument is optional and provides a callback to deal with cancellation.</p>
+<p>In the context of ISR, when only a wait-free operation is required, <code>bzd::async::suspend</code> should not be used as it uses a lock.
+Instead, <code>bzd::async::suspendForISR</code> can be used and uses the same arguments as its counterpart.</p>
 <h3 id="executor">Executor</h3>
 <p>The executors are used to run and schedule asyncs (aka coroutines).</p>
 <p>This is what the executor flowchart looks like;</p>
