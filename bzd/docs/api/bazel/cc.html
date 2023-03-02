@@ -728,7 +728,7 @@
 <p><a id="bzd_cc_binary"></a></p>
 <h2 id="bzd_cc_binary">bzd_cc_binary</h2>
 <pre>
-bzd_cc_binary(<a href="#bzd_cc_binary-name">name</a>, <a href="#bzd_cc_binary-target">target</a>, <a href="#bzd_cc_binary-tags">tags</a>, <a href="#bzd_cc_binary-srcs">srcs</a>, <a href="#bzd_cc_binary-deps">deps</a>, <a href="#bzd_cc_binary-testonly">testonly</a>, <a href="#bzd_cc_binary-kwargs">kwargs</a>)
+bzd_cc_binary(<a href="#bzd_cc_binary-name">name</a>, <a href="#bzd_cc_binary-target">target</a>, <a href="#bzd_cc_binary-tags">tags</a>, <a href="#bzd_cc_binary-bdls">bdls</a>, <a href="#bzd_cc_binary-hdrs">hdrs</a>, <a href="#bzd_cc_binary-srcs">srcs</a>, <a href="#bzd_cc_binary-deps">deps</a>, <a href="#bzd_cc_binary-testonly">testonly</a>, <a href="#bzd_cc_binary-kwargs">kwargs</a>)
 </pre>
 
 <p>Rule that defines a bzd C++ binary.</p>
@@ -754,6 +754,16 @@ bzd_cc_binary(<a href="#bzd_cc_binary-name">name</a>, <a href="#bzd_cc_binary-ta
 </tr>
 <tr>
 <td align="left"><a id="bzd_cc_binary-tags"></a>tags</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bzd_cc_binary-bdls"></a>bdls</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bzd_cc_binary-hdrs"></a>hdrs</td>
 <td align="left"><p align="center"> - </p></td>
 <td align="left"><code>[]</code></td>
 </tr>
@@ -811,7 +821,7 @@ bzd_cc_library(<a href="#bzd_cc_library-tags">tags</a>, <a href="#bzd_cc_library
 <p><a id="bzd_cc_test"></a></p>
 <h2 id="bzd_cc_test">bzd_cc_test</h2>
 <pre>
-bzd_cc_test(<a href="#bzd_cc_test-name">name</a>, <a href="#bzd_cc_test-target">target</a>, <a href="#bzd_cc_test-tags">tags</a>, <a href="#bzd_cc_test-srcs">srcs</a>, <a href="#bzd_cc_test-deps">deps</a>, <a href="#bzd_cc_test-testonly">testonly</a>, <a href="#bzd_cc_test-kwargs">kwargs</a>)
+bzd_cc_test(<a href="#bzd_cc_test-name">name</a>, <a href="#bzd_cc_test-target">target</a>, <a href="#bzd_cc_test-tags">tags</a>, <a href="#bzd_cc_test-bdls">bdls</a>, <a href="#bzd_cc_test-hdrs">hdrs</a>, <a href="#bzd_cc_test-srcs">srcs</a>, <a href="#bzd_cc_test-deps">deps</a>, <a href="#bzd_cc_test-testonly">testonly</a>, <a href="#bzd_cc_test-kwargs">kwargs</a>)
 </pre>
 
 <p>Rule that defines a bzd C++ test binary.</p>
@@ -837,6 +847,16 @@ bzd_cc_test(<a href="#bzd_cc_test-name">name</a>, <a href="#bzd_cc_test-target">
 </tr>
 <tr>
 <td align="left"><a id="bzd_cc_test-tags"></a>tags</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bzd_cc_test-bdls"></a>bdls</td>
+<td align="left"><p align="center"> - </p></td>
+<td align="left"><code>[]</code></td>
+</tr>
+<tr>
+<td align="left"><a id="bzd_cc_test-hdrs"></a>hdrs</td>
 <td align="left"><p align="center"> - </p></td>
 <td align="left"><code>[]</code></td>
 </tr>
