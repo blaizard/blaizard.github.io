@@ -896,8 +896,8 @@
 Thanks to this object you can, for example, resume the coroutine. The coroutine_handle is a templated type, where Promise type is its template argument.</p>
 <h3 id="frame">Frame</h3>
 <p>The frame contains the current state of the coroutine.
-Coroutine function is created by the compiler when you call a new coroutine, for example <code>auto resumable_object = bzd::delay(10_ms);</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Async</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">delay</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
+Coroutine function is created by the compiler when you call a new coroutine, for example <code>auto resumable_object = delay(10_ms);</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Async</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CoroDelayFrame</span><span class="p">{</span><span class="n">args</span><span class="p">...};</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">return_object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frame</span><span class="o">-&gt;</span><span class="n">_promise</span><span class="p">.</span><span class="n">get_return_object</span><span class="p">();</span>
@@ -1025,8 +1025,10 @@ returns a valid result, otherwise the error will be propagate to the caller.</p>
 <h3 id="suspend">Suspend</h3>
 <p>Suspending the execution of an async can be done with <code>bzd::async::suspend(...)</code>. This function takes 2 callables as arguments,
 the first, that is guaranteed to be called, contains a movable-only suspended executable object as argument.
-The user needs to dispose it from this callback.
-The second argument is optional and provides a callback to deal with cancellation.</p>
+The user needs to dispose it within this callback. Once the callback is completed, the suspended executbale object
+cannot be moved anymore.
+It is also guaranteed that no cancellation can occur during the lifetime of this callback.</p>
+<p>The second argument is optional and provides a callback to deal with cancellation.</p>
 <p>This can be used in the context of ISR.</p>
 <h3 id="executor">Executor</h3>
 <p>The executors are used to run and schedule asyncs (aka coroutines).</p>
