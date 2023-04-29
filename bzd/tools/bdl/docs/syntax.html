@@ -1010,8 +1010,15 @@ Only one namespace can be declared within a file and the namespace statement mus
 </code></pre></div>
 <h2 id="expressions">Expressions</h2>
 <p>An expression is defined as follow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[const] &lt;type&gt; &lt;name&gt; [= &lt;value&gt;] [[&lt;contracts&gt;...]];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[const] &lt;type&gt; &lt;name&gt; [= &lt;values&gt;] [[&lt;contracts&gt;...]];
 </code></pre></div>
+<p>where <code>values</code> can be an association of <code>value</code>, <code>symbol</code>, <code>regexpr</code> or <code>preset</code>.</p>
+<ul>
+<li><code>value</code> is either a string <code>"hello"</code>, a number <code>42</code> or <code>-3.14</code> or a boolean <code>true</code> or <code>false</code>.</li>
+<li><code>symbol</code> is either a relative symbol to the current namespace <code>abc</code> or a fully qualified name <code>this.is.abc</code>.</li>
+<li><code>regexpr</code> is a regular expression <code>/[a-z]*/</code>.</li>
+<li><code>preset</code> is a preset that is replaced by a predefined content. For example <code>abc = {out};</code> is equivalent to <code>abd: bzd.OStream = target.out;</code></li>
+</ul>
 <h2 id="methods">Methods</h2>
 <p>A function is defined as follow:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>method &lt;name&gt;(&lt;expression1&gt;, ...) [-&gt; &lt;type&gt;] [[&lt;contracts&gt;...]];
