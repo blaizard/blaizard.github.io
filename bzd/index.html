@@ -242,6 +242,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#on-nixos" class="md-nav__link">
+    On NixOs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
     Remote
   </a>
@@ -743,6 +750,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#on-nixos" class="md-nav__link">
+    On NixOs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
     Remote
   </a>
@@ -887,9 +901,13 @@ be made available.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
 </code></pre></div>
 <p>This will build locally, it will fetch all tools needed to build on your machine.</p>
+<h3 id="on-nixos">On NixOs</h3>
+<p>Use the following user environemt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nix-shell<span class="w"> </span>--pure<span class="w"> </span>./tools/bazel.nix
+</code></pre></div>
 <h3 id="remote">Remote</h3>
 <p>Remote execution is also supported and is enabled by first deploying on a server the predefined Buildbarn configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./tools/buildbarn/run.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./tools/buildbarn/run.sh
 </code></pre></div>
 <p>Then to build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.
@@ -897,10 +915,10 @@ To enable this configuration, run bazel with <code>--config=docker</code>.</p>
 <h2 id="code-quality">Code Quality</h2>
 <p>All supported languages come with their set of code quality related tools.
 To run all static sanity checks at once, code formatters and documentation generators, run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
 </code></pre></div>
 <p>To run all tests, run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./quality_gate.sh
 </code></pre></div>
 <p>This is a non-exhaustive list of languages and their supported tools. In addition to that
 formater and linters for YAML, json and markdown are also available.</p>
