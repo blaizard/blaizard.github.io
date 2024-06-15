@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="tools/bdl/docs/overview.html">
+        <link rel="next" href="docs/api/bazel/bdl.html">
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
@@ -242,13 +242,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-nixos" class="md-nav__link">
-    On NixOs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
     Remote
   </a>
@@ -331,7 +324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/overview.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/overview.md" class="md-nav__link">
         Overview
       </a>
     </li>
@@ -345,7 +338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/syntax.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/syntax.md" class="md-nav__link">
         Syntax
       </a>
     </li>
@@ -359,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/components.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/components.md" class="md-nav__link">
         Components
       </a>
     </li>
@@ -373,7 +366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/build.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/build.md" class="md-nav__link">
         Build
       </a>
     </li>
@@ -414,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/cc.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/cc.md" class="md-nav__link">
         C++
       </a>
     </li>
@@ -435,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/executors.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/executors.md" class="md-nav__link">
         Executors
       </a>
     </li>
@@ -449,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/gateway.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/gateway.md" class="md-nav__link">
         Gateway
       </a>
     </li>
@@ -463,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools/bdl/docs/system.html" class="md-nav__link">
+      <a href="../bzd_bdl~/bdl/docs/system.md" class="md-nav__link">
         System
       </a>
     </li>
@@ -750,13 +743,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#on-nixos" class="md-nav__link">
-    On NixOs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#remote" class="md-nav__link">
     Remote
   </a>
@@ -846,15 +832,15 @@ This mono-repository enables the following technologies:</p>
 <p>This framework is built to run on all sort of embedded platforms, from bare metals 8-bit microcontrollers to high performance compute units.
 It is made to remove any dependencies from STL, but provide a similar set of components and utilities to develop applications in an
 efficient and safe manner.</p>
-<p>It features the followings:</p>
+<p>It features the following:</p>
 <ul>
 <li>No dynamic allocations. All storage is declared either at compile time or on the stack.</li>
 <li>The core library is self contained, no reliance on third-party, only on the freestanding STL.</li>
 <li>Flexible error handling model.</li>
 <li>Based on C++ coroutines.</li>
-<li>Compile-time string formating tool.</li>
+<li>Compile-time string formatting tool.</li>
 <li>Lightweight.</li>
-<li>Usefull set of containers.</li>
+<li>Useful set of containers.</li>
 </ul>
 <h2 id="platforms">Platforms</h2>
 <p>The following target platforms are currently supported:</p>
@@ -901,13 +887,9 @@ be made available.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
 </code></pre></div>
 <p>This will build locally, it will fetch all tools needed to build on your machine.</p>
-<h3 id="on-nixos">On NixOs</h3>
-<p>Use the following user environemt:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nix-shell<span class="w"> </span>--pure<span class="w"> </span>./tools/bazel.nix
-</code></pre></div>
 <h3 id="remote">Remote</h3>
 <p>Remote execution is also supported and is enabled by first deploying on a server the predefined Buildbarn configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./tools/buildbarn/run.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./tools/buildbarn/run.sh
 </code></pre></div>
 <p>Then to build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.
@@ -915,13 +897,13 @@ To enable this configuration, run bazel with <code>--config=docker</code>.</p>
 <h2 id="code-quality">Code Quality</h2>
 <p>All supported languages come with their set of code quality related tools.
 To run all static sanity checks at once, code formatters and documentation generators, run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
 </code></pre></div>
 <p>To run all tests, run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./quality_gate.sh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
 </code></pre></div>
 <p>This is a non-exhaustive list of languages and their supported tools. In addition to that
-formater and linters for YAML, json and markdown are also available.</p>
+formatter and linters for YAML, json and markdown are also available.</p>
 <table>
 <thead>
 <tr>
@@ -975,7 +957,7 @@ formater and linters for YAML, json and markdown are also available.</p>
 <li>Variables, constants, functions, concepts, namespaces are named in <code>camelCase</code>.</li>
 <li>All types are named in <code>PascalCase</code>.</li>
 <li>Non-public members (variables, functions...) are appended with a <code>_</code> character.</li>
-<li>All namings try to avoid abreviations.</li>
+<li>All namings try to avoid abbreviations.</li>
 </ul>
 <h2 id="memory-footprint">Memory Footprint</h2>
 <p>All classes offered by this library have the same objective to have a fixed memory size. Their footprint or maximum size
