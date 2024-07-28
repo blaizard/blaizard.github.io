@@ -752,6 +752,8 @@
 <p><a id="bdl_library"></a></p>
 <h2 id="bdl_library">bdl_library</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_library")
+
 bdl_library(<a href="#bdl_library-name">name</a>, <a href="#bdl_library-deps">deps</a>, <a href="#bdl_library-srcs">srcs</a>)
 </pre>
 
@@ -796,6 +798,8 @@ The files are generated at the same path of the target, with the name of the tar
 <p><a id="bdl_application_factory"></a></p>
 <h2 id="bdl_application_factory">bdl_application_factory</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_application_factory")
+
 bdl_application_factory(<a href="#bdl_application_factory-implementation">implementation</a>)
 </pre>
 
@@ -819,6 +823,8 @@ bdl_application_factory(<a href="#bdl_application_factory-implementation">implem
 <p><a id="bdl_system"></a></p>
 <h2 id="bdl_system">bdl_system</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_system")
+
 bdl_system(<a href="#bdl_system-name">name</a>, <a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-deps">deps</a>, <a href="#bdl_system-testonly">testonly</a>, <a href="#bdl_system-kwargs">kwargs</a>)
 </pre>
 
@@ -862,6 +868,8 @@ bdl_system(<a href="#bdl_system-name">name</a>, <a href="#bdl_system-targets">ta
 <p><a id="bdl_system_test"></a></p>
 <h2 id="bdl_system_test">bdl_system_test</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_system_test")
+
 bdl_system_test(<a href="#bdl_system_test-name">name</a>, <a href="#bdl_system_test-targets">targets</a>, <a href="#bdl_system_test-deps">deps</a>, <a href="#bdl_system_test-testonly">testonly</a>, <a href="#bdl_system_test-kwargs">kwargs</a>)
 </pre>
 
@@ -905,6 +913,8 @@ bdl_system_test(<a href="#bdl_system_test-name">name</a>, <a href="#bdl_system_t
 <p><a id="bdl_target"></a></p>
 <h2 id="bdl_target">bdl_target</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_target")
+
 bdl_target(<a href="#bdl_target-name">name</a>, <a href="#bdl_target-kwargs">kwargs</a>)
 </pre>
 
@@ -933,6 +943,8 @@ bdl_target(<a href="#bdl_target-name">name</a>, <a href="#bdl_target-kwargs">kwa
 <p><a id="bdl_target_platform"></a></p>
 <h2 id="bdl_target_platform">bdl_target_platform</h2>
 <pre>
+load("@bzd_bdl//:defs.bzl", "bdl_target_platform")
+
 bdl_target_platform(<a href="#bdl_target_platform-name">name</a>, <a href="#bdl_target_platform-target">target</a>, <a href="#bdl_target_platform-platform">platform</a>, <a href="#bdl_target_platform-visibility">visibility</a>, <a href="#bdl_target_platform-tags">tags</a>)
 </pre>
 
