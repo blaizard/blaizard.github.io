@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="docs/api/bazel/bdl.html">
+        <link rel="next" href="external/bzd_bdl%2B/bdl/docs/overview.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -283,6 +283,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-quality" class="md-nav__link">
     <span class="md-ellipsis">
       Code Quality
@@ -368,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/overview.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -389,7 +398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/syntax.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/syntax.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -410,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/components.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/components.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -431,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/build.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/build.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/cc.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/cc.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -516,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/executors.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/executors.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/gateway.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/gateway.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_bdl+/bdl/docs/system.md" class="md-nav__link">
+      <a href="external/bzd_bdl%2B/bdl/docs/system.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -810,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_python+/bzd/parser/README.md" class="md-nav__link">
+      <a href="external/bzd_python%2B/bzd/parser/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -831,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_python+/bzd/template/README.md" class="md-nav__link">
+      <a href="external/bzd_python%2B/bzd/template/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bzd_python+/bzd/validation/README.md" class="md-nav__link">
+      <a href="external/bzd_python%2B/bzd/validation/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -947,6 +956,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation
+    </span>
+  </a>
   
 </li>
       
@@ -1092,12 +1110,13 @@ be made available.</p>
 </code></pre></div>
 <p>This will build locally, it will fetch all tools needed to build on your machine.</p>
 <h3 id="remote">Remote</h3>
-<p>Remote execution is also supported and is enabled by first deploying on a server the predefined Buildbarn configuration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./tools/buildbarn/run.sh
-</code></pre></div>
-<p>Then to build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
+<p>To build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.
 To enable this configuration, run bazel with <code>--config=docker</code>.</p>
+<h2 id="documentation">Documentation</h2>
+<p>To build the full project documentation, run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//docs
+</code></pre></div>
 <h2 id="code-quality">Code Quality</h2>
 <p>All supported languages come with their set of code quality related tools.
 To run all static sanity checks at once, code formatters and documentation generators, run the following command:</p>

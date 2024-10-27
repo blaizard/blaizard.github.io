@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../core/async/index.html">
+        <link rel="prev" href="cc.html">
       
       
-        <link rel="next" href="../../../../external/bzd_python%2B/bzd/parser/index.html">
+        <link rel="next" href="gateway.html">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Pattern - Documentation</title>
+        <title>Executors - Documentation</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pattern" class="md-skip">
+        <a href="#executors" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pattern
+              Executors
             
           </span>
         </div>
@@ -205,17 +205,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -229,7 +231,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             BDL
@@ -243,7 +245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/overview.html" class="md-nav__link">
+      <a href="overview.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -264,7 +266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/syntax.html" class="md-nav__link">
+      <a href="syntax.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -285,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/components.html" class="md-nav__link">
+      <a href="components.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -306,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/build.html" class="md-nav__link">
+      <a href="build.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -362,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/cc.html" class="md-nav__link">
+      <a href="cc.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -388,10 +390,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/executors.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Executors
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="executors.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -400,6 +422,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-executor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Default executor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#association" class="md-nav__link">
+    <span class="md-ellipsis">
+      Association
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/gateway.html" class="md-nav__link">
+      <a href="gateway.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -433,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_bdl%2B/bdl/docs/system.html" class="md-nav__link">
+      <a href="system.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -542,19 +602,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -568,7 +626,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             C++
@@ -582,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../../../../cc/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -603,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core/async/index.html" class="md-nav__link">
+      <a href="../../../../cc/bzd/core/async/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,30 +679,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Pattern
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../cc/bzd/utility/pattern/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,59 +691,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-does-it-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      What does it do?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#specialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Specialization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Specialization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to use it?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -760,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_python%2B/bzd/parser/index.html" class="md-nav__link">
+      <a href="../../../bzd_python%2B/bzd/parser/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -781,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_python%2B/bzd/template/index.html" class="md-nav__link">
+      <a href="../../../bzd_python%2B/bzd/template/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -802,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../external/bzd_python%2B/bzd/validation/index.html" class="md-nav__link">
+      <a href="../../../bzd_python%2B/bzd/validation/index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -850,35 +835,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-does-it-do" class="md-nav__link">
+  <a href="#default-executor" class="md-nav__link">
     <span class="md-ellipsis">
-      What does it do?
+      Default executor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#specialization" class="md-nav__link">
+  <a href="#association" class="md-nav__link">
     <span class="md-ellipsis">
-      Specialization
+      Association
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Specialization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use-it" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to use it?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -900,51 +870,46 @@
   
 
 
-<h1 id="pattern">Pattern</h1>
-<p>The pattern library is a flexible framework to deal with pattern and specializations at compile time.</p>
-<p>It allow the build up of tools like <code>std::format</code>.</p>
-<h2 id="what-does-it-do">What does it do?</h2>
-<p>It takes as input and compile time string, split it into strings and specialization, delimited by <code>{...}</code>
-extract metadatas for the specialization and call the right specialization function with its corresponding
-argument.
-A lot of sanity checks are also performed to ensure the string is properly formed and that the number
-of arguments are correct.</p>
-<p>Example, given the string "Hello {:[a-z]+}" and the argument <code>name</code> of type <code>bzd::String&amp;</code>.
-It will decompose the string into "Hello " and call the specialization of bzd::String&amp; for this implementation
-with the metadata "[a-z]+".
-Then it's up to the implementation to deal with the data. All this is done during compilation time.</p>
-<h2 id="specialization">Specialization</h2>
-<p>The use of a class here is to allow partial specialization.
-Also function overloading cannot be used here because the definition order will matter,
-as those can be used in a recursive way. This would lead to error such as:
-"specialization of [...] after instantiation".
-Some article on the matter: http://www.gotw.ca/publications/mill17.htm</p>
-<h3 id="how-to-use-it">How to use it?</h3>
-<p>Given <code>MySpecialization</code>, a struct specialized.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">concepts</span><span class="o">::???</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MySpecialization</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">{</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">concepts</span><span class="o">::</span><span class="n">inputByteCopyableRange</span><span class="w"> </span><span class="n">Range</span><span class="o">&gt;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Size</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fromString</span><span class="p">(</span><span class="n">Range</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">range</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">};</span>
+<h1 id="executors">Executors</h1>
+<p>An executor is a group of computation units (cores) that can share workloads between each others.
+They share the same work queue and a component gets executed on an arbitrary core.</p>
+<pre class="mermaid"><code>classDiagram
+   Executor "1" --&gt; "*" Core</code></pre>
+<p>Cores can be assigned with a maximum load or other specific attributes (to be implemented).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>// A workload will run on either core0 or core1.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>composition
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>{
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   core0 = FreeRTOS(stackSize = 4000, load = 20%);
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   core1 = FreeRTOS(stackSize = 10000);
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   esp32 = Executor(core0, core1) [executor];
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>}
 </code></pre></div>
-<p>or with metadata. In that case, the Metadata type defines the type used and the function must have a "parse" function
-that parses the options string and generate a Metadata structure. This function is called during build time only, so
-it must be constexpr. Metadata are optional and are parsed from the options as a StringView following the pattern: <code>{:&lt;options&gt;}</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">concepts</span><span class="o">::???</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">MySpecialization</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">/// The type of metadata to be used, this tell the pattern framework that this specialization is using custom metadata.</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Metadata</span><span class="w"> </span><span class="p">{};</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="c1">/// If Metadata is provided, this function must exists, it is used to convert at compile time the options into metadata.</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Adapter</span><span class="o">&gt;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">Metadata</span><span class="w"> </span><span class="n">parse</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">StringView</span><span class="w"> </span><span class="n">options</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="n">concepts</span><span class="o">::</span><span class="n">inputByteCopyableRange</span><span class="w"> </span><span class="n">Range</span><span class="o">&gt;</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">Optional</span><span class="o">&lt;</span><span class="n">Size</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fromString</span><span class="p">(</span><span class="n">Range</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">range</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Metadata</span><span class="w"> </span><span class="n">metadata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Metadata</span><span class="p">{})</span><span class="w"> </span><span class="k">noexcept</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">};</span>
+<p>Sometimes, for portability purpose, you might want to inject the knowledge of cores at runtime.
+To do so, a platform specific executor can be made, abstracting the notion of cores.
+For example, a linux machine can be composed as follow:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>composition
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>{
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   linux = LinuxExecutor [executor];
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
 </code></pre></div>
+<p>Multiple executors can be created and deployed on the same process/binary, this can be useful to have different task priorities for example.</p>
+<h2 id="default-executor">Default executor</h2>
+<p>When the system only has a single executor, it is automatically assigned to all workloads, therefore there is no need for specific assignment.</p>
+<h2 id="association">Association</h2>
+<p>If the system contains multiple executor, however, it is necessary to define where workloads are running.</p>
+<p>This can be done in 2 different ways. By either specifying it at component instantiation, This is done with the <code>executor</code> contract.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>composition
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   comp1 = Component [executor(linux)];
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>}
+</code></pre></div>
+<p>or separately from the component, using the builtin function <code>bind</code>, to bind a fqn or a regular expression to an executor, for example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>composition
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>{
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   bind(/comp1.*/) [executor(linux)];
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>}
+</code></pre></div>
+<p>This tells that all fqn starting with <code>comp1</code> will be assigned to the executor <code>linux</code>.</p>
 
 
 
