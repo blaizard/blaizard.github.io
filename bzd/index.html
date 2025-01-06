@@ -1087,14 +1087,21 @@ efficient and safe manner.</p>
 <tr>
 <td>linux_x86_64_gcc</td>
 <td>gcc</td>
-<td>13.1.0</td>
+<td>14.2.0</td>
 <td>host*</td>
 <td></td>
 </tr>
 <tr>
-<td>esp32_xtensa_lx6_gcc</td>
+<td>esp32_idf_xtensa_lx6_gcc</td>
 <td>gcc</td>
-<td>12.2.0</td>
+<td>14.2.0</td>
+<td>sim*, uart</td>
+<td>x</td>
+</tr>
+<tr>
+<td>esp32s3_idf_xtensa_lx7_gcc</td>
+<td>gcc</td>
+<td>14.2.0</td>
 <td>sim*, uart</td>
 <td>x</td>
 </tr>
@@ -1173,6 +1180,9 @@ formatter and linters for YAML, json and markdown are also available.</p>
 </tr>
 </tbody>
 </table>
+<p>To generate the compile_commands.json file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@bzd_sanitizer//aspects/compile_commands:build
+</code></pre></div>
 <h2 id="naming-convention">Naming Convention</h2>
 <p>The code in this repository follows several principle regarding naming convention. The following rules are applied cross languages.</p>
 <ul>
