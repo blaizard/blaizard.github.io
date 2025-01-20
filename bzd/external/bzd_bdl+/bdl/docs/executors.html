@@ -439,6 +439,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thread safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-between-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction between components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#default-executor" class="md-nav__link">
     <span class="md-ellipsis">
       Default executor
@@ -835,6 +859,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#thread-safety" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thread safety
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thread safety">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaction-between-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interaction between components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#default-executor" class="md-nav__link">
     <span class="md-ellipsis">
       Default executor
@@ -871,7 +919,7 @@
 
 
 <h1 id="executors">Executors</h1>
-<p>An executor is a group of computation units (cores) that can share workloads between each others.
+<p>An executor is a group of computation units (cores) that can share workloads between each others (by work-stealing strategy).
 They share the same work queue and a component gets executed on an arbitrary core.</p>
 <pre class="mermaid"><code>classDiagram
    Executor "1" --&gt; "*" Core</code></pre>
@@ -893,6 +941,21 @@ For example, a linux machine can be composed as follow:</p>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
 </code></pre></div>
 <p>Multiple executors can be created and deployed on the same process/binary, this can be useful to have different task priorities for example.</p>
+<h2 id="thread-safety">Thread safety</h2>
+<p>By default a component or task is assigned to a specific core during its lifetime. This done at runtime as the number of cores is not always known at build time.
+This ensures that all resources within a component is accessible safely.</p>
+<h3 id="interaction-between-components">Interaction between components</h3>
+<p>Components have various ways to interact with each others.</p>
+<ul>
+<li>They can be passed as <code>config</code>.</li>
+<li>They can be passed as argument through their interface.</li>
+<li>They can use variables to communicate.</li>
+</ul>
+<p>To identify on which core, which component should run on, it depends on its dependency with others.
+If a non-thread safe component is a dependency of another component, they will both run on the same core.
+However, if it is marked with the tag <code>[threadsafe]</code>, it will be scheduled on any available core.</p>
+<p>If the only dependency is through variables, it is also considered as thread safe.</p>
+<p>An error will be raised if there is no possible combination. For example, if 2 workloads executed on different executors depend on a 3rd component that is not threadsafe.</p>
 <h2 id="default-executor">Default executor</h2>
 <p>When the system only has a single executor, it is automatically assigned to all workloads, therefore there is no need for specific assignment.</p>
 <h2 id="association">Association</h2>

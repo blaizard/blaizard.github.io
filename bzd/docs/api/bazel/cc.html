@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bzd_cc_binary" class="md-skip">
+        <a href="#bzd_cc_library" class="md-skip">
           Skip to content
         </a>
       
@@ -561,15 +561,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bzd_cc_binary" class="md-nav__link">
-    <span class="md-ellipsis">
-      bzd_cc_binary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bzd_cc_library" class="md-nav__link">
     <span class="md-ellipsis">
       bzd_cc_library
@@ -838,15 +829,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#bzd_cc_binary" class="md-nav__link">
-    <span class="md-ellipsis">
-      bzd_cc_binary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#bzd_cc_library" class="md-nav__link">
     <span class="md-ellipsis">
       bzd_cc_library
@@ -887,72 +869,6 @@
 <!-- Generated with Stardoc: http://skydoc.bazel.build -->
 
 <p>Rules for CC.</p>
-<p><a id="bzd_cc_binary"></a></p>
-<h2 id="bzd_cc_binary">bzd_cc_binary</h2>
-<pre>
-load("@bzd//cc/bdl:cc.bzl", "bzd_cc_binary")
-
-bzd_cc_binary(<a href="#bzd_cc_binary-name">name</a>, <a href="#bzd_cc_binary-target">target</a>, <a href="#bzd_cc_binary-tags">tags</a>, <a href="#bzd_cc_binary-bdls">bdls</a>, <a href="#bzd_cc_binary-hdrs">hdrs</a>, <a href="#bzd_cc_binary-srcs">srcs</a>, <a href="#bzd_cc_binary-deps">deps</a>, <a href="#bzd_cc_binary-testonly">testonly</a>, <a href="#bzd_cc_binary-kwargs">**kwargs</a>)
-</pre>
-
-<p>Rule that defines a bzd C++ binary.</p>
-<p><strong>PARAMETERS</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Description</th>
-<th style="text-align: left;">Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-name"></a>name</td>
-<td style="text-align: left;">Name for the target.</td>
-<td style="text-align: left;">none</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-target"></a>target</td>
-<td style="text-align: left;">The target name.</td>
-<td style="text-align: left;"><code>"//cc/targets:auto"</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-tags"></a>tags</td>
-<td style="text-align: left;">Tags to be added to the rules.</td>
-<td style="text-align: left;"><code>[]</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-bdls"></a>bdls</td>
-<td style="text-align: left;">BDLs to be added to the rule.</td>
-<td style="text-align: left;"><code>[]</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-hdrs"></a>hdrs</td>
-<td style="text-align: left;">Headers to be added to the rule.</td>
-<td style="text-align: left;"><code>[]</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-srcs"></a>srcs</td>
-<td style="text-align: left;">Sources to be added to the rule.</td>
-<td style="text-align: left;"><code>[]</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-deps"></a>deps</td>
-<td style="text-align: left;">Dependencies to be added to the rule.</td>
-<td style="text-align: left;"><code>[]</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-testonly"></a>testonly</td>
-<td style="text-align: left;">If this is a testonly target.</td>
-<td style="text-align: left;"><code>False</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><a id="bzd_cc_binary-kwargs"></a>kwargs</td>
-<td style="text-align: left;">Additional attributes to be added to the <code>bdl_system</code> rule.</td>
-<td style="text-align: left;">none</td>
-</tr>
-</tbody>
-</table>
 <p><a id="bzd_cc_library"></a></p>
 <h2 id="bzd_cc_library">bzd_cc_library</h2>
 <pre>
