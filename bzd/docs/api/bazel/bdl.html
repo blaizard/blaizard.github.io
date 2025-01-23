@@ -549,6 +549,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bdlsystemjsoninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      BdlSystemJsonInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bdl_application_factory" class="md-nav__link">
     <span class="md-ellipsis">
       bdl_application_factory
@@ -856,6 +865,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#bdlsystemjsoninfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      BdlSystemJsonInfo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bdl_application_factory" class="md-nav__link">
     <span class="md-ellipsis">
       bdl_application_factory
@@ -948,6 +966,30 @@ The files are generated at the same path of the target, with the name of the tar
 <td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
 <td style="text-align: left;">required</td>
 <td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><a id="BdlSystemJsonInfo"></a></p>
+<h2 id="bdlsystemjsoninfo">BdlSystemJsonInfo</h2>
+<pre>
+load("@bzd_bdl//:defs.bzl", "BdlSystemJsonInfo")
+
+BdlSystemJsonInfo(<a href="#BdlSystemJsonInfo-json">json</a>)
+</pre>
+
+<p>Provider for a system json representation of a system.</p>
+<p><strong>FIELDS</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a id="BdlSystemJsonInfo-json"></a>json</td>
+<td style="text-align: left;">Dictionary of json files representing the system, keyed by target.</td>
 </tr>
 </tbody>
 </table>
