@@ -1289,6 +1289,12 @@ formatter and linters for YAML, json and markdown are also available.</p>
 <p>To generate the compile_commands.json file:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@bzd_sanitizer//aspects/compile_commands:build
 </code></pre></div>
+<p>Update <code>compile_commands.json</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@bzd_sanitizer//aspects/compile_commands:build
+</code></pre></div>
+<p>Update <code>rust-project.json</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@rules_rust//tools/rust_analyzer:gen_rust_project<span class="w"> </span>--<span class="w"> </span>//rust/...
+</code></pre></div>
 <h2 id="naming-convention">Naming Convention</h2>
 <p>The code in this repository follows several principle regarding naming convention. The following rules are applied cross languages.</p>
 <ul>

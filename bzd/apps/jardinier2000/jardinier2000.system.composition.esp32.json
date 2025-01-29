@@ -1,15 +1,5 @@
 {
     "ios": {
-        "jardinier.lights.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.lights.pwmDuty0"
-                ],
-                "uid": "jardinier.lights.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
         "jardinier.lights.lights": {
             "pwmDuty0": {
                 "type": "source",
@@ -26,6 +16,16 @@
                 ],
                 "uid": "jardinier.lights.lights.pwmDuty1",
                 "symbol": "Integer"
+            }
+        },
+        "jardinier.lights.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.lights.pwmDuty0"
+                ],
+                "uid": "jardinier.lights.pwm0.duty",
+                "symbol": "const Integer"
             }
         },
         "jardinier.lights.pwm1": {
@@ -423,8 +423,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
-                        "esp32.timer"
+                        "esp32.timer",
+                        "esp32.out"
                     ]
                 },
                 {
