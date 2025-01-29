@@ -1,0 +1,483 @@
+{
+    "ios": {
+        "jardinier.lights.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.lights.pwmDuty0"
+                ],
+                "uid": "jardinier.lights.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "jardinier.lights.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "jardinier.lights.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "jardinier.lights.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.lights.pwmDuty1",
+                "symbol": "Integer"
+            }
+        },
+        "jardinier.lights.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.lights.pwmDuty1"
+                ],
+                "uid": "jardinier.lights.pwm1.duty",
+                "symbol": "const Integer"
+            }
+        }
+    },
+    "contexts": [
+        {
+            "registry": {
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.core1": {
+                    "expression": {
+                        "name": "core1",
+                        "fqn": "esp32.core1",
+                        "symbol": "bzd.components.esp32.Core",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "stackSize",
+                                "fqn": "bzd.components.esp32.Core.stackSize",
+                                "symbol": "bzd.StackSize",
+                                "category": "using",
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "value": 16000
+                                    }
+                                ],
+                                "value": 16000
+                            },
+                            {
+                                "name": "name",
+                                "fqn": "bzd.components.esp32.Core.name",
+                                "symbol": "String",
+                                "category": "builtin",
+                                "value": "core[1]"
+                            },
+                            {
+                                "name": "cpu",
+                                "fqn": "bzd.components.esp32.Core.cpu",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 1
+                            },
+                            {
+                                "name": "priority",
+                                "fqn": "bzd.components.esp32.Core.priority",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 100
+                            }
+                        ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.core0": {
+                    "expression": {
+                        "name": "core0",
+                        "fqn": "esp32.core0",
+                        "symbol": "bzd.components.esp32.Core",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "stackSize",
+                                "fqn": "bzd.components.esp32.Core.stackSize",
+                                "symbol": "bzd.StackSize",
+                                "category": "using",
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "value": 16000
+                                    }
+                                ],
+                                "value": 16000
+                            },
+                            {
+                                "name": "name",
+                                "fqn": "bzd.components.esp32.Core.name",
+                                "symbol": "String",
+                                "category": "builtin",
+                                "value": "core[0]"
+                            },
+                            {
+                                "name": "cpu",
+                                "fqn": "bzd.components.esp32.Core.cpu",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 0
+                            },
+                            {
+                                "name": "priority",
+                                "fqn": "bzd.components.esp32.Core.priority",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 50
+                            }
+                        ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.timer": {
+                    "expression": {
+                        "name": "timer",
+                        "fqn": "esp32.timer",
+                        "symbol": "bzd.components.esp32.timer.GPTimer",
+                        "category": "component"
+                    },
+                    "init": [
+                        {
+                            "symbol": "esp32.timer.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "esp32.timer.service",
+                            "category": "method"
+                        }
+                    ],
+                    "shutdown": [
+                        {
+                            "symbol": "esp32.timer.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": []
+                },
+                "jardinier.lights.lights": {
+                    "expression": {
+                        "name": "lights",
+                        "fqn": "jardinier.lights.lights",
+                        "symbol": "jardinier.LightController",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "esp32.timer",
+                        "esp32.out"
+                    ]
+                },
+                "jardinier.lights.pwmTimer": {
+                    "expression": {
+                        "name": "pwmTimer",
+                        "fqn": "jardinier.lights.pwmTimer",
+                        "symbol": "bzd.components.esp32.LEDCTimer",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "frequency",
+                                "fqn": "bzd.components.esp32.LEDCTimer.frequency",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 4000
+                            },
+                            {
+                                "name": "number",
+                                "fqn": "bzd.components.esp32.LEDCTimer.number",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "init": [
+                        {
+                            "symbol": "jardinier.lights.pwmTimer.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [],
+                    "shutdown": [
+                        {
+                            "symbol": "jardinier.lights.pwmTimer.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": []
+                },
+                "jardinier.lights.pwm1": {
+                    "expression": {
+                        "name": "pwm1",
+                        "fqn": "jardinier.lights.pwm1",
+                        "symbol": "bzd.components.esp32.LEDCPWM",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "timer",
+                                "fqn": "bzd.components.esp32.LEDCPWM.timer",
+                                "symbol": "jardinier.lights.pwmTimer",
+                                "category": "expression"
+                            },
+                            {
+                                "name": "channel",
+                                "fqn": "bzd.components.esp32.LEDCPWM.channel",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 1
+                            },
+                            {
+                                "name": "io",
+                                "fqn": "bzd.components.esp32.LEDCPWM.io",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 13
+                            }
+                        ]
+                    },
+                    "init": [
+                        {
+                            "symbol": "jardinier.lights.pwm1.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "jardinier.lights.pwm1.run",
+                            "category": "method"
+                        }
+                    ],
+                    "shutdown": [
+                        {
+                            "symbol": "jardinier.lights.pwm1.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": [
+                        "jardinier.lights.pwmTimer"
+                    ]
+                },
+                "esp32.executor": {
+                    "expression": {
+                        "name": "executor",
+                        "fqn": "esp32.executor",
+                        "symbol": "bzd.components.generic.Executor",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "cores",
+                                "fqn": "bzd.components.generic.Executor.cores",
+                                "symbol": "list",
+                                "category": "builtin",
+                                "parameters": [
+                                    {
+                                        "name": "values",
+                                        "symbol": "esp32.core0",
+                                        "category": "expression"
+                                    },
+                                    {
+                                        "name": "values",
+                                        "symbol": "esp32.core1",
+                                        "category": "expression"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "out",
+                                "fqn": "bzd.components.generic.Executor.out",
+                                "symbol": "esp32.out",
+                                "category": "expression"
+                            },
+                            {
+                                "name": "profiler",
+                                "fqn": "bzd.components.generic.Executor.profiler",
+                                "symbol": "Any",
+                                "category": "builtin",
+                                "parameters": [
+                                    {
+                                        "name": "default",
+                                        "value": 0,
+                                        "symbol": "bzd.components.generic.ExecutorProfilerNoop",
+                                        "category": "component"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "esp32.out",
+                        "esp32.core1",
+                        "esp32.core0"
+                    ]
+                },
+                "jardinier.lights.pwm0": {
+                    "expression": {
+                        "name": "pwm0",
+                        "fqn": "jardinier.lights.pwm0",
+                        "symbol": "bzd.components.esp32.LEDCPWM",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "timer",
+                                "fqn": "bzd.components.esp32.LEDCPWM.timer",
+                                "symbol": "jardinier.lights.pwmTimer",
+                                "category": "expression"
+                            },
+                            {
+                                "name": "channel",
+                                "fqn": "bzd.components.esp32.LEDCPWM.channel",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 0
+                            },
+                            {
+                                "name": "io",
+                                "fqn": "bzd.components.esp32.LEDCPWM.io",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 12
+                            }
+                        ]
+                    },
+                    "init": [
+                        {
+                            "symbol": "jardinier.lights.pwm0.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "jardinier.lights.pwm0.run",
+                            "category": "method"
+                        }
+                    ],
+                    "shutdown": [
+                        {
+                            "symbol": "jardinier.lights.pwm0.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": [
+                        "jardinier.lights.pwmTimer"
+                    ]
+                }
+            },
+            "workloads": [
+                {
+                    "expression": {
+                        "symbol": "jardinier.water",
+                        "category": "method",
+                        "parameters": [
+                            {
+                                "name": "timer",
+                                "symbol": "esp32.timer",
+                                "category": "expression"
+                            },
+                            {
+                                "name": "out",
+                                "symbol": "esp32.out",
+                                "category": "expression"
+                            },
+                            {
+                                "name": "wateringTimeS",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 60
+                            },
+                            {
+                                "name": "wakeUpPeriodS",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 43200
+                            }
+                        ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "esp32.out",
+                        "esp32.timer"
+                    ]
+                },
+                {
+                    "expression": {
+                        "symbol": "jardinier.lights.lights.run",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "jardinier.lights.lights"
+                    ]
+                }
+            ],
+            "services": [
+                {
+                    "expression": {
+                        "symbol": "esp32.timer.service",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "esp32.timer"
+                    ]
+                },
+                {
+                    "expression": {
+                        "symbol": "jardinier.lights.pwm1.run",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "jardinier.lights.pwm1"
+                    ]
+                },
+                {
+                    "expression": {
+                        "symbol": "jardinier.lights.pwm0.run",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "jardinier.lights.pwm0"
+                    ]
+                }
+            ]
+        }
+    ]
+}
