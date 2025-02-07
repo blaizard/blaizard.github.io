@@ -981,7 +981,7 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_1738960028241332805055105775205947 = async (selectObject) => {
+    const redraw_17389631562187183001345145551945337 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("/external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1469,16 +1469,16 @@
     ]
 }];
         const svg = await bdlToSvg(bdls, config == "all");
-        document.getElementById("diagram_1738960028241332805055105775205947").innerHTML = svg;
+        document.getElementById("diagram_17389631562187183001345145551945337").innerHTML = svg;
     };
-    window.onload = redraw_1738960028241332805055105775205947;
+    window.onload = redraw_17389631562187183001345145551945337;
 </script>
-<p><select onchange="redraw_1738960028241332805055105775205947(this)">
+<p><select onchange="redraw_17389631562187183001345145551945337(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1738960028241332805055105775205947">Diagram Loading...</div>
+<div id="diagram_17389631562187183001345145551945337">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
