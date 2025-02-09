@@ -981,7 +981,7 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17389631562187183001345145551945337 = async (selectObject) => {
+    const redraw_1739107549224505005657154174033996 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("/external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -994,6 +994,16 @@
                     "jardinier.lights.lights.pwmDuty0"
                 ],
                 "uid": "jardinier.lights.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "jardinier.lights.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.lights.pwmDuty1"
+                ],
+                "uid": "jardinier.lights.pwm1.duty",
                 "symbol": "const Integer"
             }
         },
@@ -1014,33 +1024,11 @@
                 "uid": "jardinier.lights.lights.pwmDuty1",
                 "symbol": "Integer"
             }
-        },
-        "jardinier.lights.pwm1": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.lights.pwmDuty1"
-                ],
-                "uid": "jardinier.lights.pwm1.duty",
-                "symbol": "const Integer"
-            }
         }
     },
     "contexts": [
         {
             "registry": {
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.core1": {
                     "expression": {
                         "name": "core1",
@@ -1137,6 +1125,18 @@
                     "shutdown": [],
                     "deps": []
                 },
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "esp32.timer": {
                     "expression": {
                         "name": "timer",
@@ -1175,8 +1175,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 },
                 "jardinier.lights.pwmTimer": {
@@ -1319,9 +1319,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
                         "esp32.core1",
-                        "esp32.core0"
+                        "esp32.core0",
+                        "esp32.out"
                     ]
                 },
                 "jardinier.lights.pwm0": {
@@ -1410,8 +1410,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 },
                 {
@@ -1469,16 +1469,16 @@
     ]
 }];
         const svg = await bdlToSvg(bdls, config == "all");
-        document.getElementById("diagram_17389631562187183001345145551945337").innerHTML = svg;
+        document.getElementById("diagram_1739107549224505005657154174033996").innerHTML = svg;
     };
-    window.onload = redraw_17389631562187183001345145551945337;
+    window.onload = redraw_1739107549224505005657154174033996;
 </script>
-<p><select onchange="redraw_17389631562187183001345145551945337(this)">
+<p><select onchange="redraw_1739107549224505005657154174033996(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17389631562187183001345145551945337">Diagram Loading...</div>
+<div id="diagram_1739107549224505005657154174033996">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
