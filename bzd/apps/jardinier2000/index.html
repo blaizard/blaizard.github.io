@@ -981,47 +981,47 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_1739302480529554402706306314210235 = async (selectObject) => {
+    const redraw_1739389302042839304948104434227836 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("/external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "jardinier.lights.lights": {
+        "esp32.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "esp32.board.pwm1.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "jardinier.lights": {
             "pwmDuty0": {
                 "type": "source",
                 "connections": [
-                    "jardinier.lights.pwm0.duty"
+                    "esp32.board.pwm0.duty"
                 ],
-                "uid": "jardinier.lights.lights.pwmDuty0",
+                "uid": "jardinier.lights.pwmDuty0",
                 "symbol": "Integer"
             },
             "pwmDuty1": {
                 "type": "source",
                 "connections": [
-                    "jardinier.lights.pwm1.duty"
+                    "esp32.board.pwm1.duty"
                 ],
-                "uid": "jardinier.lights.lights.pwmDuty1",
+                "uid": "jardinier.lights.pwmDuty1",
                 "symbol": "Integer"
             }
         },
-        "jardinier.lights.pwm1": {
+        "esp32.board.pwm0": {
             "duty": {
                 "type": "sink",
                 "connections": [
-                    "jardinier.lights.lights.pwmDuty1"
+                    "jardinier.lights.pwmDuty0"
                 ],
-                "uid": "jardinier.lights.pwm1.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "jardinier.lights.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.lights.pwmDuty0"
-                ],
-                "uid": "jardinier.lights.pwm0.duty",
+                "uid": "esp32.board.pwm0.duty",
                 "symbol": "const Integer"
             }
         }
@@ -1164,10 +1164,10 @@
                     ],
                     "deps": []
                 },
-                "jardinier.lights.lights": {
+                "jardinier.lights": {
                     "expression": {
                         "name": "lights",
-                        "fqn": "jardinier.lights.lights",
+                        "fqn": "jardinier.lights",
                         "symbol": "jardinier.LightController",
                         "category": "component"
                     },
@@ -1179,10 +1179,10 @@
                         "esp32.out"
                     ]
                 },
-                "jardinier.lights.pwmTimer": {
+                "esp32.board.pwmTimer": {
                     "expression": {
                         "name": "pwmTimer",
-                        "fqn": "jardinier.lights.pwmTimer",
+                        "fqn": "esp32.board.pwmTimer",
                         "symbol": "bzd.components.esp32.LEDCTimer",
                         "category": "component",
                         "parameters": [
@@ -1204,30 +1204,30 @@
                     },
                     "init": [
                         {
-                            "symbol": "jardinier.lights.pwmTimer.init",
+                            "symbol": "esp32.board.pwmTimer.init",
                             "category": "method"
                         }
                     ],
                     "intra": [],
                     "shutdown": [
                         {
-                            "symbol": "jardinier.lights.pwmTimer.shutdown",
+                            "symbol": "esp32.board.pwmTimer.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": []
                 },
-                "jardinier.lights.pwm1": {
+                "esp32.board.pwm1": {
                     "expression": {
                         "name": "pwm1",
-                        "fqn": "jardinier.lights.pwm1",
+                        "fqn": "esp32.board.pwm1",
                         "symbol": "bzd.components.esp32.LEDCPWM",
                         "category": "component",
                         "parameters": [
                             {
                                 "name": "timer",
                                 "fqn": "bzd.components.esp32.LEDCPWM.timer",
-                                "symbol": "jardinier.lights.pwmTimer",
+                                "symbol": "esp32.board.pwmTimer",
                                 "category": "expression"
                             },
                             {
@@ -1248,24 +1248,24 @@
                     },
                     "init": [
                         {
-                            "symbol": "jardinier.lights.pwm1.init",
+                            "symbol": "esp32.board.pwm1.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "jardinier.lights.pwm1.run",
+                            "symbol": "esp32.board.pwm1.run",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "jardinier.lights.pwm1.shutdown",
+                            "symbol": "esp32.board.pwm1.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": [
-                        "jardinier.lights.pwmTimer"
+                        "esp32.board.pwmTimer"
                     ]
                 },
                 "esp32.executor": {
@@ -1324,17 +1324,17 @@
                         "esp32.out"
                     ]
                 },
-                "jardinier.lights.pwm0": {
+                "esp32.board.pwm0": {
                     "expression": {
                         "name": "pwm0",
-                        "fqn": "jardinier.lights.pwm0",
+                        "fqn": "esp32.board.pwm0",
                         "symbol": "bzd.components.esp32.LEDCPWM",
                         "category": "component",
                         "parameters": [
                             {
                                 "name": "timer",
                                 "fqn": "bzd.components.esp32.LEDCPWM.timer",
-                                "symbol": "jardinier.lights.pwmTimer",
+                                "symbol": "esp32.board.pwmTimer",
                                 "category": "expression"
                             },
                             {
@@ -1355,24 +1355,24 @@
                     },
                     "init": [
                         {
-                            "symbol": "jardinier.lights.pwm0.init",
+                            "symbol": "esp32.board.pwm0.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "jardinier.lights.pwm0.run",
+                            "symbol": "esp32.board.pwm0.run",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "jardinier.lights.pwm0.shutdown",
+                            "symbol": "esp32.board.pwm0.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": [
-                        "jardinier.lights.pwmTimer"
+                        "esp32.board.pwmTimer"
                     ]
                 }
             },
@@ -1416,14 +1416,14 @@
                 },
                 {
                     "expression": {
-                        "symbol": "jardinier.lights.lights.run",
+                        "symbol": "jardinier.lights.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "jardinier.lights.lights"
+                        "jardinier.lights"
                     ]
                 }
             ],
@@ -1442,26 +1442,26 @@
                 },
                 {
                     "expression": {
-                        "symbol": "jardinier.lights.pwm1.run",
+                        "symbol": "esp32.board.pwm1.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "jardinier.lights.pwm1"
+                        "esp32.board.pwm1"
                     ]
                 },
                 {
                     "expression": {
-                        "symbol": "jardinier.lights.pwm0.run",
+                        "symbol": "esp32.board.pwm0.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "jardinier.lights.pwm0"
+                        "esp32.board.pwm0"
                     ]
                 }
             ]
@@ -1469,16 +1469,16 @@
     ]
 }];
         const svg = await bdlToSvg(bdls, config == "all");
-        document.getElementById("diagram_1739302480529554402706306314210235").innerHTML = svg;
+        document.getElementById("diagram_1739389302042839304948104434227836").innerHTML = svg;
     };
-    window.onload = redraw_1739302480529554402706306314210235;
+    window.onload = redraw_1739389302042839304948104434227836;
 </script>
-<p><select onchange="redraw_1739302480529554402706306314210235(this)">
+<p><select onchange="redraw_1739389302042839304948104434227836(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1739302480529554402706306314210235">Diagram Loading...</div>
+<div id="diagram_1739389302042839304948104434227836">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
