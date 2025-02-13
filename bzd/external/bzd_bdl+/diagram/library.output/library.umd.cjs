@@ -1,5 +1,5 @@
 (function(global2, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("web-worker")) : typeof define === "function" && define.amd ? define(["web-worker"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, global2.bdlToSvg = factory(global2.require$$1));
+  typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("web-worker")) : typeof define === "function" && define.amd ? define(["web-worker"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, global2.BdlToSvg = factory(global2.require$$1));
 })(this, function(require$$1) {
   "use strict";var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
@@ -97827,35 +97827,23 @@ var __async = (__this, __arguments, generator) => {
     getIOsFromFQN(fqn) {
       return this.ios[fqn] || {};
     }
-    includeFQN(fqn, options) {
-      for (const target of options.filterOut) {
-        if (fqn.startsWith(target)) {
-          return false;
-        }
-      }
-      return true;
-    }
-    processComponents(root2, options, parent = null, level = 0) {
+    processComponents(root2, parent = null, level = 0) {
       let children = [];
       let edges = [];
       let deps = /* @__PURE__ */ new Set();
       const addEdge = (edges2, from2, to2, classes2) => {
-        if (this.includeFQN(from2, options) && this.includeFQN(to2, options)) {
-          edges2.push({
-            id: from2 + "-" + to2,
-            sources: [from2],
-            targets: [to2],
-            classes: classes2
-          });
-        }
+        edges2.push({
+          id: from2 + "-" + to2,
+          sources: [from2],
+          targets: [to2],
+          classes: classes2
+        });
       };
       for (const component of root2) {
         const fqn = component.fqn;
         const category = component.expression.category;
-        if (category != "target" && !this.includeFQN(fqn, options)) {
-          continue;
-        }
-        const name = (parent ? fqn.replace(parent, "") : fqn) + (category == "method" ? "(...)" : "");
+        const name = level == 2 ? fqn.replace(parent, "") : fqn;
+        const displayName = name + (category == "method" ? "(...)" : "");
         const config = this.getParametersFromExpression(component.expression);
         const ios = this.getIOsFromFQN(fqn);
         let ports = [];
@@ -97882,7 +97870,6 @@ var __async = (__this, __arguments, generator) => {
         }
         const members = this.processComponents(
           component.members,
-          options,
           /*parent*/
           fqn,
           level + 1
@@ -97901,7 +97888,7 @@ var __async = (__this, __arguments, generator) => {
           tooltip: config.join("\n"),
           labels: [
             {
-              text: name
+              text: displayName
             }
           ],
           classes: ["level-" + level],
@@ -97916,8 +97903,8 @@ var __async = (__this, __arguments, generator) => {
         deps
       };
     }
-    process(options) {
-      const { children, edges } = this.processComponents(this.tree, options);
+    process() {
+      const { children, edges } = this.processComponents(this.tree);
       return {
         id: "root",
         children,
@@ -97925,20 +97912,60 @@ var __async = (__this, __arguments, generator) => {
       };
     }
   }
-  function bdlToSvg(bdls, all) {
-    return __async(this, null, function* () {
-      const converter = new BdlToElk();
-      let targets = /* @__PURE__ */ new Set();
+  class BdlToSvg {
+    constructor(bdls) {
+      let converter = new BdlToElk();
+      this.targets = /* @__PURE__ */ new Set();
       for (const bdl of bdls) {
         converter.addTarget(bdl);
-        targets.add(bdl.target);
+        this.targets.add(bdl.target);
       }
-      const elk = converter.process({
-        filterOut: all ? [] : targets
+      this.elk = converter.process();
+    }
+    identifyNodesToShow(node, options, level = 0) {
+      if (level == 2) {
+        for (const target of options.ignore || []) {
+          if (node.id.startsWith(target)) {
+            return [];
+          }
+        }
+      }
+      let targets = [node.id];
+      for (const child of node.children || []) {
+        targets = targets.concat(this.identifyNodesToShow(child, options, level + 1));
+      }
+      return targets;
+    }
+    filter(node, options, ids = /* @__PURE__ */ new Set(), level = 0) {
+      ids.add(node.id);
+      for (const port of node.ports || []) {
+        ids.add(port.id);
+      }
+      const children = (node.children || []).filter((child) => {
+        return options.targets.has(child.id);
+      }).map((child) => this.filter(child, options, ids, level + 1));
+      const edges = (node.edges || []).filter((edge) => {
+        for (const target of [...edge.sources, ...edge.targets]) {
+          if (!ids.has(target)) {
+            return false;
+          }
+        }
+        return true;
       });
-      const renderer = elkToSVG();
-      return yield renderer.render(elk);
-    });
+      return Object.assign({}, node, {
+        edges,
+        children
+      });
+    }
+    render(all) {
+      return __async(this, null, function* () {
+        const targets = this.identifyNodesToShow(this.elk, { ignore: all ? [] : this.targets });
+        const elkFiltered = this.filter(this.elk, {
+          targets: new Set(targets)
+        });
+        return yield elkToSVG().render(elkFiltered);
+      });
+    }
   }
-  return bdlToSvg;
+  return BdlToSvg;
 });
