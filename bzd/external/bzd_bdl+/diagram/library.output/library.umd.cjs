@@ -97596,6 +97596,7 @@ var __async = (__this, __arguments, generator) => {
         "elk.layered.edgeLabels.sideSelection": "DIRECTION_DOWN",
         "elk.spacing.edgeLabel": 5,
         "elk.spacing.labelPortHorizontal": 5
+        //"elk.hierarchyHandling": "INCLUDE_CHILDREN",
       };
     }
     render(json) {
@@ -97831,6 +97832,7 @@ var __async = (__this, __arguments, generator) => {
       let children = [];
       let edges = [];
       let deps = /* @__PURE__ */ new Set();
+      let targets = /* @__PURE__ */ new Set();
       const addEdge = (edges2, from2, to2, classes2) => {
         edges2.push({
           id: from2 + "-" + to2,
@@ -97838,6 +97840,14 @@ var __async = (__this, __arguments, generator) => {
           targets: [to2],
           classes: classes2
         });
+      };
+      const isEdgeKnown = (edge, targets2) => {
+        for (const edgeId of [...edge.sources, ...edge.targets]) {
+          if (!targets2.has(edgeId)) {
+            return false;
+          }
+        }
+        return true;
       };
       for (const component of root2) {
         const fqn = component.fqn;
@@ -97847,6 +97857,7 @@ var __async = (__this, __arguments, generator) => {
         const config = this.getParametersFromExpression(component.expression);
         const ios = this.getIOsFromFQN(fqn);
         let ports = [];
+        targets.add(fqn);
         for (const [ioName, io] of Object.entries(ios)) {
           const isSource = io.type == "source";
           ports.push({
@@ -97862,6 +97873,7 @@ var __async = (__this, __arguments, generator) => {
               "port.side": isSource ? "EAST" : "WEST"
             }
           });
+          targets.add(io.uid);
           if (isSource) {
             for (const sink of io.connections) {
               addEdge(edges, io.uid, sink, ["io"]);
@@ -97876,6 +97888,8 @@ var __async = (__this, __arguments, generator) => {
         );
         const componentDeps = /* @__PURE__ */ new Set([...members.deps, ...component["deps"] || []]);
         deps = /* @__PURE__ */ new Set([...deps, ...componentDeps]);
+        targets = /* @__PURE__ */ new Set([...targets, ...members.targets]);
+        edges = [...edges, ...members.edges];
         if (level == 1) {
           for (const depFQN of componentDeps) {
             if (!fqn.startsWith(depFQN)) {
@@ -97883,6 +97897,14 @@ var __async = (__this, __arguments, generator) => {
             }
           }
         }
+        let edgesChildren = [];
+        edges = edges.filter((edge) => {
+          if (isEdgeKnown(edge, members.targets)) {
+            edgesChildren.push(edge);
+            return false;
+          }
+          return true;
+        });
         children.push({
           id: fqn,
           tooltip: config.join("\n"),
@@ -97893,14 +97915,15 @@ var __async = (__this, __arguments, generator) => {
           ],
           classes: ["level-" + level],
           children: members.children,
-          edges: members.edges,
+          edges: edgesChildren,
           ports
         });
       }
       return {
         children,
         edges,
-        deps
+        deps,
+        targets
       };
     }
     process() {
