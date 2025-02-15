@@ -98042,7 +98042,8 @@ var __async = (__this, __arguments, generator) => {
         const elkFiltered = this.filter(this.elk, {
           targets: new Set(targets)
         });
-        return yield elkToSVG().render(elkFiltered);
+        const deepCopyElkFiltered = structuredClone(elkFiltered);
+        return yield elkToSVG().render(deepCopyElkFiltered);
       });
     }
   }
