@@ -778,6 +778,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system_test" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_system_test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_target
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1076,6 +1103,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bdl_system" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_system
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_system_test" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_system_test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bdl_target" class="md-nav__link">
+    <span class="md-ellipsis">
+      bdl_target
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1191,6 +1245,492 @@ bdl_application_factory(<a href="#bdl_application_factory-implementation">implem
 <td style="text-align: left;"><a id="bdl_application_factory-implementation"></a>implementation</td>
 <td style="text-align: left;"><p align="center"> - </p></td>
 <td style="text-align: left;">none</td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_system"></a></p>
+<h2 id="bdl_system">bdl_system</h2>
+<pre>
+load("@bzd_bdl//:defs.bzl", "bdl_system")
+
+bdl_system(*, <a href="#bdl_system-name">name</a>, <a href="#bdl_system-deps">deps</a>, <a href="#bdl_system-data">data</a>, <a href="#bdl_system-args">args</a>, <a href="#bdl_system-compatible_with">compatible_with</a>, <a href="#bdl_system-deprecation">deprecation</a>, <a href="#bdl_system-exec_compatible_with">exec_compatible_with</a>,
+           <a href="#bdl_system-exec_properties">exec_properties</a>, <a href="#bdl_system-features">features</a>, <a href="#bdl_system-output_licenses">output_licenses</a>, <a href="#bdl_system-package_metadata">package_metadata</a>, <a href="#bdl_system-restricted_to">restricted_to</a>, <a href="#bdl_system-tags">tags</a>,
+           <a href="#bdl_system-target_compatible_with">target_compatible_with</a>, <a href="#bdl_system-targets">targets</a>, <a href="#bdl_system-testonly">testonly</a>, <a href="#bdl_system-toolchains">toolchains</a>, <a href="#bdl_system-visibility">visibility</a>)
+</pre>
+
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Mandatory</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-name"></a>name</td>
+<td style="text-align: left;">A unique name for this macro instance. Normally, this is also the name for the macro's main or only target. The names of any other targets that this macro might create will be this name with a string suffix.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+<td style="text-align: left;">required</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-deps"></a>deps</td>
+<td style="text-align: left;">Dependencies for the rule.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>[]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-data"></a>data</td>
+<td style="text-align: left;">Files to be added to the runfiles.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-args"></a>args</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#binary.args">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-compatible_with"></a>compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-deprecation"></a>deprecation</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.deprecation">Inherited rule attribute</a></td>
+<td style="text-align: left;">String; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-exec_compatible_with"></a>exec_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-exec_properties"></a>exec_properties</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_properties">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/rules/lib/dict">Dictionary: String -&gt; String</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-features"></a>features</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.features">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-output_licenses"></a>output_licenses</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#binary.output_licenses">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-package_metadata"></a>package_metadata</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.package_metadata">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-restricted_to"></a>restricted_to</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.restricted_to">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-tags"></a>tags</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.tags">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-target_compatible_with"></a>target_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.target_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-targets"></a>targets</td>
+<td style="text-align: left;">A dictionary with name and target corresponding to the binaries for this system.</td>
+<td style="text-align: left;">Dictionary: String -&gt; Label; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>{}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-testonly"></a>testonly</td>
+<td style="text-align: left;">Set testonly attribute.</td>
+<td style="text-align: left;">Boolean; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-toolchains"></a>toolchains</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.toolchains">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system-visibility"></a>visibility</td>
+<td style="text-align: left;">The visibility to be passed to this macro's exported targets. It always implicitly includes the location where this macro is instantiated, so this attribute only needs to be explicitly set if you want the macro's targets to be additionally visible somewhere else.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_system_test"></a></p>
+<h2 id="bdl_system_test">bdl_system_test</h2>
+<pre>
+load("@bzd_bdl//:defs.bzl", "bdl_system_test")
+
+bdl_system_test(*, <a href="#bdl_system_test-name">name</a>, <a href="#bdl_system_test-deps">deps</a>, <a href="#bdl_system_test-data">data</a>, <a href="#bdl_system_test-args">args</a>, <a href="#bdl_system_test-compatible_with">compatible_with</a>, <a href="#bdl_system_test-deprecation">deprecation</a>, <a href="#bdl_system_test-exec_compatible_with">exec_compatible_with</a>,
+                <a href="#bdl_system_test-exec_properties">exec_properties</a>, <a href="#bdl_system_test-features">features</a>, <a href="#bdl_system_test-flaky">flaky</a>, <a href="#bdl_system_test-local">local</a>, <a href="#bdl_system_test-package_metadata">package_metadata</a>, <a href="#bdl_system_test-restricted_to">restricted_to</a>, <a href="#bdl_system_test-shard_count">shard_count</a>,
+                <a href="#bdl_system_test-size">size</a>, <a href="#bdl_system_test-tags">tags</a>, <a href="#bdl_system_test-target_compatible_with">target_compatible_with</a>, <a href="#bdl_system_test-targets">targets</a>, <a href="#bdl_system_test-testonly">testonly</a>, <a href="#bdl_system_test-timeout">timeout</a>, <a href="#bdl_system_test-toolchains">toolchains</a>,
+                <a href="#bdl_system_test-visibility">visibility</a>)
+</pre>
+
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Mandatory</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-name"></a>name</td>
+<td style="text-align: left;">A unique name for this macro instance. Normally, this is also the name for the macro's main or only target. The names of any other targets that this macro might create will be this name with a string suffix.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+<td style="text-align: left;">required</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-deps"></a>deps</td>
+<td style="text-align: left;">Dependencies for the rule.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>[]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-data"></a>data</td>
+<td style="text-align: left;">Files to be added to the runfiles.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-args"></a>args</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.args">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-compatible_with"></a>compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-deprecation"></a>deprecation</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.deprecation">Inherited rule attribute</a></td>
+<td style="text-align: left;">String; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-exec_compatible_with"></a>exec_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-exec_properties"></a>exec_properties</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_properties">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/rules/lib/dict">Dictionary: String -&gt; String</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-features"></a>features</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.features">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-flaky"></a>flaky</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.flaky">Inherited rule attribute</a></td>
+<td style="text-align: left;">Boolean; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-local"></a>local</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.local">Inherited rule attribute</a></td>
+<td style="text-align: left;">Boolean; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-package_metadata"></a>package_metadata</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.package_metadata">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-restricted_to"></a>restricted_to</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.restricted_to">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-shard_count"></a>shard_count</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.shard_count">Inherited rule attribute</a></td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-size"></a>size</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.size">Inherited rule attribute</a></td>
+<td style="text-align: left;">String; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-tags"></a>tags</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.tags">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-target_compatible_with"></a>target_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.target_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-targets"></a>targets</td>
+<td style="text-align: left;">A dictionary with name and target corresponding to the binaries for this system.</td>
+<td style="text-align: left;">Dictionary: String -&gt; Label; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>{}</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-testonly"></a>testonly</td>
+<td style="text-align: left;">Set testonly attribute.</td>
+<td style="text-align: left;">Boolean; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>False</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-timeout"></a>timeout</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#test.timeout">Inherited rule attribute</a></td>
+<td style="text-align: left;">String; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-toolchains"></a>toolchains</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.toolchains">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_system_test-visibility"></a>visibility</td>
+<td style="text-align: left;">The visibility to be passed to this macro's exported targets. It always implicitly includes the location where this macro is instantiated, so this attribute only needs to be explicitly set if you want the macro's targets to be additionally visible somewhere else.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><a id="bdl_target"></a></p>
+<h2 id="bdl_target">bdl_target</h2>
+<pre>
+load("@bzd_bdl//:defs.bzl", "bdl_target")
+
+bdl_target(*, <a href="#bdl_target-name">name</a>, <a href="#bdl_target-deps">deps</a>, <a href="#bdl_target-binary">binary</a>, <a href="#bdl_target-compatible_with">compatible_with</a>, <a href="#bdl_target-composition">composition</a>, <a href="#bdl_target-deprecation">deprecation</a>, <a href="#bdl_target-exec_compatible_with">exec_compatible_with</a>,
+           <a href="#bdl_target-exec_properties">exec_properties</a>, <a href="#bdl_target-features">features</a>, <a href="#bdl_target-language">language</a>, <a href="#bdl_target-package_metadata">package_metadata</a>, <a href="#bdl_target-parent">parent</a>, <a href="#bdl_target-platform">platform</a>, <a href="#bdl_target-restricted_to">restricted_to</a>,
+           <a href="#bdl_target-tags">tags</a>, <a href="#bdl_target-target_compatible_with">target_compatible_with</a>, <a href="#bdl_target-testonly">testonly</a>, <a href="#bdl_target-toolchains">toolchains</a>, <a href="#bdl_target-visibility">visibility</a>)
+</pre>
+
+<p><strong>ATTRIBUTES</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Mandatory</th>
+<th style="text-align: left;">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-name"></a>name</td>
+<td style="text-align: left;">A unique name for this macro instance. Normally, this is also the name for the macro's main or only target. The names of any other targets that this macro might create will be this name with a string suffix.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels#target-names">Name</a></td>
+<td style="text-align: left;">required</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-deps"></a>deps</td>
+<td style="text-align: left;">List of dependencies.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-binary"></a>binary</td>
+<td style="text-align: left;">Executable for the binary target.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">Label</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-compatible_with"></a>compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-composition"></a>composition</td>
+<td style="text-align: left;">List of composition bdl source files for this target.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-deprecation"></a>deprecation</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.deprecation">Inherited rule attribute</a></td>
+<td style="text-align: left;">String; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-exec_compatible_with"></a>exec_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-exec_properties"></a>exec_properties</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.exec_properties">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/rules/lib/dict">Dictionary: String -&gt; String</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-features"></a>features</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.features">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-language"></a>language</td>
+<td style="text-align: left;">Language associated with this target.</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-package_metadata"></a>package_metadata</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.package_metadata">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-parent"></a>parent</td>
+<td style="text-align: left;">The parent target if it extends an existing target.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">Label</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-platform"></a>platform</td>
+<td style="text-align: left;">The platform used for the transition of this target.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">Label</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-restricted_to"></a>restricted_to</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.restricted_to">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-tags"></a>tags</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.tags">Inherited rule attribute</a></td>
+<td style="text-align: left;">List of strings; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-target_compatible_with"></a>target_compatible_with</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.target_compatible_with">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-testonly"></a>testonly</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.testonly">Inherited rule attribute</a></td>
+<td style="text-align: left;">Boolean; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-toolchains"></a>toolchains</td>
+<td style="text-align: left;"><a href="https://bazel.build/reference/be/common-definitions#common.toolchains">Inherited rule attribute</a></td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"><code>None</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a id="bdl_target-visibility"></a>visibility</td>
+<td style="text-align: left;">The visibility to be passed to this macro's exported targets. It always implicitly includes the location where this macro is instantiated, so this attribute only needs to be explicitly set if you want the macro's targets to be additionally visible somewhere else.</td>
+<td style="text-align: left;"><a href="https://bazel.build/concepts/labels">List of labels</a>; <a href="https://bazel.build/reference/be/common-definitions#configurable-attributes">nonconfigurable</a></td>
+<td style="text-align: left;">optional</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>

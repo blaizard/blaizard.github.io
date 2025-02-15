@@ -1087,12 +1087,32 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17395715128826947046381930535430815 = async (selectObject) => {
+    const redraw_1739628041951463502915526690122221 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
+        "esp32.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "esp32.board.pwm1.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "esp32.board.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty0"
+                ],
+                "uid": "esp32.board.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
         "jardinier.lights": {
             "pwmDuty0": {
                 "type": "source",
@@ -1109,26 +1129,6 @@
                 ],
                 "uid": "jardinier.lights.pwmDuty1",
                 "symbol": "Integer"
-            }
-        },
-        "esp32.board.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty0"
-                ],
-                "uid": "esp32.board.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "esp32.board.pwm1": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty1"
-                ],
-                "uid": "esp32.board.pwm1.duty",
-                "symbol": "const Integer"
             }
         }
     },
@@ -1576,16 +1576,16 @@
 }];
         const bdlToSvg = new BdlToSvg(bdls);
         const svg = await bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17395715128826947046381930535430815").innerHTML = svg;
+        document.getElementById("diagram_1739628041951463502915526690122221").innerHTML = svg;
     };
-    window.onload = redraw_17395715128826947046381930535430815;
+    window.onload = redraw_1739628041951463502915526690122221;
 </script>
-<p><select onchange="redraw_17395715128826947046381930535430815(this)">
+<p><select onchange="redraw_1739628041951463502915526690122221(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17395715128826947046381930535430815">Diagram Loading...</div>
+<div id="diagram_1739628041951463502915526690122221">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
