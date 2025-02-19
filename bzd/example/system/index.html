@@ -1070,8 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    let bdlToSvg = null;
-    const redraw_1739724927365989405779341719771224 = async (selectObject) => {
+    const redraw_173999927556622240139891001809903 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1303,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1574,20 +1573,20 @@
         }
     ]
 }];
-        if (bdlToSvg === null) {
-            bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_173999927556622240139891001809903.bdlToSvg === undefined) {
+            redraw_173999927556622240139891001809903.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1739724927365989405779341719771224").innerHTML = svg;
+        const svg = await redraw_173999927556622240139891001809903.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_173999927556622240139891001809903").innerHTML = svg;
     };
-    window.onload = redraw_1739724927365989405779341719771224;
+    window.onload = redraw_173999927556622240139891001809903;
 </script>
-<p><select onchange="redraw_1739724927365989405779341719771224(this)">
+<p><select onchange="redraw_173999927556622240139891001809903(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1739724927365989405779341719771224">Diagram Loading...</div>
+<div id="diagram_173999927556622240139891001809903">Diagram Loading...</div>
 
 
 
