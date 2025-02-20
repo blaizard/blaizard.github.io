@@ -1087,12 +1087,30 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17399992785012681042033590386093156 = async (selectObject) => {
+    const redraw_1740092087873560406566508577582848 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "esp32.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "esp32.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            }
+        },
         "esp32.board.pwm1": {
             "duty": {
                 "type": "sink",
@@ -1111,24 +1129,6 @@
                 ],
                 "uid": "esp32.board.pwm0.duty",
                 "symbol": "const Integer"
-            }
-        },
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "esp32.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "esp32.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
             }
         }
     },
@@ -1270,6 +1270,47 @@
                     ],
                     "deps": []
                 },
+                "esp32.board.ioWater": {
+                    "expression": {
+                        "name": "ioWater",
+                        "fqn": "esp32.board.ioWater",
+                        "symbol": "bzd.components.esp32.io.Digital",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "pin",
+                                "fqn": "bzd.components.esp32.io.Digital.pin",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 0
+                            },
+                            {
+                                "name": "mode",
+                                "fqn": "bzd.components.esp32.io.Digital.mode",
+                                "symbol": "bzd.components.esp32.io.DigitalMode.output",
+                                "category": "enumValue",
+                                "value": {
+                                    "type": "enum",
+                                    "fqn": "bzd.components.esp32.io.DigitalMode.output"
+                                }
+                            }
+                        ]
+                    },
+                    "init": [
+                        {
+                            "symbol": "esp32.board.ioWater.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [],
+                    "shutdown": [
+                        {
+                            "symbol": "esp32.board.ioWater.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": []
+                },
                 "jardinier.lights": {
                     "expression": {
                         "name": "lights",
@@ -1281,8 +1322,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 },
                 "esp32.board.pwmTimer": {
@@ -1509,6 +1550,11 @@
                                 "symbol": "Integer",
                                 "category": "builtin",
                                 "value": 43200
+                            },
+                            {
+                                "name": "io",
+                                "symbol": "esp32.board.ioWater",
+                                "category": "expression"
                             }
                         ]
                     },
@@ -1516,8 +1562,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
+                        "esp32.out",
                         "esp32.timer",
-                        "esp32.out"
+                        "esp32.board.ioWater"
                     ]
                 },
                 {
@@ -1574,20 +1621,20 @@
         }
     ]
 }];
-        if (redraw_17399992785012681042033590386093156.bdlToSvg === undefined) {
-            redraw_17399992785012681042033590386093156.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1740092087873560406566508577582848.bdlToSvg === undefined) {
+            redraw_1740092087873560406566508577582848.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17399992785012681042033590386093156.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17399992785012681042033590386093156").innerHTML = svg;
+        const svg = await redraw_1740092087873560406566508577582848.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1740092087873560406566508577582848").innerHTML = svg;
     };
-    window.onload = redraw_17399992785012681042033590386093156;
+    window.onload = redraw_1740092087873560406566508577582848;
 </script>
-<p><select onchange="redraw_17399992785012681042033590386093156(this)">
+<p><select onchange="redraw_1740092087873560406566508577582848(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17399992785012681042033590386093156">Diagram Loading...</div>
+<div id="diagram_1740092087873560406566508577582848">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
