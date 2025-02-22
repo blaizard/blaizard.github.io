@@ -543,6 +543,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#structures" class="md-nav__link">
     <span class="md-ellipsis">
       Structures
@@ -1177,6 +1186,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#structures" class="md-nav__link">
     <span class="md-ellipsis">
       Structures
@@ -1359,6 +1377,17 @@
 </tr>
 </tbody>
 </table>
+<h3 id="literals">Literals</h3>
+<p>Literals is a notation of a value that may define an arbitrary type, written in the bdl format.
+Available literals in bdl are:</p>
+<ul>
+<li>integers: <code>1</code>, <code>-4</code>, ...</li>
+<li>floats: <code>0.23</code>, <code>-3.14</code>, ...</li>
+<li>booleans: <code>true</code>, <code>false</code></li>
+<li>strings: <code>"hello"</code>, ...</li>
+<li>enumeration values: <code>myenum.value1</code></li>
+</ul>
+<p>To be implemented: numbers with units.</p>
 <h3 id="structures">Structures</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>struct Coord
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>{
@@ -1375,7 +1404,7 @@
 </code></pre></div>
 <h3 id="strong-types">Strong Types</h3>
 <p>Strong typing is supported with the <code>using</code> keyword. For example, to define an integer with strong typing, this can be done as follow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>using MyStrongType = Integer [min(0), max(23)];
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>using MyStrongType = Integer [min(0) max(23)];
 </code></pre></div>
 <h2 id="namespaces">Namespaces</h2>
 <p>To prevent symbol leakage, files can be defined to be under a specific namespace, with the following keyword:</p>
@@ -1393,7 +1422,7 @@ Only one namespace can be declared within a file and the namespace statement mus
 </code></pre></div>
 <p>where <code>values</code> can be an association of <code>value</code>, <code>symbol</code>, <code>regexpr</code> or <code>preset</code>.</p>
 <ul>
-<li><code>value</code> is either a string <code>"hello"</code>, a number <code>42</code> or <code>-3.14</code> or a boolean <code>true</code> or <code>false</code>.</li>
+<li><code>value</code> is either a literal.</li>
 <li><code>symbol</code> is either a relative symbol to the current namespace <code>abc</code> or a fully qualified name <code>this.is.abc</code>.</li>
 <li><code>regexpr</code> is a regular expression <code>/[a-z]*/</code>.</li>
 <li><code>preset</code> is a preset that is replaced by a predefined content. For example <code>abc = {out};</code> is equivalent to <code>abd: bzd.OStream = target.out;</code></li>

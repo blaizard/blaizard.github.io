@@ -97809,7 +97809,13 @@ var __async = (__this, __arguments, generator) => {
     }
     getExpressionValue(expression) {
       if ("value" in expression) {
-        return expression.value;
+        const value = expression.value;
+        if (value.constructor == Object) {
+          if (value.type == "enum") {
+            return value.fqn;
+          }
+        }
+        return value;
       }
       let output = expression["symbol"] || "<unknown>";
       if ("parameters" in expression) {
@@ -97907,7 +97913,7 @@ var __async = (__this, __arguments, generator) => {
         });
         children.push({
           id: fqn,
-          tooltip: config.join("\n"),
+          tooltip: "config:\n" + config.map((l) => "- " + l).join("\n"),
           labels: [
             {
               text: displayName
