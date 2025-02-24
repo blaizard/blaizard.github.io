@@ -1087,57 +1087,35 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17403433038320034048731095510565403 = async (selectObject) => {
+    const redraw_1740426069468579304132019499908747 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
-    "target": "esp32",
+    "target": "platform",
     "ios": {
-        "esp32.board.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty0"
-                ],
-                "uid": "esp32.board.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "esp32.board.ioWater": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.water.pump"
-                ],
-                "uid": "esp32.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
-        "jardinier.water": {
-            "pump": {
+        "jardinier.controller": {
+            "lightState": {
                 "type": "source",
                 "connections": [
-                    "esp32.board.ioWater.out"
+                    "jardinier.lights.state"
                 ],
-                "uid": "jardinier.water.pump",
-                "symbol": "bzd.io.digital.State"
-            }
-        },
-        "esp32.board.pwm1": {
-            "duty": {
-                "type": "sink",
+                "uid": "jardinier.controller.lightState",
+                "symbol": "jardinier.LightSate"
+            },
+            "waterPumpSate": {
+                "type": "source",
                 "connections": [
-                    "jardinier.lights.pwmDuty1"
+                    "jardinier.water.state"
                 ],
-                "uid": "esp32.board.pwm1.duty",
-                "symbol": "const Integer"
+                "uid": "jardinier.controller.waterPumpSate",
+                "symbol": "jardinier.WaterPumpState"
             }
         },
         "jardinier.lights": {
             "pwmDuty0": {
                 "type": "source",
                 "connections": [
-                    "esp32.board.pwm0.duty"
+                    "platform.board.pwm0.duty"
                 ],
                 "uid": "jardinier.lights.pwmDuty0",
                 "symbol": "Integer"
@@ -1145,20 +1123,106 @@
             "pwmDuty1": {
                 "type": "source",
                 "connections": [
-                    "esp32.board.pwm1.duty"
+                    "platform.board.pwm1.duty"
                 ],
                 "uid": "jardinier.lights.pwmDuty1",
                 "symbol": "Integer"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.lightState"
+                ],
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
+            }
+        },
+        "jardinier.water": {
+            "pump": {
+                "type": "source",
+                "connections": [
+                    "platform.board.ioWater.out"
+                ],
+                "uid": "jardinier.water.pump",
+                "symbol": "bzd.io.digital.State"
+            },
+            "led": {
+                "type": "source",
+                "connections": [
+                    "platform.board.ioLED.out"
+                ],
+                "uid": "jardinier.water.led",
+                "symbol": "bzd.io.digital.State"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.waterPumpSate"
+                ],
+                "uid": "jardinier.water.state",
+                "symbol": "const jardinier.WaterPumpState"
+            }
+        },
+        "platform.board.ioWater": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.water.pump"
+                ],
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
+            }
+        },
+        "platform.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "platform.board.pwm1.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "platform.board.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty0"
+                ],
+                "uid": "platform.board.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "platform.board.ioLED": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.water.led"
+                ],
+                "uid": "platform.board.ioLED.out",
+                "symbol": "const bzd.io.digital.State"
             }
         }
     },
     "contexts": [
         {
             "registry": {
-                "esp32.core1": {
+                "platform.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "platform.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "platform.core1": {
                     "expression": {
                         "name": "core1",
-                        "fqn": "esp32.core1",
+                        "fqn": "platform.core1",
                         "symbol": "bzd.components.esp32.Core",
                         "category": "component",
                         "parameters": [
@@ -1203,10 +1267,10 @@
                     "shutdown": [],
                     "deps": []
                 },
-                "esp32.core0": {
+                "platform.core0": {
                     "expression": {
                         "name": "core0",
-                        "fqn": "esp32.core0",
+                        "fqn": "platform.core0",
                         "symbol": "bzd.components.esp32.Core",
                         "category": "component",
                         "parameters": [
@@ -1251,40 +1315,28 @@
                     "shutdown": [],
                     "deps": []
                 },
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
-                "esp32.timer": {
+                "platform.timer": {
                     "expression": {
                         "name": "timer",
-                        "fqn": "esp32.timer",
+                        "fqn": "platform.timer",
                         "symbol": "bzd.components.esp32.timer.GPTimer",
                         "category": "component"
                     },
                     "init": [
                         {
-                            "symbol": "esp32.timer.init",
+                            "symbol": "platform.timer.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "esp32.timer.service",
+                            "symbol": "platform.timer.service",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "esp32.timer.shutdown",
+                            "symbol": "platform.timer.shutdown",
                             "category": "method"
                         }
                     ],
@@ -1301,60 +1353,121 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
-                        "esp32.timer"
+                        "platform.out",
+                        "platform.timer"
                     ]
                 },
-                "esp32.board.ioWater": {
+                "jardinier.controller": {
+                    "expression": {
+                        "name": "controller",
+                        "fqn": "jardinier.controller",
+                        "symbol": "jardinier.Controller",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "platform.timer",
+                        "platform.out"
+                    ]
+                },
+                "platform.board.ioWater": {
                     "expression": {
                         "name": "ioWater",
-                        "fqn": "esp32.board.ioWater",
-                        "symbol": "bzd.components.esp32.io.Digital",
+                        "fqn": "platform.board.ioWater",
+                        "symbol": "bzd.components.esp32.io.digital.Output",
                         "category": "component",
                         "parameters": [
                             {
                                 "name": "pin",
-                                "fqn": "bzd.components.esp32.io.Digital.pin",
+                                "fqn": "bzd.components.esp32.io.digital.Output.pin",
                                 "symbol": "Integer",
                                 "category": "builtin",
-                                "value": 3
+                                "value": 14
                             },
                             {
                                 "name": "mode",
-                                "fqn": "bzd.components.esp32.io.Digital.mode",
-                                "symbol": "bzd.components.esp32.io.DigitalMode.output",
-                                "category": "enumValue",
+                                "fqn": "bzd.components.esp32.io.digital.Output.mode",
+                                "symbol": "bzd.components.esp32.io.digital.OutputMode",
+                                "category": "enum",
                                 "value": {
                                     "type": "enum",
-                                    "fqn": "bzd.components.esp32.io.DigitalMode.output"
+                                    "fqn": "bzd.components.esp32.io.digital.OutputMode.normal"
                                 }
                             }
                         ]
                     },
                     "init": [
                         {
-                            "symbol": "esp32.board.ioWater.init",
+                            "symbol": "platform.board.ioWater.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "esp32.board.ioWater.run",
+                            "symbol": "platform.board.ioWater.run",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "esp32.board.ioWater.shutdown",
+                            "symbol": "platform.board.ioWater.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": []
                 },
-                "esp32.board.pwmTimer": {
+                "platform.board.ioLED": {
+                    "expression": {
+                        "name": "ioLED",
+                        "fqn": "platform.board.ioLED",
+                        "symbol": "bzd.components.esp32.io.digital.Output",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "pin",
+                                "fqn": "bzd.components.esp32.io.digital.Output.pin",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 3
+                            },
+                            {
+                                "name": "mode",
+                                "fqn": "bzd.components.esp32.io.digital.Output.mode",
+                                "symbol": "bzd.components.esp32.io.digital.OutputMode",
+                                "category": "enum",
+                                "value": {
+                                    "type": "enum",
+                                    "fqn": "bzd.components.esp32.io.digital.OutputMode.normal"
+                                }
+                            }
+                        ]
+                    },
+                    "init": [
+                        {
+                            "symbol": "platform.board.ioLED.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "platform.board.ioLED.run",
+                            "category": "method"
+                        }
+                    ],
+                    "shutdown": [
+                        {
+                            "symbol": "platform.board.ioLED.shutdown",
+                            "category": "method"
+                        }
+                    ],
+                    "deps": []
+                },
+                "platform.board.pwmTimer": {
                     "expression": {
                         "name": "pwmTimer",
-                        "fqn": "esp32.board.pwmTimer",
+                        "fqn": "platform.board.pwmTimer",
                         "symbol": "bzd.components.esp32.LEDCTimer",
                         "category": "component",
                         "parameters": [
@@ -1376,30 +1489,30 @@
                     },
                     "init": [
                         {
-                            "symbol": "esp32.board.pwmTimer.init",
+                            "symbol": "platform.board.pwmTimer.init",
                             "category": "method"
                         }
                     ],
                     "intra": [],
                     "shutdown": [
                         {
-                            "symbol": "esp32.board.pwmTimer.shutdown",
+                            "symbol": "platform.board.pwmTimer.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": []
                 },
-                "esp32.board.pwm1": {
+                "platform.board.pwm1": {
                     "expression": {
                         "name": "pwm1",
-                        "fqn": "esp32.board.pwm1",
+                        "fqn": "platform.board.pwm1",
                         "symbol": "bzd.components.esp32.LEDCPWM",
                         "category": "component",
                         "parameters": [
                             {
                                 "name": "timer",
                                 "fqn": "bzd.components.esp32.LEDCPWM.timer",
-                                "symbol": "esp32.board.pwmTimer",
+                                "symbol": "platform.board.pwmTimer",
                                 "category": "expression"
                             },
                             {
@@ -1410,8 +1523,8 @@
                                 "value": 1
                             },
                             {
-                                "name": "io",
-                                "fqn": "bzd.components.esp32.LEDCPWM.io",
+                                "name": "pin",
+                                "fqn": "bzd.components.esp32.LEDCPWM.pin",
                                 "symbol": "Integer",
                                 "category": "builtin",
                                 "value": 13
@@ -1420,30 +1533,30 @@
                     },
                     "init": [
                         {
-                            "symbol": "esp32.board.pwm1.init",
+                            "symbol": "platform.board.pwm1.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "esp32.board.pwm1.run",
+                            "symbol": "platform.board.pwm1.run",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "esp32.board.pwm1.shutdown",
+                            "symbol": "platform.board.pwm1.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": [
-                        "esp32.board.pwmTimer"
+                        "platform.board.pwmTimer"
                     ]
                 },
-                "esp32.executor": {
+                "platform.executor": {
                     "expression": {
                         "name": "executor",
-                        "fqn": "esp32.executor",
+                        "fqn": "platform.executor",
                         "symbol": "bzd.components.generic.Executor",
                         "category": "component",
                         "parameters": [
@@ -1455,12 +1568,12 @@
                                 "parameters": [
                                     {
                                         "name": "values",
-                                        "symbol": "esp32.core0",
+                                        "symbol": "platform.core0",
                                         "category": "expression"
                                     },
                                     {
                                         "name": "values",
-                                        "symbol": "esp32.core1",
+                                        "symbol": "platform.core1",
                                         "category": "expression"
                                     }
                                 ]
@@ -1468,7 +1581,7 @@
                             {
                                 "name": "out",
                                 "fqn": "bzd.components.generic.Executor.out",
-                                "symbol": "esp32.out",
+                                "symbol": "platform.out",
                                 "category": "expression"
                             },
                             {
@@ -1491,9 +1604,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.core1",
-                        "esp32.core0",
-                        "esp32.out"
+                        "platform.out",
+                        "platform.core1",
+                        "platform.core0"
                     ]
                 },
                 "jardinier.water": {
@@ -1506,13 +1619,13 @@
                             {
                                 "name": "timer",
                                 "fqn": "jardinier.WaterController.timer",
-                                "symbol": "esp32.timer",
+                                "symbol": "platform.timer",
                                 "category": "expression"
                             },
                             {
                                 "name": "out",
                                 "fqn": "jardinier.WaterController.out",
-                                "symbol": "esp32.out",
+                                "symbol": "platform.out",
                                 "category": "expression"
                             },
                             {
@@ -1535,21 +1648,21 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
-                        "esp32.timer"
+                        "platform.out",
+                        "platform.timer"
                     ]
                 },
-                "esp32.board.pwm0": {
+                "platform.board.pwm0": {
                     "expression": {
                         "name": "pwm0",
-                        "fqn": "esp32.board.pwm0",
+                        "fqn": "platform.board.pwm0",
                         "symbol": "bzd.components.esp32.LEDCPWM",
                         "category": "component",
                         "parameters": [
                             {
                                 "name": "timer",
                                 "fqn": "bzd.components.esp32.LEDCPWM.timer",
-                                "symbol": "esp32.board.pwmTimer",
+                                "symbol": "platform.board.pwmTimer",
                                 "category": "expression"
                             },
                             {
@@ -1560,8 +1673,8 @@
                                 "value": 0
                             },
                             {
-                                "name": "io",
-                                "fqn": "bzd.components.esp32.LEDCPWM.io",
+                                "name": "pin",
+                                "fqn": "bzd.components.esp32.LEDCPWM.pin",
                                 "symbol": "Integer",
                                 "category": "builtin",
                                 "value": 12
@@ -1570,24 +1683,24 @@
                     },
                     "init": [
                         {
-                            "symbol": "esp32.board.pwm0.init",
+                            "symbol": "platform.board.pwm0.init",
                             "category": "method"
                         }
                     ],
                     "intra": [
                         {
-                            "symbol": "esp32.board.pwm0.run",
+                            "symbol": "platform.board.pwm0.run",
                             "category": "method"
                         }
                     ],
                     "shutdown": [
                         {
-                            "symbol": "esp32.board.pwm0.shutdown",
+                            "symbol": "platform.board.pwm0.shutdown",
                             "category": "method"
                         }
                     ],
                     "deps": [
-                        "esp32.board.pwmTimer"
+                        "platform.board.pwmTimer"
                     ]
                 }
             },
@@ -1606,6 +1719,18 @@
                 },
                 {
                     "expression": {
+                        "symbol": "jardinier.controller.run",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "jardinier.controller"
+                    ]
+                },
+                {
+                    "expression": {
                         "symbol": "jardinier.water.run",
                         "category": "method"
                     },
@@ -1620,70 +1745,82 @@
             "services": [
                 {
                     "expression": {
-                        "symbol": "esp32.timer.service",
+                        "symbol": "platform.timer.service",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer"
+                        "platform.timer"
                     ]
                 },
                 {
                     "expression": {
-                        "symbol": "esp32.board.ioWater.run",
+                        "symbol": "platform.board.ioWater.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.board.ioWater"
+                        "platform.board.ioWater"
                     ]
                 },
                 {
                     "expression": {
-                        "symbol": "esp32.board.pwm1.run",
+                        "symbol": "platform.board.ioLED.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.board.pwm1"
+                        "platform.board.ioLED"
                     ]
                 },
                 {
                     "expression": {
-                        "symbol": "esp32.board.pwm0.run",
+                        "symbol": "platform.board.pwm1.run",
                         "category": "method"
                     },
                     "init": [],
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.board.pwm0"
+                        "platform.board.pwm1"
+                    ]
+                },
+                {
+                    "expression": {
+                        "symbol": "platform.board.pwm0.run",
+                        "category": "method"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "platform.board.pwm0"
                     ]
                 }
             ]
         }
     ]
 }];
-        if (redraw_17403433038320034048731095510565403.bdlToSvg === undefined) {
-            redraw_17403433038320034048731095510565403.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1740426069468579304132019499908747.bdlToSvg === undefined) {
+            redraw_1740426069468579304132019499908747.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17403433038320034048731095510565403.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17403433038320034048731095510565403").innerHTML = svg;
+        const svg = await redraw_1740426069468579304132019499908747.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1740426069468579304132019499908747").innerHTML = svg;
     };
-    window.onload = redraw_17403433038320034048731095510565403;
+    window.onload = redraw_1740426069468579304132019499908747;
 </script>
-<p><select onchange="redraw_17403433038320034048731095510565403(this)">
+<p><select onchange="redraw_1740426069468579304132019499908747(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17403433038320034048731095510565403">Diagram Loading...</div>
+<div id="diagram_1740426069468579304132019499908747">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
