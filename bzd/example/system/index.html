@@ -1070,22 +1070,12 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17420664866691358006571302847769622 = async (selectObject) => {
+    const redraw_1742150557376203306563949416830478 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "example.poller": {
-            "receive": {
-                "type": "sink",
-                "connections": [
-                    "example.emitter.send"
-                ],
-                "uid": "example.poller.receive",
-                "symbol": "const Integer"
-            }
-        },
         "example.emitter": {
             "send": {
                 "type": "source",
@@ -1094,6 +1084,16 @@
                 ],
                 "uid": "example.emitter.send",
                 "symbol": "Integer"
+            }
+        },
+        "example.poller": {
+            "receive": {
+                "type": "sink",
+                "connections": [
+                    "example.emitter.send"
+                ],
+                "uid": "example.poller.receive",
+                "symbol": "const Integer"
             }
         }
     },
@@ -1302,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1340,16 +1340,6 @@
 },{
     "target": "hpc",
     "ios": {
-        "example.poller": {
-            "receive": {
-                "type": "sink",
-                "connections": [
-                    "example.emitter.send"
-                ],
-                "uid": "example.poller.receive",
-                "symbol": "const Integer"
-            }
-        },
         "example.emitter": {
             "send": {
                 "type": "source",
@@ -1358,6 +1348,16 @@
                 ],
                 "uid": "example.emitter.send",
                 "symbol": "Integer"
+            }
+        },
+        "example.poller": {
+            "receive": {
+                "type": "sink",
+                "connections": [
+                    "example.emitter.send"
+                ],
+                "uid": "example.poller.receive",
+                "symbol": "const Integer"
             }
         }
     },
@@ -1461,20 +1461,6 @@
                         "hpc.proactor"
                     ]
                 },
-                "hpc.executorProfiler": {
-                    "expression": {
-                        "name": "executorProfiler",
-                        "fqn": "hpc.executorProfiler",
-                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": [
-                        "hpc.out"
-                    ]
-                },
                 "example.emitter": {
                     "expression": {
                         "name": "emitter",
@@ -1488,6 +1474,20 @@
                     "deps": [
                         "hpc.out",
                         "hpc.timer"
+                    ]
+                },
+                "hpc.executorProfiler": {
+                    "expression": {
+                        "name": "executorProfiler",
+                        "fqn": "hpc.executorProfiler",
+                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "hpc.out"
                     ]
                 },
                 "hpc.executor": {
@@ -1536,8 +1536,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.out",
                         "hpc.executorProfiler",
+                        "hpc.out",
                         "hpc.core1"
                     ]
                 }
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_17420664866691358006571302847769622.bdlToSvg === undefined) {
-            redraw_17420664866691358006571302847769622.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1742150557376203306563949416830478.bdlToSvg === undefined) {
+            redraw_1742150557376203306563949416830478.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17420664866691358006571302847769622.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17420664866691358006571302847769622").innerHTML = svg;
+        const svg = await redraw_1742150557376203306563949416830478.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1742150557376203306563949416830478").innerHTML = svg;
     };
-    window.onload = redraw_17420664866691358006571302847769622;
+    window.onload = redraw_1742150557376203306563949416830478;
 </script>
-<p><select onchange="redraw_17420664866691358006571302847769622(this)">
+<p><select onchange="redraw_1742150557376203306563949416830478(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17420664866691358006571302847769622">Diagram Loading...</div>
+<div id="diagram_1742150557376203306563949416830478">Diagram Loading...</div>
 
 
 
