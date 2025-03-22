@@ -1087,22 +1087,12 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_174259646925071407361979585364775 = async (selectObject) => {
+    const redraw_17426487095874858013322248814613347 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
-        "platform.board.ioWater": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.water.pump"
-                ],
-                "uid": "platform.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
         "platform.board.pwm1": {
             "duty": {
                 "type": "sink",
@@ -1111,6 +1101,32 @@
                 ],
                 "uid": "platform.board.pwm1.duty",
                 "symbol": "const Integer"
+            }
+        },
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.lightState"
+                ],
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
             }
         },
         "jardinier.water": {
@@ -1177,30 +1193,14 @@
                 "symbol": "jardinier.WaterPumpState"
             }
         },
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
-            },
-            "state": {
+        "platform.board.ioWater": {
+            "out": {
                 "type": "sink",
                 "connections": [
-                    "jardinier.controller.lightState"
+                    "jardinier.water.pump"
                 ],
-                "uid": "jardinier.lights.state",
-                "symbol": "const jardinier.LightSate"
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
             }
         }
     },
@@ -1807,20 +1807,20 @@
         }
     ]
 }];
-        if (redraw_174259646925071407361979585364775.bdlToSvg === undefined) {
-            redraw_174259646925071407361979585364775.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17426487095874858013322248814613347.bdlToSvg === undefined) {
+            redraw_17426487095874858013322248814613347.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_174259646925071407361979585364775.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_174259646925071407361979585364775").innerHTML = svg;
+        const svg = await redraw_17426487095874858013322248814613347.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17426487095874858013322248814613347").innerHTML = svg;
     };
-    window.onload = redraw_174259646925071407361979585364775;
+    window.onload = redraw_17426487095874858013322248814613347;
 </script>
-<p><select onchange="redraw_174259646925071407361979585364775(this)">
+<p><select onchange="redraw_17426487095874858013322248814613347(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_174259646925071407361979585364775">Diagram Loading...</div>
+<div id="diagram_17426487095874858013322248814613347">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
