@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_1742809895404438022819862148742487 = async (selectObject) => {
+    const redraw_17431116119021595016861603199177644 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1302,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1461,21 +1461,6 @@
                         "hpc.proactor"
                     ]
                 },
-                "example.emitter": {
-                    "expression": {
-                        "name": "emitter",
-                        "fqn": "example.emitter",
-                        "symbol": "example.Emitter",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": [
-                        "hpc.timer",
-                        "hpc.out"
-                    ]
-                },
                 "hpc.executorProfiler": {
                     "expression": {
                         "name": "executorProfiler",
@@ -1488,6 +1473,21 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.out"
+                    ]
+                },
+                "example.emitter": {
+                    "expression": {
+                        "name": "emitter",
+                        "fqn": "example.emitter",
+                        "symbol": "example.Emitter",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "hpc.out",
+                        "hpc.timer"
                     ]
                 },
                 "hpc.executor": {
@@ -1537,8 +1537,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.core1",
-                        "hpc.executorProfiler",
-                        "hpc.out"
+                        "hpc.out",
+                        "hpc.executorProfiler"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_1742809895404438022819862148742487.bdlToSvg === undefined) {
-            redraw_1742809895404438022819862148742487.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17431116119021595016861603199177644.bdlToSvg === undefined) {
+            redraw_17431116119021595016861603199177644.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1742809895404438022819862148742487.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1742809895404438022819862148742487").innerHTML = svg;
+        const svg = await redraw_17431116119021595016861603199177644.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17431116119021595016861603199177644").innerHTML = svg;
     };
-    window.onload = redraw_1742809895404438022819862148742487;
+    window.onload = redraw_17431116119021595016861603199177644;
 </script>
-<p><select onchange="redraw_1742809895404438022819862148742487(this)">
+<p><select onchange="redraw_17431116119021595016861603199177644(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1742809895404438022819862148742487">Diagram Loading...</div>
+<div id="diagram_17431116119021595016861603199177644">Diagram Loading...</div>
 
 
 
