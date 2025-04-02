@@ -1070,22 +1070,12 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_174354375268470860776804210114029 = async (selectObject) => {
+    const redraw_1743620941362583605985226556951943 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -1094,6 +1084,16 @@
                 ],
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
+            }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
             }
         }
     },
@@ -1302,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1340,16 +1340,6 @@
 },{
     "target": "hpc",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -1358,6 +1348,16 @@
                 ],
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
+            }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
             }
         }
     },
@@ -1537,8 +1537,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.out",
-                        "hpc.executorProfiler",
-                        "hpc.core1"
+                        "hpc.core1",
+                        "hpc.executorProfiler"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_174354375268470860776804210114029.bdlToSvg === undefined) {
-            redraw_174354375268470860776804210114029.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1743620941362583605985226556951943.bdlToSvg === undefined) {
+            redraw_1743620941362583605985226556951943.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_174354375268470860776804210114029.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_174354375268470860776804210114029").innerHTML = svg;
+        const svg = await redraw_1743620941362583605985226556951943.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1743620941362583605985226556951943").innerHTML = svg;
     };
-    window.onload = redraw_174354375268470860776804210114029;
+    window.onload = redraw_1743620941362583605985226556951943;
 </script>
-<p><select onchange="redraw_174354375268470860776804210114029(this)">
+<p><select onchange="redraw_1743620941362583605985226556951943(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_174354375268470860776804210114029">Diagram Loading...</div>
+<div id="diagram_1743620941362583605985226556951943">Diagram Loading...</div>
 
 
 
