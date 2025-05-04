@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_174605606987183170242882601298392 = async (selectObject) => {
+    const redraw_17463702671698630606528451107548 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_174605606987183170242882601298392.bdlToSvg === undefined) {
-            redraw_174605606987183170242882601298392.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17463702671698630606528451107548.bdlToSvg === undefined) {
+            redraw_17463702671698630606528451107548.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_174605606987183170242882601298392.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_174605606987183170242882601298392").innerHTML = svg;
+        const svg = await redraw_17463702671698630606528451107548.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17463702671698630606528451107548").innerHTML = svg;
     };
-    window.onload = redraw_174605606987183170242882601298392;
+    window.onload = redraw_17463702671698630606528451107548;
 </script>
-<p><select onchange="redraw_174605606987183170242882601298392(this)">
+<p><select onchange="redraw_17463702671698630606528451107548(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_174605606987183170242882601298392">Diagram Loading...</div>
+<div id="diagram_17463702671698630606528451107548">Diagram Loading...</div>
 
 
 
