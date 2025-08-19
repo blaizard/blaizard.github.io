@@ -1,6 +1,6 @@
 (function(global2, factory) {
   typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("web-worker")) : typeof define === "function" && define.amd ? define(["web-worker"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, global2.BdlToSvg = factory(global2.require$$1));
-})(this, function(require$$1) {
+})(this, (function(require$$1) {
   "use strict";var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -3001,7 +3001,7 @@ var __async = (__this, __arguments, generator) => {
   };
   const mlhvqtcsaz = "mlhvqtcsaz".split("");
   for (let i = 0, il = mlhvqtcsaz.length; i < il; ++i) {
-    pathHandlers[mlhvqtcsaz[i]] = /* @__PURE__ */ function(i2) {
+    pathHandlers[mlhvqtcsaz[i]] = /* @__PURE__ */ (function(i2) {
       return function(c, p, p0) {
         if (i2 === "H") c[0] = c[0] + p.x;
         else if (i2 === "V") c[0] = c[0] + p.y;
@@ -3015,7 +3015,7 @@ var __async = (__this, __arguments, generator) => {
         }
         return pathHandlers[i2](c, p, p0);
       };
-    }(mlhvqtcsaz[i].toUpperCase());
+    })(mlhvqtcsaz[i].toUpperCase());
   }
   function makeAbsolut(parser2) {
     const command = parser2.segment[0];
@@ -5455,213 +5455,218 @@ var __async = (__this, __arguments, generator) => {
     throw new Error('Could not dynamically require "' + path + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
   }
   var elkApi = { exports: {} };
-  (function(module2, exports2) {
-    (function(f) {
-      {
-        module2.exports = f();
-      }
-    })(function() {
-      return (/* @__PURE__ */ function() {
-        function r(e, n, t) {
-          function o(i2, f) {
-            if (!n[i2]) {
-              if (!e[i2]) {
-                var c = "function" == typeof commonjsRequire && commonjsRequire;
-                if (!f && c) return c(i2, true);
-                if (u) return u(i2, true);
-                var a = new Error("Cannot find module '" + i2 + "'");
-                throw a.code = "MODULE_NOT_FOUND", a;
+  var hasRequiredElkApi;
+  function requireElkApi() {
+    if (hasRequiredElkApi) return elkApi.exports;
+    hasRequiredElkApi = 1;
+    (function(module2, exports2) {
+      (function(f) {
+        {
+          module2.exports = f();
+        }
+      })(function() {
+        return (/* @__PURE__ */ (function() {
+          function r(e, n, t) {
+            function o(i2, f) {
+              if (!n[i2]) {
+                if (!e[i2]) {
+                  var c = "function" == typeof commonjsRequire && commonjsRequire;
+                  if (!f && c) return c(i2, true);
+                  if (u) return u(i2, true);
+                  var a = new Error("Cannot find module '" + i2 + "'");
+                  throw a.code = "MODULE_NOT_FOUND", a;
+                }
+                var p = n[i2] = { exports: {} };
+                e[i2][0].call(p.exports, function(r2) {
+                  var n2 = e[i2][1][r2];
+                  return o(n2 || r2);
+                }, p, p.exports, r, e, n, t);
               }
-              var p = n[i2] = { exports: {} };
-              e[i2][0].call(p.exports, function(r2) {
-                var n2 = e[i2][1][r2];
-                return o(n2 || r2);
-              }, p, p.exports, r, e, n, t);
+              return n[i2].exports;
             }
-            return n[i2].exports;
+            for (var u = "function" == typeof commonjsRequire && commonjsRequire, i = 0; i < t.length; i++) o(t[i]);
+            return o;
           }
-          for (var u = "function" == typeof commonjsRequire && commonjsRequire, i = 0; i < t.length; i++) o(t[i]);
-          return o;
-        }
-        return r;
-      }())({ 1: [function(require2, module3, exports3) {
-        Object.defineProperty(exports3, "__esModule", {
-          value: true
-        });
-        var _createClass = /* @__PURE__ */ function() {
-          function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-              var descriptor = props[i];
-              descriptor.enumerable = descriptor.enumerable || false;
-              descriptor.configurable = true;
-              if ("value" in descriptor) descriptor.writable = true;
-              Object.defineProperty(target, descriptor.key, descriptor);
+          return r;
+        })())({ 1: [function(require2, module3, exports3) {
+          Object.defineProperty(exports3, "__esModule", {
+            value: true
+          });
+          var _createClass = /* @__PURE__ */ (function() {
+            function defineProperties(target, props) {
+              for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+              }
+            }
+            return function(Constructor, protoProps, staticProps) {
+              if (protoProps) defineProperties(Constructor.prototype, protoProps);
+              if (staticProps) defineProperties(Constructor, staticProps);
+              return Constructor;
+            };
+          })();
+          function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+              throw new TypeError("Cannot call a class as a function");
             }
           }
-          return function(Constructor, protoProps, staticProps) {
-            if (protoProps) defineProperties(Constructor.prototype, protoProps);
-            if (staticProps) defineProperties(Constructor, staticProps);
-            return Constructor;
-          };
-        }();
-        function _classCallCheck2(instance, Constructor) {
-          if (!(instance instanceof Constructor)) {
-            throw new TypeError("Cannot call a class as a function");
-          }
-        }
-        var ELK2 = function() {
-          function ELK3() {
-            var _this = this;
-            var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, _ref$defaultLayoutOpt = _ref.defaultLayoutOptions, defaultLayoutOptions = _ref$defaultLayoutOpt === void 0 ? {} : _ref$defaultLayoutOpt, _ref$algorithms = _ref.algorithms, algorithms = _ref$algorithms === void 0 ? ["layered", "stress", "mrtree", "radial", "force", "disco", "sporeOverlap", "sporeCompaction", "rectpacking"] : _ref$algorithms, workerFactory = _ref.workerFactory, workerUrl = _ref.workerUrl;
-            _classCallCheck2(this, ELK3);
-            this.defaultLayoutOptions = defaultLayoutOptions;
-            this.initialized = false;
-            if (typeof workerUrl === "undefined" && typeof workerFactory === "undefined") {
-              throw new Error("Cannot construct an ELK without both 'workerUrl' and 'workerFactory'.");
+          var ELK2 = (function() {
+            function ELK3() {
+              var _this = this;
+              var _ref = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, _ref$defaultLayoutOpt = _ref.defaultLayoutOptions, defaultLayoutOptions = _ref$defaultLayoutOpt === void 0 ? {} : _ref$defaultLayoutOpt, _ref$algorithms = _ref.algorithms, algorithms = _ref$algorithms === void 0 ? ["layered", "stress", "mrtree", "radial", "force", "disco", "sporeOverlap", "sporeCompaction", "rectpacking"] : _ref$algorithms, workerFactory = _ref.workerFactory, workerUrl = _ref.workerUrl;
+              _classCallCheck(this, ELK3);
+              this.defaultLayoutOptions = defaultLayoutOptions;
+              this.initialized = false;
+              if (typeof workerUrl === "undefined" && typeof workerFactory === "undefined") {
+                throw new Error("Cannot construct an ELK without both 'workerUrl' and 'workerFactory'.");
+              }
+              var factory = workerFactory;
+              if (typeof workerUrl !== "undefined" && typeof workerFactory === "undefined") {
+                factory = function factory2(url) {
+                  return new Worker(url);
+                };
+              }
+              var worker = factory(workerUrl);
+              if (typeof worker.postMessage !== "function") {
+                throw new TypeError("Created worker does not provide the required 'postMessage' function.");
+              }
+              this.worker = new PromisedWorker(worker);
+              this.worker.postMessage({
+                cmd: "register",
+                algorithms
+              }).then(function(r) {
+                return _this.initialized = true;
+              }).catch(console.err);
             }
-            var factory = workerFactory;
-            if (typeof workerUrl !== "undefined" && typeof workerFactory === "undefined") {
-              factory = function factory2(url) {
-                return new Worker(url);
+            _createClass(ELK3, [{
+              key: "layout",
+              value: function layout(graph) {
+                var _ref2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, _ref2$layoutOptions = _ref2.layoutOptions, layoutOptions = _ref2$layoutOptions === void 0 ? this.defaultLayoutOptions : _ref2$layoutOptions, _ref2$logging = _ref2.logging, logging = _ref2$logging === void 0 ? false : _ref2$logging, _ref2$measureExecutio = _ref2.measureExecutionTime, measureExecutionTime = _ref2$measureExecutio === void 0 ? false : _ref2$measureExecutio;
+                if (!graph) {
+                  return Promise.reject(new Error("Missing mandatory parameter 'graph'."));
+                }
+                return this.worker.postMessage({
+                  cmd: "layout",
+                  graph,
+                  layoutOptions,
+                  options: {
+                    logging,
+                    measureExecutionTime
+                  }
+                });
+              }
+            }, {
+              key: "knownLayoutAlgorithms",
+              value: function knownLayoutAlgorithms() {
+                return this.worker.postMessage({ cmd: "algorithms" });
+              }
+            }, {
+              key: "knownLayoutOptions",
+              value: function knownLayoutOptions() {
+                return this.worker.postMessage({ cmd: "options" });
+              }
+            }, {
+              key: "knownLayoutCategories",
+              value: function knownLayoutCategories() {
+                return this.worker.postMessage({ cmd: "categories" });
+              }
+            }, {
+              key: "terminateWorker",
+              value: function terminateWorker() {
+                if (this.worker) this.worker.terminate();
+              }
+            }]);
+            return ELK3;
+          })();
+          exports3.default = ELK2;
+          var PromisedWorker = (function() {
+            function PromisedWorker2(worker) {
+              var _this2 = this;
+              _classCallCheck(this, PromisedWorker2);
+              if (worker === void 0) {
+                throw new Error("Missing mandatory parameter 'worker'.");
+              }
+              this.resolvers = {};
+              this.worker = worker;
+              this.worker.onmessage = function(answer) {
+                setTimeout(function() {
+                  _this2.receive(_this2, answer);
+                }, 0);
               };
             }
-            var worker = factory(workerUrl);
-            if (typeof worker.postMessage !== "function") {
-              throw new TypeError("Created worker does not provide the required 'postMessage' function.");
-            }
-            this.worker = new PromisedWorker(worker);
-            this.worker.postMessage({
-              cmd: "register",
-              algorithms
-            }).then(function(r) {
-              return _this.initialized = true;
-            }).catch(console.err);
-          }
-          _createClass(ELK3, [{
-            key: "layout",
-            value: function layout(graph) {
-              var _ref2 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {}, _ref2$layoutOptions = _ref2.layoutOptions, layoutOptions = _ref2$layoutOptions === void 0 ? this.defaultLayoutOptions : _ref2$layoutOptions, _ref2$logging = _ref2.logging, logging = _ref2$logging === void 0 ? false : _ref2$logging, _ref2$measureExecutio = _ref2.measureExecutionTime, measureExecutionTime = _ref2$measureExecutio === void 0 ? false : _ref2$measureExecutio;
-              if (!graph) {
-                return Promise.reject(new Error("Missing mandatory parameter 'graph'."));
+            _createClass(PromisedWorker2, [{
+              key: "postMessage",
+              value: function postMessage(msg) {
+                var id = this.id || 0;
+                this.id = id + 1;
+                msg.id = id;
+                var self2 = this;
+                return new Promise(function(resolve, reject) {
+                  self2.resolvers[id] = function(err, res) {
+                    if (err) {
+                      self2.convertGwtStyleError(err);
+                      reject(err);
+                    } else {
+                      resolve(res);
+                    }
+                  };
+                  self2.worker.postMessage(msg);
+                });
               }
-              return this.worker.postMessage({
-                cmd: "layout",
-                graph,
-                layoutOptions,
-                options: {
-                  logging,
-                  measureExecutionTime
-                }
-              });
-            }
-          }, {
-            key: "knownLayoutAlgorithms",
-            value: function knownLayoutAlgorithms() {
-              return this.worker.postMessage({ cmd: "algorithms" });
-            }
-          }, {
-            key: "knownLayoutOptions",
-            value: function knownLayoutOptions() {
-              return this.worker.postMessage({ cmd: "options" });
-            }
-          }, {
-            key: "knownLayoutCategories",
-            value: function knownLayoutCategories() {
-              return this.worker.postMessage({ cmd: "categories" });
-            }
-          }, {
-            key: "terminateWorker",
-            value: function terminateWorker() {
-              if (this.worker) this.worker.terminate();
-            }
-          }]);
-          return ELK3;
-        }();
-        exports3.default = ELK2;
-        var PromisedWorker = function() {
-          function PromisedWorker2(worker) {
-            var _this2 = this;
-            _classCallCheck2(this, PromisedWorker2);
-            if (worker === void 0) {
-              throw new Error("Missing mandatory parameter 'worker'.");
-            }
-            this.resolvers = {};
-            this.worker = worker;
-            this.worker.onmessage = function(answer) {
-              setTimeout(function() {
-                _this2.receive(_this2, answer);
-              }, 0);
-            };
-          }
-          _createClass(PromisedWorker2, [{
-            key: "postMessage",
-            value: function postMessage(msg) {
-              var id = this.id || 0;
-              this.id = id + 1;
-              msg.id = id;
-              var self2 = this;
-              return new Promise(function(resolve, reject) {
-                self2.resolvers[id] = function(err, res) {
-                  if (err) {
-                    self2.convertGwtStyleError(err);
-                    reject(err);
+            }, {
+              key: "receive",
+              value: function receive(self2, answer) {
+                var json = answer.data;
+                var resolver = self2.resolvers[json.id];
+                if (resolver) {
+                  delete self2.resolvers[json.id];
+                  if (json.error) {
+                    resolver(json.error);
                   } else {
-                    resolve(res);
+                    resolver(null, json.data);
                   }
-                };
-                self2.worker.postMessage(msg);
-              });
-            }
-          }, {
-            key: "receive",
-            value: function receive(self2, answer) {
-              var json = answer.data;
-              var resolver = self2.resolvers[json.id];
-              if (resolver) {
-                delete self2.resolvers[json.id];
-                if (json.error) {
-                  resolver(json.error);
-                } else {
-                  resolver(null, json.data);
                 }
               }
-            }
-          }, {
-            key: "terminate",
-            value: function terminate() {
-              if (this.worker) {
-                this.worker.terminate();
-              }
-            }
-          }, {
-            key: "convertGwtStyleError",
-            value: function convertGwtStyleError(err) {
-              if (!err) {
-                return;
-              }
-              var javaException = err["__java$exception"];
-              if (javaException) {
-                if (javaException.cause && javaException.cause.backingJsObject) {
-                  err.cause = javaException.cause.backingJsObject;
-                  this.convertGwtStyleError(err.cause);
+            }, {
+              key: "terminate",
+              value: function terminate() {
+                if (this.worker) {
+                  this.worker.terminate();
                 }
-                delete err["__java$exception"];
               }
-            }
-          }]);
-          return PromisedWorker2;
-        }();
-      }, {}], 2: [function(require2, module3, exports3) {
-        var ELK2 = require2("./elk-api.js").default;
-        Object.defineProperty(module3.exports, "__esModule", {
-          value: true
-        });
-        module3.exports = ELK2;
-        ELK2.default = ELK2;
-      }, { "./elk-api.js": 1 }] }, {}, [2])(2);
-    });
-  })(elkApi);
-  var elkApiExports = elkApi.exports;
+            }, {
+              key: "convertGwtStyleError",
+              value: function convertGwtStyleError(err) {
+                if (!err) {
+                  return;
+                }
+                var javaException = err["__java$exception"];
+                if (javaException) {
+                  if (javaException.cause && javaException.cause.backingJsObject) {
+                    err.cause = javaException.cause.backingJsObject;
+                    this.convertGwtStyleError(err.cause);
+                  }
+                  delete err["__java$exception"];
+                }
+              }
+            }]);
+            return PromisedWorker2;
+          })();
+        }, {}], 2: [function(require2, module3, exports3) {
+          var ELK2 = require2("./elk-api.js").default;
+          Object.defineProperty(module3.exports, "__esModule", {
+            value: true
+          });
+          module3.exports = ELK2;
+          ELK2.default = ELK2;
+        }, { "./elk-api.js": 1 }] }, {}, [2])(2);
+      });
+    })(elkApi);
+    return elkApi.exports;
+  }
   var elkWorker_min = { exports: {} };
   var hasRequiredElkWorker_min;
   function requireElkWorker_min() {
@@ -45987,7 +45992,7 @@ var __async = (__this, __arguments, generator) => {
         g = Go(a, c, e);
         if (!!h && e == h.a && Hb(c, h.g)) {
           return c;
-        } else if (!!g && !d) {
+        } else if (!!g && true) {
           throw Adb(new agb("key already present: " + c));
         }
         !!h && yo(a, h);
@@ -67783,14 +67788,8 @@ var __async = (__this, __arguments, generator) => {
                 for (s = new dMd((!b.a && (b.a = new C5d(J4, b, 10, 11)), b.a)); s.e != s.i.gc(); ) {
                   r = RD(bMd(s), 27);
                   J = RD(Gxd(r, Tld), 143);
-                  if ((!r.a && (r.a = new C5d(J4, r, 10, 11)), r.a).i > 0 && (ltd(J.f), false)) {
-                    if (RD(Gxd(r, nmd), 280) == jqd) {
-                      throw Adb(new Jed("Topdown Layout Providers should only be used on parallel nodes."));
-                    }
-                    fE(ltd(J.f));
-                    null.Um();
-                    zyd(r, $wnd.Math.max(r.g, null.Vm), $wnd.Math.max(r.f, null.Vm));
-                  } else if (Gxd(r, smd) != null) {
+                  if ((!r.a && (r.a = new C5d(J4, r, 10, 11)), r.a).i > 0 && (ltd(J.f), false)) ;
+                  else if (Gxd(r, smd) != null) {
                     h = RD(Gxd(r, smd), 347);
                     W = h.Tg(r);
                     zyd(r, $wnd.Math.max(r.g, W.a), $wnd.Math.max(r.f, W.b));
@@ -71366,7 +71365,7 @@ var __async = (__this, __arguments, generator) => {
         return new Gp(this);
       };
       _.zc = function up(a, b) {
-        return Eo(this.a, a, b, false);
+        return Eo(this.a, a, b);
       };
       _.Bc = function wp(a) {
         var b;
@@ -97523,64 +97522,70 @@ var __async = (__this, __arguments, generator) => {
     })(elkWorker_min, elkWorker_min.exports);
     return elkWorker_min.exports;
   }
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-  function _possibleConstructorReturn(self2, call) {
-    if (!self2) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-    return call && (typeof call === "object" || typeof call === "function") ? call : self2;
-  }
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-    subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-  var ELK = elkApiExports.default;
-  var ELKNode = function(_ELK) {
-    _inherits(ELKNode2, _ELK);
-    function ELKNode2() {
-      var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
-      _classCallCheck(this, ELKNode2);
-      var optionsClone = Object.assign({}, options);
-      var workerThreadsExist = false;
-      try {
-        require.resolve("web-worker");
-        workerThreadsExist = true;
-      } catch (e) {
+  var hasRequiredMain;
+  function requireMain() {
+    if (hasRequiredMain) return main.exports;
+    hasRequiredMain = 1;
+    function _classCallCheck(instance, Constructor) {
+      if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
       }
-      if (options.workerUrl) {
-        if (workerThreadsExist) {
-          var Worker2 = require$$1;
-          optionsClone.workerFactory = function(url) {
-            return new Worker2(url);
-          };
-        } else {
-          console.warn("Web worker requested but 'web-worker' package not installed. \nConsider installing the package or pass your own 'workerFactory' to ELK's constructor.\n... Falling back to non-web worker version.");
+    }
+    function _possibleConstructorReturn(self2, call) {
+      if (!self2) {
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      }
+      return call && (typeof call === "object" || typeof call === "function") ? call : self2;
+    }
+    function _inherits(subClass, superClass) {
+      if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+      }
+      subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
+      if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    }
+    var ELK2 = requireElkApi().default;
+    var ELKNode = (function(_ELK) {
+      _inherits(ELKNode2, _ELK);
+      function ELKNode2() {
+        var options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+        _classCallCheck(this, ELKNode2);
+        var optionsClone = Object.assign({}, options);
+        var workerThreadsExist = false;
+        try {
+          require.resolve("web-worker");
+          workerThreadsExist = true;
+        } catch (e) {
         }
+        if (options.workerUrl) {
+          if (workerThreadsExist) {
+            var Worker2 = require$$1;
+            optionsClone.workerFactory = function(url) {
+              return new Worker2(url);
+            };
+          } else {
+            console.warn("Web worker requested but 'web-worker' package not installed. \nConsider installing the package or pass your own 'workerFactory' to ELK's constructor.\n... Falling back to non-web worker version.");
+          }
+        }
+        if (!optionsClone.workerFactory) {
+          var _require = requireElkWorker_min(), _Worker = _require.Worker;
+          optionsClone.workerFactory = function(url) {
+            return new _Worker(url);
+          };
+        }
+        return _possibleConstructorReturn(this, (ELKNode2.__proto__ || Object.getPrototypeOf(ELKNode2)).call(this, optionsClone));
       }
-      if (!optionsClone.workerFactory) {
-        var _require = requireElkWorker_min(), _Worker = _require.Worker;
-        optionsClone.workerFactory = function(url) {
-          return new _Worker(url);
-        };
-      }
-      return _possibleConstructorReturn(this, (ELKNode2.__proto__ || Object.getPrototypeOf(ELKNode2)).call(this, optionsClone));
-    }
-    return ELKNode2;
-  }(ELK);
-  Object.defineProperty(main.exports, "__esModule", {
-    value: true
-  });
-  main.exports = ELKNode;
-  ELKNode.default = ELKNode;
-  var mainExports = main.exports;
-  const ELK$1 = /* @__PURE__ */ getDefaultExportFromCjs(mainExports);
+      return ELKNode2;
+    })(ELK2);
+    Object.defineProperty(main.exports, "__esModule", {
+      value: true
+    });
+    main.exports = ELKNode;
+    ELKNode.default = ELKNode;
+    return main.exports;
+  }
+  var mainExports = requireMain();
+  const ELK = /* @__PURE__ */ getDefaultExportFromCjs(mainExports);
   class ElkToSVG {
     constructor(svg2) {
       this.svg = svg2;
@@ -97602,7 +97607,7 @@ var __async = (__this, __arguments, generator) => {
     render(json) {
       return __async(this, null, function* () {
         this.preprocess(this.svg, json);
-        const elk = new ELK$1();
+        const elk = new ELK();
         return yield elk.layout(json, {
           layoutOptions: this.layoutOptions
         }).then((graph) => this.draw(graph)).catch((e) => {
@@ -98054,4 +98059,4 @@ var __async = (__this, __arguments, generator) => {
     }
   }
   return BdlToSvg;
-});
+}));
