@@ -1,47 +1,7 @@
 (function(global2, factory) {
   typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require("web-worker")) : typeof define === "function" && define.amd ? define(["web-worker"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, global2.BdlToSvg = factory(global2.require$$1));
 })(this, (function(require$$1) {
-  "use strict";var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __pow = Math.pow;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-var __async = (__this, __arguments, generator) => {
-  return new Promise((resolve, reject) => {
-    var fulfilled = (value) => {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    };
-    var rejected = (value) => {
-      try {
-        step(generator.throw(value));
-      } catch (e) {
-        reject(e);
-      }
-    };
-    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
-    step((generator = generator.apply(__this, __arguments)).next());
-  });
-};
-
+  "use strict";
   const methods$1 = {};
   const names = [];
   function registerMethods(name, m) {
@@ -137,7 +97,7 @@ var __async = (__this, __arguments, generator) => {
   const descriptiveElements = /* @__PURE__ */ new Set(["desc", "metadata", "title"]);
   const isDescriptive = (element) => descriptiveElements.has(element.nodeName);
   const writeDataToDom = (element, data2, defaults = {}) => {
-    const cloned = __spreadValues({}, data2);
+    const cloned = { ...data2 };
     for (const key in cloned) {
       if (cloned[key].valueOf() === defaults[key]) {
         delete cloned[key];
@@ -669,7 +629,7 @@ var __async = (__this, __arguments, generator) => {
     }
     lch() {
       const { l, a, b } = this.lab();
-      const c = Math.sqrt(__pow(a, 2) + __pow(b, 2));
+      const c = Math.sqrt(a ** 2 + b ** 2);
       let h = 180 * Math.atan2(b, a) / Math.PI;
       if (h < 0) {
         h *= -1;
@@ -700,9 +660,9 @@ var __async = (__this, __arguments, generator) => {
           const ct = 16 / 116;
           const mx = 8856e-6;
           const nm = 7.787;
-          x2 = 0.95047 * (__pow(xL, 3) > mx ? __pow(xL, 3) : (xL - ct) / nm);
-          y2 = 1 * (__pow(yL, 3) > mx ? __pow(yL, 3) : (yL - ct) / nm);
-          z = 1.08883 * (__pow(zL, 3) > mx ? __pow(zL, 3) : (zL - ct) / nm);
+          x2 = 0.95047 * (xL ** 3 > mx ? xL ** 3 : (xL - ct) / nm);
+          y2 = 1 * (yL ** 3 > mx ? yL ** 3 : (yL - ct) / nm);
+          z = 1.08883 * (zL ** 3 > mx ? zL ** 3 : (zL - ct) / nm);
         }
         const rU = x2 * 3.2406 + y2 * -1.5372 + z * -0.4986;
         const gU = x2 * -0.9689 + y2 * 1.8758 + z * 0.0415;
@@ -1493,10 +1453,11 @@ var __async = (__this, __arguments, generator) => {
     if (event instanceof globals.window.Event) {
       n.dispatchEvent(event);
     } else {
-      event = new globals.window.CustomEvent(event, __spreadValues({
+      event = new globals.window.CustomEvent(event, {
         detail: data2,
-        cancelable: true
-      }, options));
+        cancelable: true,
+        ...options
+      });
       n.dispatchEvent(event);
     }
     return event;
@@ -1888,7 +1849,7 @@ var __async = (__this, __arguments, generator) => {
       return element;
     }
     round(precision = 2, map2 = null) {
-      const factor = __pow(10, precision);
+      const factor = 10 ** precision;
       const attrs2 = this.attr(map2);
       for (const i in attrs2) {
         if (typeof attrs2[i] === "number") {
@@ -1970,13 +1931,12 @@ var __async = (__this, __arguments, generator) => {
   register(Dom, "Dom");
   class Element extends Dom {
     constructor(node, attrs2) {
-      var _a, _b;
       super(node, attrs2);
       this.dom = {};
       this.node.instance = this;
       if (node.hasAttribute("data-svgjs") || node.hasAttribute("svgjs:data")) {
         this.setData(
-          (_b = (_a = JSON.parse(node.getAttribute("data-svgjs"))) != null ? _a : JSON.parse(node.getAttribute("svgjs:data"))) != null ? _b : {}
+          JSON.parse(node.getAttribute("data-svgjs")) ?? JSON.parse(node.getAttribute("svgjs:data")) ?? {}
         );
       }
     }
@@ -2270,7 +2230,7 @@ var __async = (__this, __arguments, generator) => {
       return o == null ? decomposed : decomposed[o];
     }
     if (!Matrix.isMatrixLike(o)) {
-      o = __spreadProps(__spreadValues({}, o), { origin: getOrigin(o, this) });
+      o = { ...o, origin: getOrigin(o, this) };
     }
     const cleanRelative = relative === true ? this : relative || false;
     const result = new Matrix(cleanRelative).transform(o);
@@ -2812,7 +2772,7 @@ var __async = (__this, __arguments, generator) => {
             return 1;
           }
         } else {
-          return 3 * t * __pow(1 - t, 2) * y1 + 3 * __pow(t, 2) * (1 - t) * y2 + __pow(t, 3);
+          return 3 * t * (1 - t) ** 2 * y1 + 3 * t ** 2 * (1 - t) * y2 + t ** 3;
         }
       };
     },
@@ -4018,20 +3978,19 @@ var __async = (__this, __arguments, generator) => {
       this._persist = this._isDeclarative ? true : null;
     }
     static sanitise(duration, delay, when) {
-      var _a, _b, _c, _d, _e;
       let times = 1;
       let swing = false;
       let wait = 0;
-      duration = duration != null ? duration : timeline.duration;
-      delay = delay != null ? delay : timeline.delay;
+      duration = duration ?? timeline.duration;
+      delay = delay ?? timeline.delay;
       when = when || "last";
       if (typeof duration === "object" && !(duration instanceof Stepper)) {
-        delay = (_a = duration.delay) != null ? _a : delay;
-        when = (_b = duration.when) != null ? _b : when;
+        delay = duration.delay ?? delay;
+        when = duration.when ?? when;
         swing = duration.swing || swing;
-        times = (_c = duration.times) != null ? _c : times;
-        wait = (_d = duration.wait) != null ? _d : wait;
-        duration = (_e = duration.duration) != null ? _e : timeline.duration;
+        times = duration.times ?? times;
+        wait = duration.wait ?? wait;
+        duration = duration.duration ?? timeline.duration;
       }
       return {
         duration,
@@ -4545,7 +4504,7 @@ var __async = (__this, __arguments, generator) => {
         const { x: x2, y: y2 } = new Point(origin).transform(
           element._currentTransform(this)
         );
-        let target = new Matrix(__spreadProps(__spreadValues({}, transforms2), { origin: [x2, y2] }));
+        let target = new Matrix({ ...transforms2, origin: [x2, y2] });
         let start = this._isDeclarative && current ? current : startTransform;
         if (affine) {
           target = target.decompose(x2, y2);
@@ -4579,7 +4538,7 @@ var __async = (__this, __arguments, generator) => {
         if ((newTransforms.origin || "center").toString() !== (transforms2.origin || "center").toString()) {
           origin = getOrigin(newTransforms, element);
         }
-        transforms2 = __spreadProps(__spreadValues({}, newTransforms), { origin });
+        transforms2 = { ...newTransforms, origin };
       }
       this.queue(setup, run, retarget, true);
       this._isDeclarative && this._rememberMorpher("transform", morpher);
@@ -4858,9 +4817,8 @@ var __async = (__this, __arguments, generator) => {
   class Text extends Shape {
     // Initialize node
     constructor(node, attrs2 = node) {
-      var _a;
       super(nodeOrNew("text", node), attrs2);
-      this.dom.leading = (_a = this.dom.leading) != null ? _a : new SVGNumber(1.3);
+      this.dom.leading = this.dom.leading ?? new SVGNumber(1.3);
       this._rebuild = true;
       this._build = false;
     }
@@ -5312,10 +5270,11 @@ var __async = (__this, __arguments, generator) => {
       return this;
     }
     font(name, src, params = {}) {
-      return this.rule("@font-face", __spreadValues({
+      return this.rule("@font-face", {
         fontFamily: name,
-        src
-      }, params));
+        src,
+        ...params
+      });
     }
     rule(selector, obj) {
       return this.addText(cssRule(selector, obj));
@@ -97604,16 +97563,14 @@ var __async = (__this, __arguments, generator) => {
         //"elk.hierarchyHandling": "INCLUDE_CHILDREN",
       };
     }
-    render(json) {
-      return __async(this, null, function* () {
-        this.preprocess(this.svg, json);
-        const elk = new ELK();
-        return yield elk.layout(json, {
-          layoutOptions: this.layoutOptions
-        }).then((graph) => this.draw(graph)).catch((e) => {
-          console.error(e);
-          throw new Error("ELK layout failed.");
-        });
+    async render(json) {
+      this.preprocess(this.svg, json);
+      const elk = new ELK();
+      return await elk.layout(json, {
+        layoutOptions: this.layoutOptions
+      }).then((graph) => this.draw(graph)).catch((e) => {
+        console.error(e);
+        throw new Error("ELK layout failed.");
       });
     }
     drawEdge(svg2, edge, x2, y2) {
@@ -98047,15 +98004,13 @@ var __async = (__this, __arguments, generator) => {
         children
       });
     }
-    render(all) {
-      return __async(this, null, function* () {
-        const targets = this.identifyNodesToShow({ ignore: all ? [] : this.targets });
-        const elkFiltered = this.filter(this.elk, {
-          targets: new Set(targets)
-        });
-        const deepCopyElkFiltered = structuredClone(elkFiltered);
-        return yield elkToSVG().render(deepCopyElkFiltered);
+    async render(all) {
+      const targets = this.identifyNodesToShow({ ignore: all ? [] : this.targets });
+      const elkFiltered = this.filter(this.elk, {
+        targets: new Set(targets)
       });
+      const deepCopyElkFiltered = structuredClone(elkFiltered);
+      return await elkToSVG().render(deepCopyElkFiltered);
     }
   }
   return BdlToSvg;
