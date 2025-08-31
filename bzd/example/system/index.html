@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17566689853624460006799075072653649 = async (selectObject) => {
+    const redraw_17566703122007985012814523961299096 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1537,8 +1537,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.executorProfiler",
-                        "hpc.out",
-                        "hpc.core1"
+                        "hpc.core1",
+                        "hpc.out"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_17566689853624460006799075072653649.bdlToSvg === undefined) {
-            redraw_17566689853624460006799075072653649.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17566703122007985012814523961299096.bdlToSvg === undefined) {
+            redraw_17566703122007985012814523961299096.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17566689853624460006799075072653649.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17566689853624460006799075072653649").innerHTML = svg;
+        const svg = await redraw_17566703122007985012814523961299096.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17566703122007985012814523961299096").innerHTML = svg;
     };
-    window.onload = redraw_17566689853624460006799075072653649;
+    window.onload = redraw_17566703122007985012814523961299096;
 </script>
-<p><select onchange="redraw_17566689853624460006799075072653649(this)">
+<p><select onchange="redraw_17566703122007985012814523961299096(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17566689853624460006799075072653649">Diagram Loading...</div>
+<div id="diagram_17566703122007985012814523961299096">Diagram Loading...</div>
 
 
 
