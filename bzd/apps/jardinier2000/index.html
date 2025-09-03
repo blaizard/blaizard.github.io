@@ -1087,48 +1087,12 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_1756897593682893803166343132995819 = async (selectObject) => {
+    const redraw_1756898150983456003398555590374108 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
-            },
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.lightState"
-                ],
-                "uid": "jardinier.lights.state",
-                "symbol": "const jardinier.LightSate"
-            }
-        },
-        "platform.board.pwm1": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty1"
-                ],
-                "uid": "platform.board.pwm1.duty",
-                "symbol": "const Integer"
-            }
-        },
         "jardinier.controller": {
             "lightState": {
                 "type": "source",
@@ -1155,6 +1119,32 @@
                 ],
                 "uid": "platform.board.ioWater.out",
                 "symbol": "const bzd.io.digital.State"
+            }
+        },
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.lightState"
+                ],
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
             }
         },
         "platform.board.ioLED": {
@@ -1201,6 +1191,16 @@
                 ],
                 "uid": "jardinier.water.state",
                 "symbol": "const jardinier.WaterPumpState"
+            }
+        },
+        "platform.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "platform.board.pwm1.duty",
+                "symbol": "const Integer"
             }
         }
     },
@@ -1807,20 +1807,20 @@
         }
     ]
 }];
-        if (redraw_1756897593682893803166343132995819.bdlToSvg === undefined) {
-            redraw_1756897593682893803166343132995819.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1756898150983456003398555590374108.bdlToSvg === undefined) {
+            redraw_1756898150983456003398555590374108.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1756897593682893803166343132995819.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1756897593682893803166343132995819").innerHTML = svg;
+        const svg = await redraw_1756898150983456003398555590374108.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1756898150983456003398555590374108").innerHTML = svg;
     };
-    window.onload = redraw_1756897593682893803166343132995819;
+    window.onload = redraw_1756898150983456003398555590374108;
 </script>
-<p><select onchange="redraw_1756897593682893803166343132995819(this)">
+<p><select onchange="redraw_1756898150983456003398555590374108(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1756897593682893803166343132995819">Diagram Loading...</div>
+<div id="diagram_1756898150983456003398555590374108">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
