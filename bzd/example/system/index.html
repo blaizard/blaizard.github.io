@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17570842842540798047986312293458744 = async (selectObject) => {
+    const redraw_1757085318538899709392665962514504 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1100,18 +1100,6 @@
     "contexts": [
         {
             "registry": {
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.core0": {
                     "expression": {
                         "name": "core0",
@@ -1208,6 +1196,18 @@
                     "shutdown": [],
                     "deps": []
                 },
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "esp32.timer": {
                     "expression": {
                         "name": "timer",
@@ -1286,9 +1286,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
                         "esp32.core0",
-                        "esp32.core1"
+                        "esp32.core1",
+                        "esp32.out"
                     ]
                 },
                 "example.poller": {
@@ -1302,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
-                        "esp32.timer"
+                        "esp32.timer",
+                        "esp32.out"
                     ]
                 }
             },
@@ -1537,8 +1537,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.out",
-                        "hpc.core1",
-                        "hpc.executorProfiler"
+                        "hpc.executorProfiler",
+                        "hpc.core1"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_17570842842540798047986312293458744.bdlToSvg === undefined) {
-            redraw_17570842842540798047986312293458744.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1757085318538899709392665962514504.bdlToSvg === undefined) {
+            redraw_1757085318538899709392665962514504.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17570842842540798047986312293458744.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17570842842540798047986312293458744").innerHTML = svg;
+        const svg = await redraw_1757085318538899709392665962514504.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1757085318538899709392665962514504").innerHTML = svg;
     };
-    window.onload = redraw_17570842842540798047986312293458744;
+    window.onload = redraw_1757085318538899709392665962514504;
 </script>
-<p><select onchange="redraw_17570842842540798047986312293458744(this)">
+<p><select onchange="redraw_1757085318538899709392665962514504(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17570842842540798047986312293458744">Diagram Loading...</div>
+<div id="diagram_1757085318538899709392665962514504">Diagram Loading...</div>
 
 
 
