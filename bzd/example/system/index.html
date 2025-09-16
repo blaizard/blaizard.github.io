@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17580483048019583018770255115579404 = async (selectObject) => {
+    const redraw_175804886392216906147565654978514 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1100,6 +1100,18 @@
     "contexts": [
         {
             "registry": {
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "esp32.core1": {
                     "expression": {
                         "name": "core1",
@@ -1142,18 +1154,6 @@
                                 "value": 100
                             }
                         ]
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
                     },
                     "init": [],
                     "intra": [],
@@ -1286,8 +1286,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.core1",
                         "esp32.out",
+                        "esp32.core1",
                         "esp32.core0"
                     ]
                 },
@@ -1461,20 +1461,6 @@
                         "hpc.proactor"
                     ]
                 },
-                "hpc.executorProfiler": {
-                    "expression": {
-                        "name": "executorProfiler",
-                        "fqn": "hpc.executorProfiler",
-                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": [
-                        "hpc.out"
-                    ]
-                },
                 "example.emitter": {
                     "expression": {
                         "name": "emitter",
@@ -1487,6 +1473,20 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.timer",
+                        "hpc.out"
+                    ]
+                },
+                "hpc.executorProfiler": {
+                    "expression": {
+                        "name": "executorProfiler",
+                        "fqn": "hpc.executorProfiler",
+                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
                         "hpc.out"
                     ]
                 },
@@ -1536,9 +1536,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
+                        "hpc.executorProfiler",
                         "hpc.out",
-                        "hpc.core1",
-                        "hpc.executorProfiler"
+                        "hpc.core1"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_17580483048019583018770255115579404.bdlToSvg === undefined) {
-            redraw_17580483048019583018770255115579404.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_175804886392216906147565654978514.bdlToSvg === undefined) {
+            redraw_175804886392216906147565654978514.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17580483048019583018770255115579404.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17580483048019583018770255115579404").innerHTML = svg;
+        const svg = await redraw_175804886392216906147565654978514.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_175804886392216906147565654978514").innerHTML = svg;
     };
-    window.onload = redraw_17580483048019583018770255115579404;
+    window.onload = redraw_175804886392216906147565654978514;
 </script>
-<p><select onchange="redraw_17580483048019583018770255115579404(this)">
+<p><select onchange="redraw_175804886392216906147565654978514(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17580483048019583018770255115579404">Diagram Loading...</div>
+<div id="diagram_175804886392216906147565654978514">Diagram Loading...</div>
 
 
 
