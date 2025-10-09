@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_176002582027369509642278104236794 = async (selectObject) => {
+    const redraw_1760039608905773206634292679815553 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1100,54 +1100,6 @@
     "contexts": [
         {
             "registry": {
-                "esp32.core1": {
-                    "expression": {
-                        "name": "core1",
-                        "fqn": "esp32.core1",
-                        "symbol": "bzd.components.esp32.Core",
-                        "category": "component",
-                        "parameters": [
-                            {
-                                "name": "stackSize",
-                                "fqn": "bzd.components.esp32.Core.stackSize",
-                                "symbol": "bzd.StackSize",
-                                "category": "using",
-                                "parameters": [
-                                    {
-                                        "name": "value",
-                                        "value": 16000
-                                    }
-                                ],
-                                "value": 16000
-                            },
-                            {
-                                "name": "name",
-                                "fqn": "bzd.components.esp32.Core.name",
-                                "symbol": "String",
-                                "category": "builtin",
-                                "value": "core[1]"
-                            },
-                            {
-                                "name": "cpu",
-                                "fqn": "bzd.components.esp32.Core.cpu",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 1
-                            },
-                            {
-                                "name": "priority",
-                                "fqn": "bzd.components.esp32.Core.priority",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 100
-                            }
-                        ]
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.core0": {
                     "expression": {
                         "name": "core0",
@@ -1202,6 +1154,54 @@
                         "fqn": "esp32.out",
                         "symbol": "bzd.components.std.Out",
                         "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.core1": {
+                    "expression": {
+                        "name": "core1",
+                        "fqn": "esp32.core1",
+                        "symbol": "bzd.components.esp32.Core",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "stackSize",
+                                "fqn": "bzd.components.esp32.Core.stackSize",
+                                "symbol": "bzd.StackSize",
+                                "category": "using",
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "value": 16000
+                                    }
+                                ],
+                                "value": 16000
+                            },
+                            {
+                                "name": "name",
+                                "fqn": "bzd.components.esp32.Core.name",
+                                "symbol": "String",
+                                "category": "builtin",
+                                "value": "core[1]"
+                            },
+                            {
+                                "name": "cpu",
+                                "fqn": "bzd.components.esp32.Core.cpu",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 1
+                            },
+                            {
+                                "name": "priority",
+                                "fqn": "bzd.components.esp32.Core.priority",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 100
+                            }
+                        ]
                     },
                     "init": [],
                     "intra": [],
@@ -1286,9 +1286,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.core1",
                         "esp32.core0",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.core1"
                     ]
                 },
                 "example.poller": {
@@ -1364,28 +1364,6 @@
     "contexts": [
         {
             "registry": {
-                "hpc.proactor": {
-                    "expression": {
-                        "name": "proactor",
-                        "fqn": "hpc.proactor",
-                        "symbol": "bzd.components.linux.epoll.Proactor",
-                        "category": "component"
-                    },
-                    "init": [
-                        {
-                            "symbol": "hpc.proactor.init",
-                            "category": "method"
-                        }
-                    ],
-                    "intra": [
-                        {
-                            "symbol": "hpc.proactor.exec",
-                            "category": "method"
-                        }
-                    ],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "hpc.core1": {
                     "expression": {
                         "name": "core1",
@@ -1427,6 +1405,28 @@
                     "shutdown": [],
                     "deps": []
                 },
+                "hpc.proactor": {
+                    "expression": {
+                        "name": "proactor",
+                        "fqn": "hpc.proactor",
+                        "symbol": "bzd.components.linux.epoll.Proactor",
+                        "category": "component"
+                    },
+                    "init": [
+                        {
+                            "symbol": "hpc.proactor.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "hpc.proactor.exec",
+                            "category": "method"
+                        }
+                    ],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "hpc.timer": {
                     "expression": {
                         "name": "timer",
@@ -1461,20 +1461,6 @@
                         "hpc.proactor"
                     ]
                 },
-                "hpc.executorProfiler": {
-                    "expression": {
-                        "name": "executorProfiler",
-                        "fqn": "hpc.executorProfiler",
-                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": [
-                        "hpc.out"
-                    ]
-                },
                 "example.emitter": {
                     "expression": {
                         "name": "emitter",
@@ -1487,6 +1473,20 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.timer",
+                        "hpc.out"
+                    ]
+                },
+                "hpc.executorProfiler": {
+                    "expression": {
+                        "name": "executorProfiler",
+                        "fqn": "hpc.executorProfiler",
+                        "symbol": "bzd.components.generic.ExecutorProfilerMemory",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
                         "hpc.out"
                     ]
                 },
@@ -1536,9 +1536,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.out",
                         "hpc.core1",
-                        "hpc.executorProfiler"
+                        "hpc.executorProfiler",
+                        "hpc.out"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_176002582027369509642278104236794.bdlToSvg === undefined) {
-            redraw_176002582027369509642278104236794.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1760039608905773206634292679815553.bdlToSvg === undefined) {
+            redraw_1760039608905773206634292679815553.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_176002582027369509642278104236794.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_176002582027369509642278104236794").innerHTML = svg;
+        const svg = await redraw_1760039608905773206634292679815553.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1760039608905773206634292679815553").innerHTML = svg;
     };
-    window.onload = redraw_176002582027369509642278104236794;
+    window.onload = redraw_1760039608905773206634292679815553;
 </script>
-<p><select onchange="redraw_176002582027369509642278104236794(this)">
+<p><select onchange="redraw_1760039608905773206634292679815553(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_176002582027369509642278104236794">Diagram Loading...</div>
+<div id="diagram_1760039608905773206634292679815553">Diagram Loading...</div>
 
 
 
