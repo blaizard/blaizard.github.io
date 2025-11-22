@@ -1087,48 +1087,12 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17619098532172084014990119804070468 = async (selectObject) => {
+    const redraw_1763782839057003705049224152220502 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
-            },
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.lightState"
-                ],
-                "uid": "jardinier.lights.state",
-                "symbol": "const jardinier.LightSate"
-            }
-        },
-        "platform.board.ioWater": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.water.pump"
-                ],
-                "uid": "platform.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
         "platform.board.pwm0": {
             "duty": {
                 "type": "sink",
@@ -1136,16 +1100,6 @@
                     "jardinier.lights.pwmDuty0"
                 ],
                 "uid": "platform.board.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "platform.board.pwm1": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty1"
-                ],
-                "uid": "platform.board.pwm1.duty",
                 "symbol": "const Integer"
             }
         },
@@ -1165,6 +1119,16 @@
                 ],
                 "uid": "jardinier.controller.waterPumpSate",
                 "symbol": "jardinier.WaterPumpState"
+            }
+        },
+        "platform.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "platform.board.pwm1.duty",
+                "symbol": "const Integer"
             }
         },
         "jardinier.water": {
@@ -1193,6 +1157,32 @@
                 "symbol": "const jardinier.WaterPumpState"
             }
         },
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.lightState"
+                ],
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
+            }
+        },
         "platform.board.ioLED": {
             "out": {
                 "type": "sink",
@@ -1202,17 +1192,63 @@
                 "uid": "platform.board.ioLED.out",
                 "symbol": "const bzd.io.digital.State"
             }
+        },
+        "platform.board.ioWater": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.water.pump"
+                ],
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
+            }
         }
     },
     "contexts": [
         {
             "registry": {
-                "platform.out": {
+                "platform.core1": {
                     "expression": {
-                        "name": "out",
-                        "fqn": "platform.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
+                        "name": "core1",
+                        "fqn": "platform.core1",
+                        "symbol": "bzd.components.esp32.Core",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "stackSize",
+                                "fqn": "bzd.components.esp32.Core.stackSize",
+                                "symbol": "bzd.StackSize",
+                                "category": "using",
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "value": 16000
+                                    }
+                                ],
+                                "value": 16000
+                            },
+                            {
+                                "name": "name",
+                                "fqn": "bzd.components.esp32.Core.name",
+                                "symbol": "String",
+                                "category": "builtin",
+                                "value": "core[1]"
+                            },
+                            {
+                                "name": "cpu",
+                                "fqn": "bzd.components.esp32.Core.cpu",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 1
+                            },
+                            {
+                                "name": "priority",
+                                "fqn": "bzd.components.esp32.Core.priority",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 100
+                            }
+                        ]
                     },
                     "init": [],
                     "intra": [],
@@ -1267,48 +1303,12 @@
                     "shutdown": [],
                     "deps": []
                 },
-                "platform.core1": {
+                "platform.out": {
                     "expression": {
-                        "name": "core1",
-                        "fqn": "platform.core1",
-                        "symbol": "bzd.components.esp32.Core",
-                        "category": "component",
-                        "parameters": [
-                            {
-                                "name": "stackSize",
-                                "fqn": "bzd.components.esp32.Core.stackSize",
-                                "symbol": "bzd.StackSize",
-                                "category": "using",
-                                "parameters": [
-                                    {
-                                        "name": "value",
-                                        "value": 16000
-                                    }
-                                ],
-                                "value": 16000
-                            },
-                            {
-                                "name": "name",
-                                "fqn": "bzd.components.esp32.Core.name",
-                                "symbol": "String",
-                                "category": "builtin",
-                                "value": "core[1]"
-                            },
-                            {
-                                "name": "cpu",
-                                "fqn": "bzd.components.esp32.Core.cpu",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 1
-                            },
-                            {
-                                "name": "priority",
-                                "fqn": "bzd.components.esp32.Core.priority",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 100
-                            }
-                        ]
+                        "name": "out",
+                        "fqn": "platform.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
                     },
                     "init": [],
                     "intra": [],
@@ -1604,9 +1604,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
+                        "platform.core1",
                         "platform.core0",
-                        "platform.core1"
+                        "platform.out"
                     ]
                 },
                 "jardinier.water": {
@@ -1807,20 +1807,20 @@
         }
     ]
 }];
-        if (redraw_17619098532172084014990119804070468.bdlToSvg === undefined) {
-            redraw_17619098532172084014990119804070468.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1763782839057003705049224152220502.bdlToSvg === undefined) {
+            redraw_1763782839057003705049224152220502.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17619098532172084014990119804070468.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17619098532172084014990119804070468").innerHTML = svg;
+        const svg = await redraw_1763782839057003705049224152220502.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1763782839057003705049224152220502").innerHTML = svg;
     };
-    window.onload = redraw_17619098532172084014990119804070468;
+    window.onload = redraw_1763782839057003705049224152220502;
 </script>
-<p><select onchange="redraw_17619098532172084014990119804070468(this)">
+<p><select onchange="redraw_1763782839057003705049224152220502(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17619098532172084014990119804070468">Diagram Loading...</div>
+<div id="diagram_1763782839057003705049224152220502">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
