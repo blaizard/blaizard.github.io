@@ -1087,7 +1087,7 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17641709901470175021621110165215207 = async (selectObject) => {
+    const redraw_176433747183037508120202060300917 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1101,6 +1101,16 @@
                 ],
                 "uid": "platform.board.ioLED.out",
                 "symbol": "const bzd.io.digital.State"
+            }
+        },
+        "platform.board.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty0"
+                ],
+                "uid": "platform.board.pwm0.duty",
+                "symbol": "const Integer"
             }
         },
         "jardinier.controller": {
@@ -1141,32 +1151,6 @@
                 "symbol": "const Integer"
             }
         },
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
-            },
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.lightState"
-                ],
-                "uid": "jardinier.lights.state",
-                "symbol": "const jardinier.LightSate"
-            }
-        },
         "jardinier.water": {
             "pump": {
                 "type": "source",
@@ -1193,20 +1177,48 @@
                 "symbol": "const jardinier.WaterPumpState"
             }
         },
-        "platform.board.pwm0": {
-            "duty": {
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            },
+            "state": {
                 "type": "sink",
                 "connections": [
-                    "jardinier.lights.pwmDuty0"
+                    "jardinier.controller.lightState"
                 ],
-                "uid": "platform.board.pwm0.duty",
-                "symbol": "const Integer"
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
             }
         }
     },
     "contexts": [
         {
             "registry": {
+                "platform.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "platform.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "platform.core1": {
                     "expression": {
                         "name": "core1",
@@ -1297,18 +1309,6 @@
                                 "value": 50
                             }
                         ]
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
-                "platform.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "platform.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
                     },
                     "init": [],
                     "intra": [],
@@ -1604,9 +1604,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
+                        "platform.out",
                         "platform.core1",
-                        "platform.core0",
-                        "platform.out"
+                        "platform.core0"
                     ]
                 },
                 "jardinier.water": {
@@ -1807,20 +1807,20 @@
         }
     ]
 }];
-        if (redraw_17641709901470175021621110165215207.bdlToSvg === undefined) {
-            redraw_17641709901470175021621110165215207.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_176433747183037508120202060300917.bdlToSvg === undefined) {
+            redraw_176433747183037508120202060300917.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17641709901470175021621110165215207.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17641709901470175021621110165215207").innerHTML = svg;
+        const svg = await redraw_176433747183037508120202060300917.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_176433747183037508120202060300917").innerHTML = svg;
     };
-    window.onload = redraw_17641709901470175021621110165215207;
+    window.onload = redraw_176433747183037508120202060300917;
 </script>
-<p><select onchange="redraw_17641709901470175021621110165215207(this)">
+<p><select onchange="redraw_176433747183037508120202060300917(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17641709901470175021621110165215207">Diagram Loading...</div>
+<div id="diagram_176433747183037508120202060300917">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
