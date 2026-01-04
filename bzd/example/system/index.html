@@ -1070,7 +1070,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_176744359101602960002406917607085668 = async (selectObject) => {
+    const redraw_1767500110060886907525036507205601 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1461,21 +1461,6 @@
                         "hpc.proactor"
                     ]
                 },
-                "example.emitter": {
-                    "expression": {
-                        "name": "emitter",
-                        "fqn": "example.emitter",
-                        "symbol": "example.Emitter",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": [
-                        "hpc.timer",
-                        "hpc.out"
-                    ]
-                },
                 "hpc.executorProfiler": {
                     "expression": {
                         "name": "executorProfiler",
@@ -1488,6 +1473,21 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.out"
+                    ]
+                },
+                "example.emitter": {
+                    "expression": {
+                        "name": "emitter",
+                        "fqn": "example.emitter",
+                        "symbol": "example.Emitter",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": [
+                        "hpc.out",
+                        "hpc.timer"
                     ]
                 },
                 "hpc.executor": {
@@ -1536,9 +1536,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.executorProfiler",
                         "hpc.out",
-                        "hpc.core1"
+                        "hpc.core1",
+                        "hpc.executorProfiler"
                     ]
                 }
             },
@@ -1573,20 +1573,20 @@
         }
     ]
 }];
-        if (redraw_176744359101602960002406917607085668.bdlToSvg === undefined) {
-            redraw_176744359101602960002406917607085668.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1767500110060886907525036507205601.bdlToSvg === undefined) {
+            redraw_1767500110060886907525036507205601.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_176744359101602960002406917607085668.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_176744359101602960002406917607085668").innerHTML = svg;
+        const svg = await redraw_1767500110060886907525036507205601.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1767500110060886907525036507205601").innerHTML = svg;
     };
-    window.onload = redraw_176744359101602960002406917607085668;
+    window.onload = redraw_1767500110060886907525036507205601;
 </script>
-<p><select onchange="redraw_176744359101602960002406917607085668(this)">
+<p><select onchange="redraw_1767500110060886907525036507205601(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_176744359101602960002406917607085668">Diagram Loading...</div>
+<div id="diagram_1767500110060886907525036507205601">Diagram Loading...</div>
 
 
 
