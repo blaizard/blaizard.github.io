@@ -740,7 +740,7 @@
             
   
   <span class="md-ellipsis">
-    Bazel
+    C++
   </span>
   
 
@@ -749,90 +749,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            Bazel
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../docs/api/bazel/bdl.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    bdl
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../docs/api/bazel/cc.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    cc
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    C++
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             C++
           </label>
@@ -922,10 +838,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -936,8 +852,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Python
           </label>
@@ -1070,7 +986,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_1769003716421736704192083061462222 = async (selectObject) => {
+    const redraw_1770287379423842059596121576955 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1100,66 +1016,6 @@
     "contexts": [
         {
             "registry": {
-                "esp32.core1": {
-                    "expression": {
-                        "name": "core1",
-                        "fqn": "esp32.core1",
-                        "symbol": "bzd.components.esp32.Core",
-                        "category": "component",
-                        "parameters": [
-                            {
-                                "name": "stackSize",
-                                "fqn": "bzd.components.esp32.Core.stackSize",
-                                "symbol": "bzd.StackSize",
-                                "category": "using",
-                                "parameters": [
-                                    {
-                                        "name": "value",
-                                        "value": 16000
-                                    }
-                                ],
-                                "value": 16000
-                            },
-                            {
-                                "name": "name",
-                                "fqn": "bzd.components.esp32.Core.name",
-                                "symbol": "String",
-                                "category": "builtin",
-                                "value": "core[1]"
-                            },
-                            {
-                                "name": "cpu",
-                                "fqn": "bzd.components.esp32.Core.cpu",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 1
-                            },
-                            {
-                                "name": "priority",
-                                "fqn": "bzd.components.esp32.Core.priority",
-                                "symbol": "Integer",
-                                "category": "builtin",
-                                "value": 100
-                            }
-                        ]
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.core0": {
                     "expression": {
                         "name": "core0",
@@ -1200,6 +1056,66 @@
                                 "symbol": "Integer",
                                 "category": "builtin",
                                 "value": 50
+                            }
+                        ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.core1": {
+                    "expression": {
+                        "name": "core1",
+                        "fqn": "esp32.core1",
+                        "symbol": "bzd.components.esp32.Core",
+                        "category": "component",
+                        "parameters": [
+                            {
+                                "name": "stackSize",
+                                "fqn": "bzd.components.esp32.Core.stackSize",
+                                "symbol": "bzd.StackSize",
+                                "category": "using",
+                                "parameters": [
+                                    {
+                                        "name": "value",
+                                        "value": 16000
+                                    }
+                                ],
+                                "value": 16000
+                            },
+                            {
+                                "name": "name",
+                                "fqn": "bzd.components.esp32.Core.name",
+                                "symbol": "String",
+                                "category": "builtin",
+                                "value": "core[1]"
+                            },
+                            {
+                                "name": "cpu",
+                                "fqn": "bzd.components.esp32.Core.cpu",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 1
+                            },
+                            {
+                                "name": "priority",
+                                "fqn": "bzd.components.esp32.Core.priority",
+                                "symbol": "Integer",
+                                "category": "builtin",
+                                "value": 100
                             }
                         ]
                     },
@@ -1286,9 +1202,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.core1",
+                        "esp32.core0",
                         "esp32.out",
-                        "esp32.core0"
+                        "esp32.core1"
                     ]
                 },
                 "example.poller": {
@@ -1537,8 +1453,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.executorProfiler",
-                        "hpc.out",
-                        "hpc.core1"
+                        "hpc.core1",
+                        "hpc.out"
                     ]
                 }
             },
@@ -1573,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_1769003716421736704192083061462222.bdlToSvg === undefined) {
-            redraw_1769003716421736704192083061462222.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1770287379423842059596121576955.bdlToSvg === undefined) {
+            redraw_1770287379423842059596121576955.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1769003716421736704192083061462222.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1769003716421736704192083061462222").innerHTML = svg;
+        const svg = await redraw_1770287379423842059596121576955.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1770287379423842059596121576955").innerHTML = svg;
     };
-    window.onload = redraw_1769003716421736704192083061462222;
+    window.onload = redraw_1770287379423842059596121576955;
 </script>
-<p><select onchange="redraw_1769003716421736704192083061462222(this)">
+<p><select onchange="redraw_1770287379423842059596121576955(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1769003716421736704192083061462222">Diagram Loading...</div>
+<div id="diagram_1770287379423842059596121576955">Diagram Loading...</div>
 
 
 
