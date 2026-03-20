@@ -1003,12 +1003,56 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_17739964141739895010602712214034138 = async (selectObject) => {
+    const redraw_17739992060301409088680167578054 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
+        "jardinier.led": {
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.ledSate"
+                ],
+                "uid": "jardinier.led.state",
+                "symbol": "const jardinier.LEDState"
+            },
+            "led": {
+                "type": "source",
+                "connections": [
+                    "platform.board.ioLED.out"
+                ],
+                "uid": "jardinier.led.led",
+                "symbol": "bzd.io.digital.State"
+            }
+        },
+        "jardinier.controller": {
+            "lightState": {
+                "type": "source",
+                "connections": [
+                    "jardinier.lights.state"
+                ],
+                "uid": "jardinier.controller.lightState",
+                "symbol": "jardinier.LightSate"
+            },
+            "waterPumpSate": {
+                "type": "source",
+                "connections": [
+                    "jardinier.water.state"
+                ],
+                "uid": "jardinier.controller.waterPumpSate",
+                "symbol": "jardinier.WaterPumpState"
+            },
+            "ledSate": {
+                "type": "source",
+                "connections": [
+                    "jardinier.led.state"
+                ],
+                "uid": "jardinier.controller.ledSate",
+                "symbol": "jardinier.LEDState"
+            }
+        },
         "platform.board.ioWater": {
             "out": {
                 "type": "sink",
@@ -1016,6 +1060,36 @@
                     "jardinier.water.pump"
                 ],
                 "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
+            }
+        },
+        "platform.board.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty0"
+                ],
+                "uid": "platform.board.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "platform.board.pwm1": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty1"
+                ],
+                "uid": "platform.board.pwm1.duty",
+                "symbol": "const Integer"
+            }
+        },
+        "platform.board.ioLED": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.led.led"
+                ],
+                "uid": "platform.board.ioLED.out",
                 "symbol": "const bzd.io.digital.State"
             }
         },
@@ -1061,80 +1135,6 @@
                 ],
                 "uid": "jardinier.water.state",
                 "symbol": "const jardinier.WaterPumpState"
-            }
-        },
-        "jardinier.controller": {
-            "lightState": {
-                "type": "source",
-                "connections": [
-                    "jardinier.lights.state"
-                ],
-                "uid": "jardinier.controller.lightState",
-                "symbol": "jardinier.LightSate"
-            },
-            "waterPumpSate": {
-                "type": "source",
-                "connections": [
-                    "jardinier.water.state"
-                ],
-                "uid": "jardinier.controller.waterPumpSate",
-                "symbol": "jardinier.WaterPumpState"
-            },
-            "ledSate": {
-                "type": "source",
-                "connections": [
-                    "jardinier.led.state"
-                ],
-                "uid": "jardinier.controller.ledSate",
-                "symbol": "jardinier.LEDState"
-            }
-        },
-        "platform.board.pwm1": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty1"
-                ],
-                "uid": "platform.board.pwm1.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "platform.board.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty0"
-                ],
-                "uid": "platform.board.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
-        "platform.board.ioLED": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.led.led"
-                ],
-                "uid": "platform.board.ioLED.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
-        "jardinier.led": {
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.ledSate"
-                ],
-                "uid": "jardinier.led.state",
-                "symbol": "const jardinier.LEDState"
-            },
-            "led": {
-                "type": "source",
-                "connections": [
-                    "platform.board.ioLED.out"
-                ],
-                "uid": "jardinier.led.led",
-                "symbol": "bzd.io.digital.State"
             }
         }
     },
@@ -1768,20 +1768,20 @@
         }
     ]
 }];
-        if (redraw_17739964141739895010602712214034138.bdlToSvg === undefined) {
-            redraw_17739964141739895010602712214034138.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17739992060301409088680167578054.bdlToSvg === undefined) {
+            redraw_17739992060301409088680167578054.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17739964141739895010602712214034138.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17739964141739895010602712214034138").innerHTML = svg;
+        const svg = await redraw_17739992060301409088680167578054.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17739992060301409088680167578054").innerHTML = svg;
     };
-    window.onload = redraw_17739964141739895010602712214034138;
+    window.onload = redraw_17739992060301409088680167578054;
 </script>
-<p><select onchange="redraw_17739964141739895010602712214034138(this)">
+<p><select onchange="redraw_17739992060301409088680167578054(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17739964141739895010602712214034138">Diagram Loading...</div>
+<div id="diagram_17739992060301409088680167578054">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
