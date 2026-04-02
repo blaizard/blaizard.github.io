@@ -986,7 +986,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17751296971635487010443367207467813 = async (selectObject) => {
+    const redraw_17751307857807329047232350912600374 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1280,28 +1280,6 @@
     "contexts": [
         {
             "registry": {
-                "hpc.proactor": {
-                    "expression": {
-                        "name": "proactor",
-                        "fqn": "hpc.proactor",
-                        "symbol": "bzd.components.linux.epoll.Proactor",
-                        "category": "component"
-                    },
-                    "init": [
-                        {
-                            "symbol": "hpc.proactor.init",
-                            "category": "method"
-                        }
-                    ],
-                    "intra": [
-                        {
-                            "symbol": "hpc.proactor.exec",
-                            "category": "method"
-                        }
-                    ],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "hpc.core1": {
                     "expression": {
                         "name": "core1",
@@ -1340,6 +1318,28 @@
                     },
                     "init": [],
                     "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "hpc.proactor": {
+                    "expression": {
+                        "name": "proactor",
+                        "fqn": "hpc.proactor",
+                        "symbol": "bzd.components.linux.epoll.Proactor",
+                        "category": "component"
+                    },
+                    "init": [
+                        {
+                            "symbol": "hpc.proactor.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "hpc.proactor.exec",
+                            "category": "method"
+                        }
+                    ],
                     "shutdown": [],
                     "deps": []
                 },
@@ -1452,8 +1452,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.executorProfiler",
                         "hpc.core1",
+                        "hpc.executorProfiler",
                         "hpc.out"
                     ]
                 }
@@ -1489,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_17751296971635487010443367207467813.bdlToSvg === undefined) {
-            redraw_17751296971635487010443367207467813.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17751307857807329047232350912600374.bdlToSvg === undefined) {
+            redraw_17751307857807329047232350912600374.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17751296971635487010443367207467813.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17751296971635487010443367207467813").innerHTML = svg;
+        const svg = await redraw_17751307857807329047232350912600374.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17751307857807329047232350912600374").innerHTML = svg;
     };
-    window.onload = redraw_17751296971635487010443367207467813;
+    window.onload = redraw_17751307857807329047232350912600374;
 </script>
-<p><select onchange="redraw_17751296971635487010443367207467813(this)">
+<p><select onchange="redraw_17751307857807329047232350912600374(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17751296971635487010443367207467813">Diagram Loading...</div>
+<div id="diagram_17751307857807329047232350912600374">Diagram Loading...</div>
 
 
 
