@@ -986,22 +986,12 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_1775310700597853025462759354972786 = async (selectObject) => {
+    const redraw_177531163667509609044860401952801 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -1010,6 +1000,16 @@
                 ],
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
+            }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
             }
         }
     },
@@ -1256,16 +1256,6 @@
 },{
     "target": "hpc",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -1274,6 +1264,16 @@
                 ],
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
+            }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
             }
         }
     },
@@ -1489,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_1775310700597853025462759354972786.bdlToSvg === undefined) {
-            redraw_1775310700597853025462759354972786.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_177531163667509609044860401952801.bdlToSvg === undefined) {
+            redraw_177531163667509609044860401952801.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1775310700597853025462759354972786.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1775310700597853025462759354972786").innerHTML = svg;
+        const svg = await redraw_177531163667509609044860401952801.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_177531163667509609044860401952801").innerHTML = svg;
     };
-    window.onload = redraw_1775310700597853025462759354972786;
+    window.onload = redraw_177531163667509609044860401952801;
 </script>
-<p><select onchange="redraw_1775310700597853025462759354972786(this)">
+<p><select onchange="redraw_177531163667509609044860401952801(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1775310700597853025462759354972786">Diagram Loading...</div>
+<div id="diagram_177531163667509609044860401952801">Diagram Loading...</div>
 
 
 
