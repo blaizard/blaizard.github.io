@@ -986,7 +986,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_1777772520236490703037392940656628 = async (selectObject) => {
+    const redraw_1777835361048549709402856659310003 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1218,8 +1218,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1489,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_1777772520236490703037392940656628.bdlToSvg === undefined) {
-            redraw_1777772520236490703037392940656628.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1777835361048549709402856659310003.bdlToSvg === undefined) {
+            redraw_1777835361048549709402856659310003.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1777772520236490703037392940656628.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1777772520236490703037392940656628").innerHTML = svg;
+        const svg = await redraw_1777835361048549709402856659310003.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1777835361048549709402856659310003").innerHTML = svg;
     };
-    window.onload = redraw_1777772520236490703037392940656628;
+    window.onload = redraw_1777835361048549709402856659310003;
 </script>
-<p><select onchange="redraw_1777772520236490703037392940656628(this)">
+<p><select onchange="redraw_1777835361048549709402856659310003(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1777772520236490703037392940656628">Diagram Loading...</div>
+<div id="diagram_1777835361048549709402856659310003">Diagram Loading...</div>
 
 
 
