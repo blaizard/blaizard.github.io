@@ -986,7 +986,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17780960024243996002849249442575108 = async (selectObject) => {
+    const redraw_17782691867712620232751208480527 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1218,8 +1218,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
-                        "esp32.timer"
+                        "esp32.timer",
+                        "esp32.out"
                     ]
                 }
             },
@@ -1388,8 +1388,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.out",
-                        "hpc.timer"
+                        "hpc.timer",
+                        "hpc.out"
                     ]
                 },
                 "hpc.executorProfiler": {
@@ -1489,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_17780960024243996002849249442575108.bdlToSvg === undefined) {
-            redraw_17780960024243996002849249442575108.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17782691867712620232751208480527.bdlToSvg === undefined) {
+            redraw_17782691867712620232751208480527.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17780960024243996002849249442575108.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17780960024243996002849249442575108").innerHTML = svg;
+        const svg = await redraw_17782691867712620232751208480527.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17782691867712620232751208480527").innerHTML = svg;
     };
-    window.onload = redraw_17780960024243996002849249442575108;
+    window.onload = redraw_17782691867712620232751208480527;
 </script>
-<p><select onchange="redraw_17780960024243996002849249442575108(this)">
+<p><select onchange="redraw_17782691867712620232751208480527(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17780960024243996002849249442575108">Diagram Loading...</div>
+<div id="diagram_17782691867712620232751208480527">Diagram Loading...</div>
 
 
 
