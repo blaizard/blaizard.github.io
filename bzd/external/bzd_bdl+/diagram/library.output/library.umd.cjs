@@ -35,7 +35,7 @@
 	}) : target, mod));
 	var __toCommonJS = (mod) => __hasOwnProp.call(mod, "module.exports") ? mod["module.exports"] : __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/utils/methods.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/utils/methods.js
 	var methods = {};
 	var names = [];
 	function registerMethods(name, m) {
@@ -60,7 +60,7 @@
 		names.push(..._names);
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/utils/utils.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/utils/utils.js
 	function map(array, block) {
 		let i;
 		const il = array.length;
@@ -132,13 +132,13 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/namespaces.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/namespaces.js
 	var svg = "http://www.w3.org/2000/svg";
 	var html = "http://www.w3.org/1999/xhtml";
 	var xmlns = "http://www.w3.org/2000/xmlns/";
 	var xlink = "http://www.w3.org/1999/xlink";
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/utils/window.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/utils/window.js
 	var globals = {
 		window: typeof window === "undefined" ? null : window,
 		document: typeof document === "undefined" ? null : document
@@ -147,10 +147,10 @@
 		return globals.window;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/Base.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/Base.js
 	var Base = class {};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/utils/adopter.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/utils/adopter.js
 	var elements = {};
 	var root = "___SYMBOL___ROOT___";
 	function create(name, ns = svg) {
@@ -214,7 +214,7 @@
 		};
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/arrange.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/arrange.js
 	function siblings() {
 		return this.parent().children();
 	}
@@ -284,7 +284,7 @@
 		insertAfter
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/regex.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/regex.js
 	var numberAndUnit = /^([+-]?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?)([a-z%]*)$/i;
 	var hex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 	var rgb = /rgb\((\d+),(\d+),(\d+)\)/;
@@ -299,7 +299,7 @@
 	var delimiter = /[\s,]+/;
 	var isPathLetter = /[MLHVCSQTAZ]/i;
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/class.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/class.js
 	function classes() {
 		const attr = this.attr("class");
 		return attr == null ? [] : attr.trim().split(delimiter);
@@ -332,7 +332,7 @@
 		toggleClass
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/css.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/css.js
 	function css(style, val) {
 		const ret = {};
 		if (arguments.length === 0) {
@@ -374,7 +374,7 @@
 		visible
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/data.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/data.js
 	function data(a, v, r) {
 		if (a == null) return this.data(map(filter(this.node.attributes, (el) => el.nodeName.indexOf("data-") === 0), (el) => el.nodeName.slice(5)));
 		else if (a instanceof Array) {
@@ -392,7 +392,7 @@
 	}
 	registerMethods("Dom", { data });
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/memory.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/memory.js
 	function remember(k, v) {
 		if (typeof arguments[0] === "object") for (const key in k) this.remember(key, k[key]);
 		else if (arguments.length === 1) return this.memory()[k];
@@ -413,7 +413,7 @@
 		memory
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/Color.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/Color.js
 	function sixDigitHex(hex) {
 		return hex.length === 4 ? [
 			"#",
@@ -729,7 +729,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/Point.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/Point.js
 	var Point = class Point {
 		constructor(...args) {
 			this.init(...args);
@@ -774,7 +774,7 @@
 		return new Point(x, y).transformO(this.screenCTM().inverseO());
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/Matrix.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/Matrix.js
 	function closeEnough(a, b, threshold) {
 		return Math.abs(b - a) < (threshold || 1e-6);
 	}
@@ -1100,7 +1100,7 @@
 	}
 	register(Matrix, "Matrix");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/parser.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/parser.js
 	function parser() {
 		if (!parser.nodes) {
 			const svg = makeInstance().size(2, 0);
@@ -1125,7 +1125,7 @@
 		return parser.nodes;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/Box.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/Box.js
 	function isNulledBox(box) {
 		return !box.width && !box.height && !box.x && !box.y;
 	}
@@ -1272,7 +1272,7 @@
 	} });
 	register(Box, "Box");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/List.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/List.js
 	var List = class extends Array {
 		constructor(arr = [], ...args) {
 			super(arr, ...args);
@@ -1312,7 +1312,7 @@
 		extend([List], methods);
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/selector.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/selector.js
 	function baseFind(query, parent) {
 		return new List(map((parent || globals.document).querySelectorAll(query), function(node) {
 			return adopt(node);
@@ -1325,7 +1325,7 @@
 		return adopt(this.node.querySelector(query));
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/event.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/event.js
 	var listenerId = 0;
 	var windowEvents = {};
 	function getEvents(instance) {
@@ -1408,7 +1408,7 @@
 		return event;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/EventTarget.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/EventTarget.js
 	var EventTarget = class extends Base {
 		addEventListener() {}
 		dispatch(event, data, options) {
@@ -1443,7 +1443,7 @@
 	};
 	register(EventTarget, "EventTarget");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/defaults.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/defaults.js
 	function noop() {}
 	var timeline = {
 		duration: 400,
@@ -1474,7 +1474,7 @@
 		"text-anchor": "start"
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/SVGArray.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/SVGArray.js
 	var SVGArray = class extends Array {
 		constructor(...args) {
 			super(...args);
@@ -1509,7 +1509,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/SVGNumber.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/SVGNumber.js
 	var SVGNumber = class SVGNumber {
 		constructor(...args) {
 			this.init(...args);
@@ -1567,7 +1567,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/attr.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/attr.js
 	var colorAttributes = new Set([
 		"fill",
 		"stroke",
@@ -1611,7 +1611,7 @@
 		return this;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Dom.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Dom.js
 	var Dom = class Dom extends EventTarget {
 		constructor(node, attrs) {
 			super();
@@ -1791,7 +1791,7 @@
 	});
 	register(Dom, "Dom");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Element.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Element.js
 	var Element = class extends Dom {
 		constructor(node, attrs) {
 			super(node, attrs);
@@ -1885,7 +1885,7 @@
 	});
 	register(Element, "Element");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/sugar.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/sugar.js
 	var sugar = {
 		stroke: [
 			"color",
@@ -2028,7 +2028,7 @@
 		return last;
 	}, {}));
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/optional/transform.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/optional/transform.js
 	function untransform() {
 		return this.attr("transform", null);
 	}
@@ -2074,7 +2074,7 @@
 		transform
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Container.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Container.js
 	var Container = class Container extends Element {
 		flatten() {
 			this.each(function() {
@@ -2092,7 +2092,7 @@
 	};
 	register(Container, "Container");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Defs.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Defs.js
 	var Defs = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("defs", node), attrs);
@@ -2106,11 +2106,11 @@
 	};
 	register(Defs, "Defs");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Shape.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Shape.js
 	var Shape = class extends Element {};
 	register(Shape, "Shape");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/circled.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/circled.js
 	var circled_exports = /* @__PURE__ */ __exportAll({
 		cx: () => cx$1,
 		cy: () => cy$1,
@@ -2146,7 +2146,7 @@
 		return height == null ? this.ry() * 2 : this.ry(new SVGNumber(height).divide(2));
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Ellipse.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Ellipse.js
 	var Ellipse = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("ellipse", node), attrs);
@@ -2162,7 +2162,7 @@
 	}) });
 	register(Ellipse, "Ellipse");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Fragment.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Fragment.js
 	var Fragment = class extends Dom {
 		constructor(node = globals.document.createDocumentFragment()) {
 			super(node);
@@ -2183,7 +2183,7 @@
 	};
 	register(Fragment, "Fragment");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/gradiented.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/gradiented.js
 	var gradiented_exports = /* @__PURE__ */ __exportAll({
 		from: () => from,
 		to: () => to
@@ -2207,7 +2207,7 @@
 		});
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Gradient.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Gradient.js
 	var Gradient = class extends Container {
 		constructor(type, attrs) {
 			super(nodeOrNew(type + "Gradient", typeof type === "string" ? null : type), attrs);
@@ -2245,7 +2245,7 @@
 	});
 	register(Gradient, "Gradient");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Pattern.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Pattern.js
 	var Pattern = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("pattern", node), attrs);
@@ -2288,7 +2288,7 @@
 	});
 	register(Pattern, "Pattern");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Image.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Image.js
 	var Image = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("image", node), attrs);
@@ -2324,7 +2324,7 @@
 	}) } });
 	register(Image, "Image");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/PointArray.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/PointArray.js
 	var PointArray = class extends SVGArray {
 		bbox() {
 			let maxX = -Infinity;
@@ -2390,7 +2390,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/pointed.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/pointed.js
 	var pointed_exports = /* @__PURE__ */ __exportAll({
 		MorphArray: () => MorphArray,
 		height: () => height$1,
@@ -2414,7 +2414,7 @@
 		return height == null ? b.height : this.size(b.width, height);
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Line.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Line.js
 	var Line = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("line", node), attrs);
@@ -2452,7 +2452,7 @@
 	}) } });
 	register(Line, "Line");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Marker.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Marker.js
 	var Marker = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("marker", node), attrs);
@@ -2495,7 +2495,7 @@
 	});
 	register(Marker, "Marker");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Controller.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Controller.js
 	/***
 	Base Class
 	==========
@@ -2647,7 +2647,7 @@
 		d: makeSetterGetter("D")
 	});
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/utils/pathParser.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/utils/pathParser.js
 	var segmentParameters = {
 		M: 2,
 		L: 2,
@@ -2886,7 +2886,7 @@
 		return parser.segments;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/types/PathArray.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/types/PathArray.js
 	function arrayToString(a) {
 		let s = "";
 		for (let i = 0, il = a.length; i < il; i++) {
@@ -2988,7 +2988,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Morphable.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Morphable.js
 	var getClassForType = (value) => {
 		const type = typeof value;
 		if (type === "number") return SVGNumber;
@@ -3203,7 +3203,7 @@
 		});
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Path.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Path.js
 	var Path = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("path", node), attrs);
@@ -3244,7 +3244,7 @@
 	}) } });
 	register(Path, "Path");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/poly.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/poly.js
 	var poly_exports = /* @__PURE__ */ __exportAll({
 		array: () => array,
 		clear: () => clear,
@@ -3270,7 +3270,7 @@
 		return this.attr("points", this.array().size(p.width, p.height));
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Polygon.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Polygon.js
 	var Polygon = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("polygon", node), attrs);
@@ -3283,7 +3283,7 @@
 	extend(Polygon, poly_exports);
 	register(Polygon, "Polygon");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Polyline.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Polyline.js
 	var Polyline = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("polyline", node), attrs);
@@ -3296,7 +3296,7 @@
 	extend(Polyline, poly_exports);
 	register(Polyline, "Polyline");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Rect.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Rect.js
 	var Rect = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("rect", node), attrs);
@@ -3311,7 +3311,7 @@
 	}) } });
 	register(Rect, "Rect");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Queue.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Queue.js
 	var Queue = class {
 		constructor() {
 			this._first = null;
@@ -3357,7 +3357,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Animator.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Animator.js
 	var Animator = {
 		nextDraw: null,
 		frames: new Queue(),
@@ -3411,7 +3411,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Timeline.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Timeline.js
 	var makeSchedule = function(runnerInfo) {
 		const start = runnerInfo.start;
 		const duration = runnerInfo.runner.duration();
@@ -3620,7 +3620,7 @@
 		}
 	} } });
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/animation/Runner.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/animation/Runner.js
 	var Runner = class Runner extends EventTarget {
 		constructor(options) {
 			super();
@@ -4245,7 +4245,7 @@
 	});
 	register(Runner, "Runner");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Svg.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Svg.js
 	var Svg = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("svg", node), attrs);
@@ -4281,7 +4281,7 @@
 	}) } });
 	register(Svg, "Svg", true);
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Symbol.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Symbol.js
 	var Symbol$1 = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("symbol", node), attrs);
@@ -4292,7 +4292,7 @@
 	}) } });
 	register(Symbol$1, "Symbol");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/textable.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/textable.js
 	var textable_exports = /* @__PURE__ */ __exportAll({
 		amove: () => amove,
 		ax: () => ax,
@@ -4351,7 +4351,7 @@
 		return this;
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Text.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Text.js
 	var Text = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("text", node), attrs);
@@ -4430,7 +4430,7 @@
 	} });
 	register(Text, "Text");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Tspan.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Tspan.js
 	var Tspan = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("tspan", node), attrs);
@@ -4474,7 +4474,7 @@
 	});
 	register(Tspan, "Tspan");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Circle.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Circle.js
 	var Circle = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("circle", node), attrs);
@@ -4505,7 +4505,7 @@
 	}) } });
 	register(Circle, "Circle");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/ClipPath.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/ClipPath.js
 	var ClipPath = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("clipPath", node), attrs);
@@ -4539,7 +4539,7 @@
 	});
 	register(ClipPath, "ClipPath");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/ForeignObject.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/ForeignObject.js
 	var ForeignObject = class extends Element {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("foreignObject", node), attrs);
@@ -4550,7 +4550,7 @@
 	}) } });
 	register(ForeignObject, "ForeignObject");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/modules/core/containerGeometry.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/modules/core/containerGeometry.js
 	var containerGeometry_exports = /* @__PURE__ */ __exportAll({
 		dmove: () => dmove,
 		dx: () => dx,
@@ -4620,7 +4620,7 @@
 		return this.move(box.x, y, box);
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/G.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/G.js
 	var G = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("g", node), attrs);
@@ -4632,7 +4632,7 @@
 	}) } });
 	register(G, "G");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/A.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/A.js
 	var A = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("a", node), attrs);
@@ -4679,7 +4679,7 @@
 	});
 	register(A, "A");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Mask.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Mask.js
 	var Mask = class extends Container {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("mask", node), attrs);
@@ -4713,7 +4713,7 @@
 	});
 	register(Mask, "Mask");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Stop.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Stop.js
 	var Stop = class extends Element {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("stop", node), attrs);
@@ -4735,7 +4735,7 @@
 	} } });
 	register(Stop, "Stop");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Style.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Style.js
 	function cssRule(selector, rule) {
 		if (!selector) return "";
 		if (!rule) return selector;
@@ -4773,7 +4773,7 @@
 	});
 	register(Style, "Style");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/TextPath.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/TextPath.js
 	var TextPath = class extends Text {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("textPath", node), attrs);
@@ -4825,7 +4825,7 @@
 	TextPath.prototype.MorphArray = PathArray;
 	register(TextPath, "TextPath");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/elements/Use.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/elements/Use.js
 	var Use = class extends Shape {
 		constructor(node, attrs = node) {
 			super(nodeOrNew("use", node), attrs);
@@ -4839,7 +4839,7 @@
 	}) } });
 	register(Use, "Use");
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/node_modules/@svgdotjs/svg.js/src/main.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/@svgdotjs/svg.js@3.2.5/src/main.js
 	var SVG = makeInstance;
 	extend([
 		Svg,
@@ -4884,14 +4884,14 @@
 	]);
 	makeMorphable();
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/web-worker@1.5.0/node_modules/web-worker/src/browser/index.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/web-worker@1.5.0/src/browser/index.js
 	var browser_exports = /* @__PURE__ */ __exportAll({ default: () => browser_default });
 	var browser_default;
 	var init_browser = __esmMin((() => {
 		browser_default = typeof Worker !== "undefined" ? Worker : void 0;
 	}));
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/elkjs@0.9.3/node_modules/elkjs/lib/elk-worker.min.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/elkjs@0.9.3/lib/elk-worker.min.js
 	var require_elk_worker_min = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		var $wnd;
 		if (typeof window !== "undefined") $wnd = window;
@@ -93179,7 +93179,7 @@
 		gwtOnLoad(null, "elk", null);
 	}));
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/elkjs@0.9.3/node_modules/elkjs/lib/elk-api.js
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/node_modules/.store/elkjs@0.9.3/lib/elk-api.js
 	var require_elk_api = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 		(function(f) {
 			if (typeof exports === "object" && typeof module !== "undefined") module.exports = f();
