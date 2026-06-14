@@ -1003,20 +1003,28 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_1780946461007189808456363191432075 = async (selectObject) => {
+    const redraw_1781465498415541409842389067194316 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
-        "platform.board.ioWater": {
-            "out": {
+        "jardinier.led": {
+            "state": {
                 "type": "sink",
                 "connections": [
-                    "jardinier.water.pump"
+                    "jardinier.controller.ledSate"
                 ],
-                "uid": "platform.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
+                "uid": "jardinier.led.state",
+                "symbol": "const jardinier.LEDState"
+            },
+            "led": {
+                "type": "source",
+                "connections": [
+                    "platform.board.ioLED.out"
+                ],
+                "uid": "jardinier.led.led",
+                "symbol": "bzd.io.digital.State"
             }
         },
         "jardinier.water": {
@@ -1047,16 +1055,6 @@
                 "symbol": "const Integer"
             }
         },
-        "platform.board.ioLED": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.led.led"
-                ],
-                "uid": "platform.board.ioLED.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
         "jardinier.controller": {
             "lightState": {
                 "type": "source",
@@ -1083,22 +1081,14 @@
                 "symbol": "jardinier.LEDState"
             }
         },
-        "jardinier.led": {
-            "state": {
+        "platform.board.ioWater": {
+            "out": {
                 "type": "sink",
                 "connections": [
-                    "jardinier.controller.ledSate"
+                    "jardinier.water.pump"
                 ],
-                "uid": "jardinier.led.state",
-                "symbol": "const jardinier.LEDState"
-            },
-            "led": {
-                "type": "source",
-                "connections": [
-                    "platform.board.ioLED.out"
-                ],
-                "uid": "jardinier.led.led",
-                "symbol": "bzd.io.digital.State"
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
             }
         },
         "jardinier.lights": {
@@ -1125,6 +1115,16 @@
                 ],
                 "uid": "jardinier.lights.state",
                 "symbol": "const jardinier.LightSate"
+            }
+        },
+        "platform.board.ioLED": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.led.led"
+                ],
+                "uid": "platform.board.ioLED.out",
+                "symbol": "const bzd.io.digital.State"
             }
         },
         "platform.board.pwm0": {
@@ -1287,8 +1287,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "jardinier.led": {
@@ -1302,8 +1302,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "jardinier.controller": {
@@ -1317,8 +1317,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "platform.board.ioWater": {
@@ -1597,8 +1597,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "platform.board.pwm0": {
@@ -1768,20 +1768,20 @@
         }
     ]
 }];
-        if (redraw_1780946461007189808456363191432075.bdlToSvg === undefined) {
-            redraw_1780946461007189808456363191432075.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1781465498415541409842389067194316.bdlToSvg === undefined) {
+            redraw_1781465498415541409842389067194316.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1780946461007189808456363191432075.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1780946461007189808456363191432075").innerHTML = svg;
+        const svg = await redraw_1781465498415541409842389067194316.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1781465498415541409842389067194316").innerHTML = svg;
     };
-    window.onload = redraw_1780946461007189808456363191432075;
+    window.onload = redraw_1781465498415541409842389067194316;
 </script>
-<p><select onchange="redraw_1780946461007189808456363191432075(this)">
+<p><select onchange="redraw_1781465498415541409842389067194316(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1780946461007189808456363191432075">Diagram Loading...</div>
+<div id="diagram_1781465498415541409842389067194316">Diagram Loading...</div>
 
 <h2 id="hardware">Hardware</h2>
 <ul>
