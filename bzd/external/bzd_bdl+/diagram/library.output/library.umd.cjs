@@ -93402,7 +93402,7 @@
 		});
 	}));
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/elk_to_svg/library.mjs
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/elk_to_svg/library.js
 	var import_main = /* @__PURE__ */ __toESM((/* @__PURE__ */ __commonJSMin(((exports, module) => {
 		function _classCallCheck(instance, Constructor) {
 			if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
@@ -93571,12 +93571,12 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/elk_to_svg/entry_point.mjs
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/elk_to_svg/entry_point.js
 	function elkToSVG() {
 		return new ElkToSVG(SVG());
 	}
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/bdl_to_elk.mjs
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/bdl_to_elk.js
 	var BdlToElk = class {
 		constructor() {
 			this.tree = [];
@@ -93728,7 +93728,7 @@
 		}
 	};
 	//#endregion
-	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/library.mjs
+	//#region ../../../../../execroot/_main/bazel-out/platform-A460A94D-fastbuild-ST-a709e5d1e9f9/bin/external/bzd_bdl+/diagram/library.install/external/bzd_bdl+/diagram/library.js
 	var BdlToSvg = class {
 		constructor(bdls) {
 			let converter = new BdlToElk();
