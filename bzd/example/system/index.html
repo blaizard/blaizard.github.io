@@ -986,7 +986,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17843166398777108022289792233681638 = async (selectObject) => {
+    const redraw_17844031751219046003069956491026793 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1016,18 +1016,6 @@
     "contexts": [
         {
             "registry": {
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.core0": {
                     "expression": {
                         "name": "core0",
@@ -1070,6 +1058,18 @@
                                 "value": 50
                             }
                         ]
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
                     },
                     "init": [],
                     "intra": [],
@@ -1202,8 +1202,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.out",
                         "esp32.core0",
+                        "esp32.out",
                         "esp32.core1"
                     ]
                 },
@@ -1489,20 +1489,20 @@
         }
     ]
 }];
-        if (redraw_17843166398777108022289792233681638.bdlToSvg === undefined) {
-            redraw_17843166398777108022289792233681638.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17844031751219046003069956491026793.bdlToSvg === undefined) {
+            redraw_17844031751219046003069956491026793.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17843166398777108022289792233681638.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17843166398777108022289792233681638").innerHTML = svg;
+        const svg = await redraw_17844031751219046003069956491026793.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17844031751219046003069956491026793").innerHTML = svg;
     };
-    window.onload = redraw_17843166398777108022289792233681638;
+    window.onload = redraw_17844031751219046003069956491026793;
 </script>
-<p><select onchange="redraw_17843166398777108022289792233681638(this)">
+<p><select onchange="redraw_17844031751219046003069956491026793(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17843166398777108022289792233681638">Diagram Loading...</div>
+<div id="diagram_17844031751219046003069956491026793">Diagram Loading...</div>
 
 
 
