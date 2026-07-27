@@ -334,6 +334,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -971,6 +986,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1003,86 +1033,12 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_178509425277992730007181343800986673 = async (selectObject) => {
+    const redraw_17851795445842977035973217550260816 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "platform",
     "ios": {
-        "platform.board.ioLED": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.led.led"
-                ],
-                "uid": "platform.board.ioLED.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
-        "jardinier.water": {
-            "pump": {
-                "type": "source",
-                "connections": [
-                    "platform.board.ioWater.out"
-                ],
-                "uid": "jardinier.water.pump",
-                "symbol": "bzd.io.digital.State"
-            },
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.waterPumpSate"
-                ],
-                "uid": "jardinier.water.state",
-                "symbol": "const jardinier.WaterPumpState"
-            }
-        },
-        "jardinier.lights": {
-            "pwmDuty0": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm0.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty0",
-                "symbol": "Integer"
-            },
-            "pwmDuty1": {
-                "type": "source",
-                "connections": [
-                    "platform.board.pwm1.duty"
-                ],
-                "uid": "jardinier.lights.pwmDuty1",
-                "symbol": "Integer"
-            },
-            "state": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.controller.lightState"
-                ],
-                "uid": "jardinier.lights.state",
-                "symbol": "const jardinier.LightSate"
-            }
-        },
-        "platform.board.ioWater": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.water.pump"
-                ],
-                "uid": "platform.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
-            }
-        },
-        "platform.board.pwm0": {
-            "duty": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.lights.pwmDuty0"
-                ],
-                "uid": "platform.board.pwm0.duty",
-                "symbol": "const Integer"
-            }
-        },
         "platform.board.pwm1": {
             "duty": {
                 "type": "sink",
@@ -1119,6 +1075,26 @@
                 "symbol": "jardinier.LEDState"
             }
         },
+        "platform.board.ioLED": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.led.led"
+                ],
+                "uid": "platform.board.ioLED.out",
+                "symbol": "const bzd.io.digital.State"
+            }
+        },
+        "platform.board.pwm0": {
+            "duty": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.lights.pwmDuty0"
+                ],
+                "uid": "platform.board.pwm0.duty",
+                "symbol": "const Integer"
+            }
+        },
         "jardinier.led": {
             "state": {
                 "type": "sink",
@@ -1136,23 +1112,65 @@
                 "uid": "jardinier.led.led",
                 "symbol": "bzd.io.digital.State"
             }
+        },
+        "jardinier.lights": {
+            "pwmDuty0": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm0.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty0",
+                "symbol": "Integer"
+            },
+            "pwmDuty1": {
+                "type": "source",
+                "connections": [
+                    "platform.board.pwm1.duty"
+                ],
+                "uid": "jardinier.lights.pwmDuty1",
+                "symbol": "Integer"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.lightState"
+                ],
+                "uid": "jardinier.lights.state",
+                "symbol": "const jardinier.LightSate"
+            }
+        },
+        "jardinier.water": {
+            "pump": {
+                "type": "source",
+                "connections": [
+                    "platform.board.ioWater.out"
+                ],
+                "uid": "jardinier.water.pump",
+                "symbol": "bzd.io.digital.State"
+            },
+            "state": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.controller.waterPumpSate"
+                ],
+                "uid": "jardinier.water.state",
+                "symbol": "const jardinier.WaterPumpState"
+            }
+        },
+        "platform.board.ioWater": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.water.pump"
+                ],
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
+            }
         }
     },
     "contexts": [
         {
             "registry": {
-                "platform.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "platform.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "platform.core0": {
                     "expression": {
                         "name": "core0",
@@ -1249,6 +1267,18 @@
                     "shutdown": [],
                     "deps": []
                 },
+                "platform.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "platform.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "platform.timer": {
                     "expression": {
                         "name": "timer",
@@ -1287,8 +1317,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "jardinier.led": {
@@ -1302,8 +1332,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "jardinier.controller": {
@@ -1317,8 +1347,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "platform.board.ioWater": {
@@ -1553,9 +1583,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
                         "platform.core0",
-                        "platform.core1"
+                        "platform.core1",
+                        "platform.out"
                     ]
                 },
                 "jardinier.water": {
@@ -1597,8 +1627,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "platform.out",
-                        "platform.timer"
+                        "platform.timer",
+                        "platform.out"
                     ]
                 },
                 "platform.board.pwm0": {
@@ -1768,25 +1798,42 @@
         }
     ]
 }];
-        if (redraw_178509425277992730007181343800986673.bdlToSvg === undefined) {
-            redraw_178509425277992730007181343800986673.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17851795445842977035973217550260816.bdlToSvg === undefined) {
+            redraw_17851795445842977035973217550260816.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_178509425277992730007181343800986673.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_178509425277992730007181343800986673").innerHTML = svg;
+        const svg = await redraw_17851795445842977035973217550260816.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17851795445842977035973217550260816").innerHTML = svg;
     };
-    window.onload = redraw_178509425277992730007181343800986673;
+    window.onload = redraw_17851795445842977035973217550260816;
 </script>
-<p><select onchange="redraw_178509425277992730007181343800986673(this)">
+<p><select onchange="redraw_17851795445842977035973217550260816(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_178509425277992730007181343800986673">Diagram Loading...</div>
+<div id="diagram_17851795445842977035973217550260816">Diagram Loading...</div>
 
+<h3 id="program">Program</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//apps/jardinier2000:jardinier2000.platform<span class="w"> </span>--config<span class="o">=</span>esp32s3<span class="w"> </span>--run_under<span class="o">=</span>@bzd_espressif//runner/esp32s3:uart<span class="w"> </span>--config<span class="o">=</span>prod
+</code></pre></div>
 <h2 id="hardware">Hardware</h2>
 <ul>
 <li>v0.1: a6dc53e17e0d28d296f038ecd4dc024c1fd0ac4c</li>
 <li>v0.2: 74176779d8ccca15caded8594085d71fdf246d6d</li>
+<li>v0.3: (wip)</li>
+<li>Step down:<ul>
+<li>Updated coil 3.3uH 6x6mm -&gt; 4.7uH 8x8mm.</li>
+<li>Adding C21 &amp; C22 at VIN to damp voltage spike.</li>
+</ul>
+</li>
+<li>Moved SW1 from IO45 -&gt; IO47 (IO45 is a special pin).</li>
+<li>Reset capacitor (C6) 0.1uF -&gt; 1uF as recommended by Espressif.</li>
+</ul>
+<p>TODO: 3.3V LDO Dropout Voltage Margin (U2 - NCP1117-3.3)</p>
+<ul>
+<li>Issue: The 3.3V rail uses an NCP1117-3.3 LDO (U2), which has a high dropout voltage ($V_{DO} \approx 1.0\text{V} - 1.2\text{V}$). The LDO input is supplied from 5V through Schottky diodes D1 or D7 ($\Delta V \approx 0.4\text{V}$), leaving $V_{IN} \approx 4.6\text{V}$.</li>
+<li>Risk: If powered via USB-C and the cable voltage sags slightly (e.g., to 4.75V), $V_{IN}$ to the LDO drops to ~4.35V. This falls below the minimum required input voltage ($3.3\text{V} + 1.1\text{V} = 4.4\text{V}$), potentially causing 3.3V brownouts during ESP32-S3 Wi-Fi TX current spikes.</li>
+<li>Fix: Replace U2 with a lower-dropout LDO (e.g., AP2112K-3.3 or TLV1117LV33, both with $V_{DO} \le 0.4\text{V}$).</li>
 </ul>
 
 
