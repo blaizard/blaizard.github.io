@@ -1033,7 +1033,7 @@
 <h1 id="jardinier2000">Jardinier2000</h1>
 <h2 id="software">Software</h2>
 <script>
-    const redraw_1785436103516806108363716330663307 = async (selectObject) => {
+    const redraw_1785611326350669906165687542985573 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1065,6 +1065,16 @@
                 "symbol": "jardinier.LEDState"
             }
         },
+        "platform.board.ioLED": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.led.led"
+                ],
+                "uid": "platform.board.ioLED.out",
+                "symbol": "const bzd.io.digital.State"
+            }
+        },
         "jardinier.water": {
             "pump": {
                 "type": "source",
@@ -1081,16 +1091,6 @@
                 ],
                 "uid": "jardinier.water.state",
                 "symbol": "const jardinier.WaterPumpState"
-            }
-        },
-        "platform.board.ioWater": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.water.pump"
-                ],
-                "uid": "platform.board.ioWater.out",
-                "symbol": "const bzd.io.digital.State"
             }
         },
         "jardinier.lights": {
@@ -1147,6 +1147,16 @@
                 "symbol": "bzd.io.digital.State"
             }
         },
+        "platform.board.ioWater": {
+            "out": {
+                "type": "sink",
+                "connections": [
+                    "jardinier.water.pump"
+                ],
+                "uid": "platform.board.ioWater.out",
+                "symbol": "const bzd.io.digital.State"
+            }
+        },
         "platform.board.pwm1": {
             "duty": {
                 "type": "sink",
@@ -1155,16 +1165,6 @@
                 ],
                 "uid": "platform.board.pwm1.duty",
                 "symbol": "const Integer"
-            }
-        },
-        "platform.board.ioLED": {
-            "out": {
-                "type": "sink",
-                "connections": [
-                    "jardinier.led.led"
-                ],
-                "uid": "platform.board.ioLED.out",
-                "symbol": "const bzd.io.digital.State"
             }
         }
     },
@@ -1798,20 +1798,20 @@
         }
     ]
 }];
-        if (redraw_1785436103516806108363716330663307.bdlToSvg === undefined) {
-            redraw_1785436103516806108363716330663307.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1785611326350669906165687542985573.bdlToSvg === undefined) {
+            redraw_1785611326350669906165687542985573.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1785436103516806108363716330663307.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1785436103516806108363716330663307").innerHTML = svg;
+        const svg = await redraw_1785611326350669906165687542985573.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1785611326350669906165687542985573").innerHTML = svg;
     };
-    window.onload = redraw_1785436103516806108363716330663307;
+    window.onload = redraw_1785611326350669906165687542985573;
 </script>
-<p><select onchange="redraw_1785436103516806108363716330663307(this)">
+<p><select onchange="redraw_1785611326350669906165687542985573(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1785436103516806108363716330663307">Diagram Loading...</div>
+<div id="diagram_1785611326350669906165687542985573">Diagram Loading...</div>
 
 <h3 id="program">Program</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//apps/jardinier2000:jardinier2000.platform<span class="w"> </span>--config<span class="o">=</span>esp32s3<span class="w"> </span>--run_under<span class="o">=</span>@bzd_espressif//runner/esp32s3:uart<span class="w"> </span>--config<span class="o">=</span>prod
