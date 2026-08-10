@@ -1619,7 +1619,7 @@
 </tr>
 <tr>
 <td>Async<T></td>
-<td>Templated type that contains an asynchronous prommise returning a value of type <code>T</code> or an error.</td>
+<td>Templated type that contains an asynchronous promise returning a value of type <code>T</code> or an error.</td>
 </tr>
 <tr>
 <td>Array<T></td>
@@ -1657,7 +1657,7 @@ Available literals in bdl are:</p>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>}
 </code></pre></div>
 <h3 id="strong-types">Strong Types</h3>
-<p>Strong typing is supported with the <code>using</code> keyword. For example, to define an integer with strong typing, this can be done as follow:</p>
+<p>Strong typing is supported with the <code>using</code> keyword. For example, to define an integer with strong typing, this can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>using MyStrongType = Integer [min(0) max(23)];
 </code></pre></div>
 <h2 id="namespaces">Namespaces</h2>
@@ -1671,7 +1671,7 @@ Only one namespace can be declared within a file and the namespace statement mus
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>use &quot;cc/bzd/core/my_interface.bdl&quot;
 </code></pre></div>
 <h2 id="expressions">Expressions</h2>
-<p>An expression is defined as follow:</p>
+<p>An expression is defined as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[const] &lt;type&gt; &lt;name&gt; [= &lt;values&gt;] [[&lt;contracts&gt;...]];
 </code></pre></div>
 <p>where <code>values</code> can be an association of <code>value</code>, <code>symbol</code>, <code>regexpr</code> or <code>preset</code>.</p>
@@ -1682,7 +1682,7 @@ Only one namespace can be declared within a file and the namespace statement mus
 <li><code>preset</code> is a preset that is replaced by a predefined content. For example <code>abc = {out};</code> is equivalent to <code>abc: bzd.OStream = target.out;</code></li>
 </ul>
 <h2 id="methods">Methods</h2>
-<p>A function is defined as follow:</p>
+<p>A function is defined as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>method &lt;name&gt;(&lt;expression1&gt;, ...) [-&gt; &lt;type&gt;] [[&lt;contracts&gt;...]];
 </code></pre></div>
 <h2 id="interfaces">Interfaces</h2>
@@ -1691,9 +1691,9 @@ Note that the definition does not imply a specific interface implementation.</p>
 <h2 id="components">Components</h2>
 <p>A component is the implementation of one or multiple interfaces. It can be instantiated and exposes
 the functionality of the interface it inherits from.
-In addition it describes its configuration and compisition to the description language.</p>
+In addition it describes its configuration and composition to the description language.</p>
 <h3 id="configuration">Configuration</h3>
-<p>A component should tell how it is instancited during composition, this is done under the <code>config</code> scope as follow:</p>
+<p>A component should tell how it is instantiated during composition, this is done under the <code>config</code> scope as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>component MyModule
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>config:

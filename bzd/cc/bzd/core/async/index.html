@@ -1575,7 +1575,7 @@
 <h1 id="coroutines">Coroutines</h1>
 <h2 id="compiler-point-of-view">Compiler Point of View</h2>
 <h3 id="handle">Handle</h3>
-<p>The thing referred by <code>bzd::async::impl::coroutine_handle&lt;&gt;</code> is an object, that refers to the coroutine’s dynamically allocated state.
+<p>The thing referred to by <code>bzd::async::impl::coroutine_handle&lt;&gt;</code> is an object, that refers to the coroutine’s dynamically allocated state.
 Thanks to this object you can, for example, resume the coroutine. The coroutine_handle is a templated type, where Promise type is its template argument.</p>
 <h3 id="frame">Frame</h3>
 <p>The frame contains the current state of the coroutine.
@@ -1658,25 +1658,25 @@ Coroutine function is created by the compiler when you call a new coroutine, for
 <h3 id="to-be-aware">To be aware</h3>
 <ul>
 <li>Coroutine in C++ together with lambda capture is nasty, better not use it: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rcoro-capture</li>
-<li>Generators should not use the error propagation syntax, otherwise the generator async is consudered as terminated, while it might be reused.</li>
+<li>Generators should not use the error propagation syntax, otherwise the generator async is considered as terminated, while it might be reused.</li>
 </ul>
 <h3 id="task">Task</h3>
 <p><code>bzd::Async</code> is the task-coroutine type of this framework.</p>
-<p>A <code>void</code> coroutine is declared as follow:</p>
+<p>A <code>void</code> coroutine is declared as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">Async</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>A non-<code>void</code> coroutine is declared as follow:</p>
+<p>A non-<code>void</code> coroutine is declared as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">Async</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <h3 id="generator">Generator</h3>
 <p><code>bzd::Generator</code> is the asynchronous generator-coroutine type of this framework.</p>
-<p>A <code>void</code> generator is declared as follow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">Generaotr</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+<p>A <code>void</code> generator is declared as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">Generator</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>A non-<code>void</code> coroutine is declared as follow:</p>
+<p>A non-<code>void</code> coroutine is declared as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">Generator</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>Generator are not intended to be used directly with <code>co_await</code>. Instead, they should be used as ranges using the following pattern:</p>
+<p>Generators are not intended to be used directly with <code>co_await</code>. Instead, they should be used as ranges using the following pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="o">!</span><span class="n">myFunc</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">myFunc</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="p">;</span>
@@ -1687,22 +1687,22 @@ Coroutine function is created by the compiler when you call a new coroutine, for
 <h3 id="composition">Composition</h3>
 <h4 id="all">All</h4>
 <p>Coroutine can be composed and executed in parallel, depending on the executor used underneath.</p>
-<p>To have multiple coroutine run in parallel, this can be done as follow:</p>
+<p>To have multiple coroutines run in parallel, this can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">());</span>
 </code></pre></div>
 <p>This will execute myFunc (assuming it is a coroutine), 3 times and return the result as a tuple.</p>
 <h4 id="any">Any</h4>
 <p>You might also want to execute coroutine and return when the first one terminates, this is handy to implement
-timeouts for example. It can be done as follow:</p>
+timeouts for example. It can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">));</span>
 </code></pre></div>
-<p>This will return a result that is a tuple of optional results of the 2 coroutine executed.</p>
+<p>This will return a result that is a tuple of optional results of the 2 coroutines executed.</p>
 <h3 id="error-propagation">Error propagation</h3>
 <p>Some errors cannot be treated at the caller level and might have to be propagated to the upper layers. For that the Async
 type provides a convenient operator to reduce boiler plate code:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="o">!</span><span class="n">myFunc</span><span class="p">();</span>
 </code></pre></div>
-<p>The value is directly returned from the coroutine, any error is propagate to the caller of this coroutine. This piece of code
+<p>The value is directly returned from the coroutine, any error is propagated to the caller of this coroutine. This piece of code
 is equivalent to the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">myFunc</span><span class="p">();</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span>
@@ -1711,9 +1711,9 @@ is equivalent to the following:</p>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
 </code></pre></div>
-<p>The error propagate goes to upper levels until an awaitable handling errors is found.</p>
+<p>The error propagation goes to upper levels until an awaitable handling the error is found.</p>
 <p>Error propagation can also apply to <code>bzd::async::any</code> coroutines, and it will ensure the coroutine at a specific index
-returns a valid result, otherwise the error will be propagate to the caller.</p>
+returns a valid result, otherwise the error will be propagated to the caller.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="o">!</span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">));</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">// or</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">()).</span><span class="n">assertHasValue</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">();</span>
@@ -1737,11 +1737,11 @@ It is also guaranteed that no cancellation can occur during the lifetime of this
     E["resume(context)"] --&gt; D
     D["context.popContinuation()"] --&gt;|Executable| B
     D --&gt;|null| A</code></pre>
-<p>The executor context, is unique to the instance of the executor, it is passed to the current coroutine being executed or cancelled.
-It has for role to contain the continuation if any, that will be used for the next coroutine to be executed. This could be done
+<p>The executor context is unique to the instance of the executor, it is passed to the current coroutine being executed or cancelled.
+Its role is to contain the continuation if any, that will be used for the next coroutine to be executed. This could be done
 directly by returning it in the <code>await_suspend</code>, this would work fine in a single threaded system. Here we want to allow parallel
 execution on different cores if available, and for branching (<code>async::all</code> or <code>async::any</code>), we would have a race if multiple
-continuation are called concurrently. Having it after the completion of the coroutine helps with that effect, because it ensures that
+continuations are called concurrently. Having it after the completion of the coroutine helps with that effect, because it ensures that
 the parent is completed before the execution of the continuation.</p>
 
 

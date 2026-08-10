@@ -1441,30 +1441,30 @@
 <h1 id="build">Build</h1>
 <p>Resolving symbols within a <code>bdl</code> file is done at different build stages to allow lazy composition.</p>
 <h2 id="overview">Overview</h2>
-<p>The build process consists of 3 main stages, the <code>preprocess</code> and the <code>composition</code> stages.</p>
+<p>The build process consists of 3 main stages, the <code>preprocess</code>, the <code>composition</code> and the <code>generators</code> stages.</p>
 <p>Both stages outputs artifacts, and the <code>composition</code> process consumes the <code>preprocess</code> artifact, this gives the possibility to cache and reuse outputs for various composition processes.</p>
 <h2 id="preprocess">Preprocess</h2>
 <h3 id="parser">Parser</h3>
-<p>The parser anaylizes a <code>bdl</code> file and extracts entities out of the file, decomposing the raw text into a visitable tree.
+<p>The parser analyzes a <code>bdl</code> file and extracts entities out of the file, decomposing the raw text into a visitable tree.
 This is the only step in direct contact with the <code>bdl</code> file, it must therefore extract all useful information from this file.</p>
 <p>Part of this process, the parser also goes through a basic validation step and a build step.</p>
-<p>The build step has for responsibility to gather dependencies and resolve symbols if the dependency flag is set.</p>
+<p>The build step has the responsibility to gather dependencies and resolve symbols if the dependency flag is set.</p>
 <h3 id="bdl-object">Bdl Object</h3>
-<p>The output of the preprocess stage is a <code>bdl</code> object which mainly consist of a <code>Symbol Map</code> and a <code>Symbol Tree</code>.</p>
-<p>A <code>Symbol Map</code> links symbols with their actual definition. It consists of a dictionary of fully qualified names to resolved elements. Elements that are unnamed gets allocated a unique private fqn, that is visible only by this local compilation unit.</p>
-<p>A <code>Symbol Tree</code> is a hierarchical view of the file, it can be uised to recreate a given file and should contains all the necessary
+<p>The output of the preprocess stage is a <code>bdl</code> object which mainly consists of a <code>Symbol Map</code> and a <code>Symbol Tree</code>.</p>
+<p>A <code>Symbol Map</code> links symbols with their actual definition. It consists of a dictionary of fully qualified names to resolved elements. Elements that are unnamed get allocated a unique private fqn, that is visible only to this local compilation unit.</p>
+<p>A <code>Symbol Tree</code> is a hierarchical view of the file, it can be used to recreate a given file and should contain all the necessary
 information. It only uses symbols defined in the <code>Symbol Map</code>. In short it is a hierarchical view of a <code>Symbol Map</code>.</p>
 <p>A bdl file is serialized into a <code>.o</code> file for caching purpose. Each <code>.bdl</code> should have its corresponding <code>.o</code> file after the build process.</p>
 <h3 id="symbol-resolution">Symbol Resolution</h3>
 <p>During file <code>preprocessing</code> stage, all symbols are resolved and are matched with the previously discovered symbols.
 These symbols are stored into the <code>Symbol Map</code>.
-In other word, all symbols used must have been precendently defined. However, there are few exception that does
+In other words, all symbols used must have been previously defined. However, there are few exceptions that do
 not follow this rule, which are any symbol within a <code>composition</code> scope or within a <code>config</code> section.</p>
 <p>In a <code>composition</code> scope, only the name of the entity is registered, but the entity itself is not resolved, in other
-word, in <code>hello = my.fund(a = 1);</code>, the name <code>hello</code> is registered but the function <code>my.func</code> is not resolved, so it can
+words, in <code>hello = my.func(a = 1);</code>, the name <code>hello</code> is registered but the function <code>my.func</code> is not resolved, so it can
 be declared later on.</p>
 <p>In a <code>config</code> section, nothing is resolved, this is because config names are not part of the id tree, they are virtual
-entities that do not concretely translate into code. Parameters in <code>config</code> are only resolve when the corresponding
+entities that do not concretely translate into code. Parameters in <code>config</code> are only resolved when the corresponding
 entity is instantiated.</p>
 <h2 id="composition">Composition</h2>
 <p>The composition stage brings all components together to compose a running system.</p>

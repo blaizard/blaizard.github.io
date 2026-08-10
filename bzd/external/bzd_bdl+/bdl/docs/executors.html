@@ -1385,7 +1385,7 @@
 
 
 <h1 id="executors">Executors</h1>
-<p>An executor is a group of computation units (cores) that can share workloads between each others (by work-stealing strategy).
+<p>An executor is a group of computation units (cores) that can share workloads between each other (by work-stealing strategy).
 They share the same work queue and a component gets executed on an arbitrary core.</p>
 <pre class="mermaid"><code>classDiagram
    Executor "1" --&gt; "*" Core</code></pre>
@@ -1408,10 +1408,10 @@ For example, a linux machine can be composed as follow:</p>
 </code></pre></div>
 <p>Multiple executors can be created and deployed on the same process/binary, this can be useful to have different task priorities for example.</p>
 <h2 id="thread-safety">Thread safety</h2>
-<p>By default a component or task is assigned to a specific core during its lifetime. This done at runtime as the number of cores is not always known at build time.
-This ensures that all resources within a component is accessible safely.</p>
+<p>By default a component or task is assigned to a specific core during its lifetime. This is done at runtime as the number of cores is not always known at build time.
+This ensures that all resources within a component are accessible safely.</p>
 <h3 id="interaction-between-components">Interaction between components</h3>
-<p>Components have various ways to interact with each others.</p>
+<p>Components have various ways to interact with each other.</p>
 <ul>
 <li>They can be passed as <code>config</code>.</li>
 <li>They can be passed as argument through their interface.</li>
@@ -1425,8 +1425,8 @@ However, if it is marked with the tag <code>[threadsafe]</code>, it will be sche
 <h2 id="default-executor">Default executor</h2>
 <p>When the system only has a single executor, it is automatically assigned to all workloads, therefore there is no need for specific assignment.</p>
 <h2 id="association">Association</h2>
-<p>If the system contains multiple executor, however, it is necessary to define where workloads are running.</p>
-<p>This can be done in 2 different ways. By either specifying it at component instantiation, This is done with the <code>executor</code> contract.</p>
+<p>If the system contains multiple executors, however, it is necessary to define where workloads are running.</p>
+<p>This can be done in 2 different ways. By either specifying it at component instantiation, this is done with the <code>executor</code> contract.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>composition
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>{
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   comp1 = Component [executor(linux)];

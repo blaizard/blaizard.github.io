@@ -1460,14 +1460,14 @@
 <p>Bzd templating language (<code>btl</code>) library that supports:</p>
 <h2 id="syntax">Syntax</h2>
 <ul>
-<li>Substitutions blocks are denoted as follow: <code>{{...}}</code></li>
-<li>Control blocks are denoted as follow: <code>{%...%}</code></li>
-<li>Comment blocks are denoted as follow: <code>{#...#}</code></li>
+<li>Substitutions blocks are denoted as follows: <code>{{...}}</code></li>
+<li>Control blocks are denoted as follows: <code>{%...%}</code></li>
+<li>Comment blocks are denoted as follows: <code>{#...#}</code></li>
 <li>The sequences <code>{{</code>, <code>{%</code> and <code>{#</code> can respectively be escaped using: <code>{{{</code>, <code>{{%</code> and <code>{{#</code>.</li>
 </ul>
 <h3 id="white-spaces">White spaces</h3>
 <ul>
-<li>All blocks implement whitespace control. Using <code>-</code> inside a block will strip the left of right side of the expression,
+<li>All blocks implement whitespace control. Using <code>-</code> inside a block will strip the left or right side of the expression,
   ex: <code>{%- ... %}</code> or <code>{{ ... -}}</code></li>
 <li>The first newline after a block and trailing spaces are stripped (for all control and comment blocks).</li>
 </ul>

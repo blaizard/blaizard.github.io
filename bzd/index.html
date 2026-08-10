@@ -318,15 +318,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    <span class="md-ellipsis">
-      TODO
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1461,15 +1452,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#todo" class="md-nav__link">
-    <span class="md-ellipsis">
-      TODO
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1519,13 +1501,13 @@ This mono-repository enables the following technologies:</p>
 </tbody>
 </table>
 <h2 id="overview">Overview</h2>
-<p>This framework is built to run on all sort of embedded platforms, from bare metals 8-bit microcontrollers to high performance compute units.
+<p>This framework is built to run on all sorts of embedded platforms, from bare-metal 8-bit microcontrollers to high-performance compute units.
 It is made to remove any dependencies from STL, but provide a similar set of components and utilities to develop applications in an
 efficient and safe manner.</p>
 <p>It features the following:</p>
 <ul>
 <li>No dynamic allocations. All storage is declared either at compile time or on the stack.</li>
-<li>The core library is self contained, no reliance on third-party, only on the freestanding STL.</li>
+<li>The core library is self-contained, no reliance on third-party, only on the freestanding STL.</li>
 <li>Flexible error handling model.</li>
 <li>Based on C++ coroutines.</li>
 <li>Compile-time string formatting tool.</li>
@@ -1548,7 +1530,7 @@ efficient and safe manner.</p>
 <tr>
 <td>linux_x86_64_clang*</td>
 <td>clang</td>
-<td>17.0.2</td>
+<td>19.1.7</td>
 <td>host*</td>
 <td></td>
 </tr>
@@ -1601,7 +1583,7 @@ To run all static sanity checks at once, code formatters and documentation gener
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
 </code></pre></div>
 <p>This is a non-exhaustive list of languages and their supported tools. In addition to that
-formatter and linters for YAML, json and markdown are also available.</p>
+formatters and linters for YAML, json and markdown are also available.</p>
 <table>
 <thead>
 <tr>
@@ -1655,7 +1637,7 @@ formatter and linters for YAML, json and markdown are also available.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@rules_rust//tools/rust_analyzer:gen_rust_project<span class="w"> </span>--<span class="w"> </span>//rust/...
 </code></pre></div>
 <h2 id="naming-convention">Naming Convention</h2>
-<p>The code in this repository follows several principle regarding naming convention. The following rules are applied cross languages.</p>
+<p>The code in this repository follows several principles regarding naming conventions. The following rules are applied cross languages.</p>
 <ul>
 <li>Files and directories are named lower case <code>snake_case</code> using only the characters matching the regexpr: <code>[a-z0-9_/.]</code>. This is enforced by tools/sanitizer/actions/structure.</li>
 <li>Variables, constants, functions, concepts, namespaces are named in <code>camelCase</code>.</li>
@@ -1666,12 +1648,6 @@ formatter and linters for YAML, json and markdown are also available.</p>
 <h2 id="memory-footprint">Memory Footprint</h2>
 <p>All classes offered by this library have the same objective to have a fixed memory size. Their footprint or maximum size
 is determined at compile time, ensuring no memory allocation at runtime, making this library ideal for any safety-critical application.</p>
-<h2 id="todo">TODO</h2>
-<ul>
-<li>Fix these tests (hangs from time to time with clang prod and/or asan/lsan/ubsan):</li>
-<li>//cc/bzd/core/async/tests:multithread</li>
-<li>//cc/libs/timer/tests/std:tests</li>
-</ul>
 
 
 

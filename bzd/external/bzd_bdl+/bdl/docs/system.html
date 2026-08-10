@@ -1376,7 +1376,7 @@
 <p>A system is a group of targets. It constitutes one or multiple binaries that are ready for deployment.
 It is the most top level view of the composition.</p>
 <h2 id="definition">Definition</h2>
-<p>Defining a system is done with Bazel through a rule, as follow:</p>
+<p>Defining a system is done with Bazel through a rule, as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>load(&quot;@bzd_bdl//:defs.bzl&quot;, &quot;bdl_library&quot;, &quot;bdl_system&quot;)
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>bdl_library(
@@ -1400,7 +1400,7 @@ It is the most top level view of the composition.</p>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    ],
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>)
 </code></pre></div>
-<p>This tells that this system contains 2 binaries, the first one runs on a C++ <code>esp32</code> target platform and which
+<p>This means that this system contains 2 binaries, the first one runs on a C++ <code>esp32</code> target platform and which
 executors are referred under the namespace <code>esp32</code>. Similarly the second one runs on a C++ <code>linux</code> platform and is defined
 under the namespace <code>hpc</code>.</p>
 <p>The <code>deps</code> are <code>bdl_library</code> targets that contain the composition BDL files shared by all the targets of the system.</p>
@@ -1497,9 +1497,9 @@ json representation of the system. This is done per target, with the platform tr
 <p>Some attributes might require parametrization, for example when defining a gateway for a specific platform, the IP address
 might be needed for an ethernet-based gateway.
 This can be done via composition using the contract <code>override</code> to tell that this symbol is overriding an existing symbol.
-Not adding this contract will result into a symbol conflict and raise an error.</p>
-<p>Note, parameters are only overritable at composition stage. This information is passed top down to the component via its
-configuration. This is different form Bazel build settings mechanism for example where such variant is passed through the
+Not adding this contract will result in a symbol conflict and raise an error.</p>
+<p>Note, parameters are only overridable at composition stage. This information is passed top down to the component via its
+configuration. This is different from Bazel build settings mechanism for example where such variant is passed through the
 build tree and available at all stages of the build.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// How it might be defined.
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>composition gateway.ethernet {
