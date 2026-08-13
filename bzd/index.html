@@ -1582,7 +1582,7 @@ To run all static sanity checks at once, code formatters and documentation gener
 <p>To run all tests, run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
 </code></pre></div>
-<p>This is a non-exhaustive list of languages and their supported tools. In addition to that
+<p>This is a non-exhaustive list of languages and their supported tools. In addition to that,
 formatters and linters for YAML, json and markdown are also available.</p>
 <table>
 <thead>
@@ -1639,7 +1639,7 @@ formatters and linters for YAML, json and markdown are also available.</p>
 <h2 id="naming-convention">Naming Convention</h2>
 <p>The code in this repository follows several principles regarding naming conventions. The following rules are applied cross languages.</p>
 <ul>
-<li>Files and directories are named lower case <code>snake_case</code> using only the characters matching the regexpr: <code>[a-z0-9_/.]</code>. This is enforced by tools/sanitizer/actions/structure.</li>
+<li>Files and directories are named lower case <code>snake_case</code> using only the characters matching the regexpr: <code>[a-z0-9_/.]</code>. This is enforced by tools/bazel_build/modules/bzd_sanitizer/actions/structure.</li>
 <li>Variables, constants, functions, concepts, namespaces are named in <code>camelCase</code>.</li>
 <li>All types are named in <code>PascalCase</code>.</li>
 <li>Non-public members (variables, functions...) are appended with a <code>_</code> character.</li>

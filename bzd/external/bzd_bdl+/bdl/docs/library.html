@@ -1392,7 +1392,7 @@ each registered language, for example <code>CcInfo</code> for C++.</p>
     C --&gt; G
     F --&gt; G</code></pre>
 <p>The precompile stage is language agnostic and happens only once per library. Its output, a <code>.bdl.o</code> object per input
-file, is cached and reused by every consumer, this stage is the same as the one described in the
+file, is cached and reused by every consumer. This stage is the same as the one described in the
 <a href="build.html">build</a> documentation.</p>
 <p>The generators stage is then run for each language extension registered with the <code>bdl_extension</code> module extension. The
 extension declares a <code>library.generator</code> rule that consumes the precompiled objects and the providers it contributes to

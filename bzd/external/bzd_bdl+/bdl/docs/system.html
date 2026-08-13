@@ -1400,8 +1400,8 @@ It is the most top level view of the composition.</p>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    ],
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>)
 </code></pre></div>
-<p>This means that this system contains 2 binaries, the first one runs on a C++ <code>esp32</code> target platform and which
-executors are referred under the namespace <code>esp32</code>. Similarly the second one runs on a C++ <code>linux</code> platform and is defined
+<p>This means that this system contains 2 binaries, the first one runs on a C++ <code>esp32</code> target platform and whose
+executors are referred to under the namespace <code>esp32</code>. Similarly the second one runs on a C++ <code>linux</code> platform and is defined
 under the namespace <code>hpc</code>.</p>
 <p>The <code>deps</code> are <code>bdl_library</code> targets that contain the composition BDL files shared by all the targets of the system.</p>
 <p>Under the hood, this macro expands into several rules, one composition process per target, one binary per target and one

@@ -1417,7 +1417,7 @@ This ensures that all resources within a component are accessible safely.</p>
 <li>They can be passed as argument through their interface.</li>
 <li>They can use variables to communicate.</li>
 </ul>
-<p>To identify on which core, which component should run on, it depends on its dependency with others.
+<p>To identify on which core a component should run, it depends on its dependency with others.
 If a non-thread safe component is a dependency of another component, they will both run on the same core.
 However, if it is marked with the tag <code>[threadsafe]</code>, it will be scheduled on any available core.</p>
 <p>If the only dependency is through variables, it is also considered as thread safe.</p>

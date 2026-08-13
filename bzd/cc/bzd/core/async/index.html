@@ -1575,11 +1575,11 @@
 <h1 id="coroutines">Coroutines</h1>
 <h2 id="compiler-point-of-view">Compiler Point of View</h2>
 <h3 id="handle">Handle</h3>
-<p>The thing referred to by <code>bzd::async::impl::coroutine_handle&lt;&gt;</code> is an object, that refers to the coroutine’s dynamically allocated state.
-Thanks to this object you can, for example, resume the coroutine. The coroutine_handle is a templated type, where Promise type is its template argument.</p>
+<p>The thing referred to by <code>bzd::async::impl::coroutine_handle&lt;&gt;</code> is an object that refers to the coroutine’s dynamically allocated state.
+Thanks to this object you can, for example, resume the coroutine. The coroutine_handle is a templated type, where the Promise type is its template argument.</p>
 <h3 id="frame">Frame</h3>
 <p>The frame contains the current state of the coroutine.
-Coroutine function is created by the compiler when you call a new coroutine, for example <code>auto resumable_object = delay(10_ms);</code></p>
+A coroutine function is created by the compiler when you call a new coroutine, for example <code>auto resumable_object = delay(10_ms);</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Async</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CoroDelayFrame</span><span class="p">{</span><span class="n">args</span><span class="p">...};</span>
@@ -1657,8 +1657,8 @@ Coroutine function is created by the compiler when you call a new coroutine, for
 <h2 id="async-implementation">Async implementation</h2>
 <h3 id="to-be-aware">To be aware</h3>
 <ul>
-<li>Coroutine in C++ together with lambda capture is nasty, better not use it: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rcoro-capture</li>
-<li>Generators should not use the error propagation syntax, otherwise the generator async is considered as terminated, while it might be reused.</li>
+<li>Coroutine in C++ together with lambda capture is nasty, better not use it: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cp51-do-not-use-capturing-lambdas-that-are-coroutines</li>
+<li>Generators should not use the error propagation syntax, otherwise the generator async is considered terminated, while it might be reused.</li>
 </ul>
 <h3 id="task">Task</h3>
 <p><code>bzd::Async</code> is the task-coroutine type of this framework.</p>
@@ -1686,13 +1686,13 @@ Coroutine function is created by the compiler when you call a new coroutine, for
 </code></pre></div>
 <h3 id="composition">Composition</h3>
 <h4 id="all">All</h4>
-<p>Coroutine can be composed and executed in parallel, depending on the executor used underneath.</p>
+<p>Coroutines can be composed and executed in parallel, depending on the executor used underneath.</p>
 <p>To have multiple coroutines run in parallel, this can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">());</span>
 </code></pre></div>
 <p>This will execute myFunc (assuming it is a coroutine), 3 times and return the result as a tuple.</p>
 <h4 id="any">Any</h4>
-<p>You might also want to execute coroutine and return when the first one terminates, this is handy to implement
+<p>You might also want to execute coroutines and return when the first one terminates, this is handy to implement
 timeouts for example. It can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">));</span>
 </code></pre></div>
@@ -1720,7 +1720,7 @@ returns a valid result, otherwise the error will be propagated to the caller.</p
 </code></pre></div>
 <h3 id="suspend">Suspend</h3>
 <p>Suspending the execution of an async can be done with <code>bzd::async::suspend(...)</code>. This function takes 2 callables as arguments,
-the first, that is guaranteed to be called, contains a movable-only suspended executable object as argument.
+the first, which is guaranteed to be called, contains a movable-only suspended executable object as argument.
 The user needs to dispose it within this callback. Once the callback is completed, the suspended executable object
 cannot be moved anymore.
 It is also guaranteed that no cancellation can occur during the lifetime of this callback.</p>
@@ -1728,7 +1728,7 @@ It is also guaranteed that no cancellation can occur during the lifetime of this
 <p>This can be used in the context of ISR.</p>
 <h3 id="executor">Executor</h3>
 <p>The executors are used to run and schedule asyncs (aka coroutines).</p>
-<p>This is what the executor flowchart looks like;</p>
+<p>This is what the executor flowchart looks like:</p>
 <pre class="mermaid"><code>flowchart TD
     A["Queue.pop()"] --&gt;|Executable| B
     B["isCanceled?"] --&gt;|yes| C
