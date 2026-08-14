@@ -1339,6 +1339,69 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rust/bdl/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BDL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1507,7 +1570,7 @@ efficient and safe manner.</p>
 <p>It features the following:</p>
 <ul>
 <li>No dynamic allocations. All storage is declared either at compile time or on the stack.</li>
-<li>The core library is self-contained, no reliance on third-party, only on the freestanding STL.</li>
+<li>The core library is self-contained, no reliance on third-party libraries, only on the freestanding STL.</li>
 <li>Flexible error handling model.</li>
 <li>Based on C++ coroutines.</li>
 <li>Compile-time string formatting tool.</li>
@@ -1558,14 +1621,14 @@ efficient and safe manner.</p>
 </tbody>
 </table>
 <p>* Default.</p>
-<p>When debug is supported by the platform, one can run a target with <code>--config=debug</code> option and a debug environment will
+<p>When debug is supported by the platform, one can run a target with the <code>--config=debug</code> option and a debug environment will
 be made available.</p>
 <h2 id="build">Build</h2>
 <h3 id="locally">Locally</h3>
 <p>To build everything, just run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
 </code></pre></div>
-<p>This will build locally, it will fetch all tools needed to build on your machine.</p>
+<p>This will build locally; it will fetch all tools needed to build on your machine.</p>
 <h3 id="remote">Remote</h3>
 <p>To build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.

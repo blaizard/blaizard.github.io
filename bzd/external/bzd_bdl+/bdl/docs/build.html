@@ -1325,6 +1325,69 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rust
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Rust
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../rust/bdl/index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BDL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1442,7 +1505,7 @@
 <p>Resolving symbols within a <code>bdl</code> file is done at different build stages to allow lazy composition.</p>
 <h2 id="overview">Overview</h2>
 <p>The build process consists of 3 main stages, the <code>preprocess</code>, the <code>composition</code> and the <code>generators</code> stages.</p>
-<p>Both stages output artifacts, and the <code>composition</code> process consumes the <code>preprocess</code> artifact, this gives the possibility to cache and reuse outputs for various composition processes.</p>
+<p>Both stages output artifacts, and the <code>composition</code> process consumes the <code>preprocess</code> artifact; this gives the possibility to cache and reuse outputs for various composition processes.</p>
 <h2 id="preprocess">Preprocess</h2>
 <h3 id="parser">Parser</h3>
 <p>The parser analyzes a <code>bdl</code> file and extracts entities out of the file, decomposing the raw text into a visitable tree.
@@ -1456,20 +1519,20 @@ This is the only step in direct contact with the <code>bdl</code> file, it must 
 information. It only uses symbols defined in the <code>Symbol Map</code>. In short it is a hierarchical view of a <code>Symbol Map</code>.</p>
 <p>A bdl file is serialized into a <code>.o</code> file for caching purposes. Each <code>.bdl</code> should have its corresponding <code>.o</code> file after the build process.</p>
 <h3 id="symbol-resolution">Symbol Resolution</h3>
-<p>During file <code>preprocessing</code> stage, all symbols are resolved and are matched with the previously discovered symbols.
+<p>During the file <code>preprocessing</code> stage, all symbols are resolved and are matched with the previously discovered symbols.
 These symbols are stored into the <code>Symbol Map</code>.
 In other words, all symbols used must have been previously defined. However, there are few exceptions that do
 not follow this rule, which are any symbol within a <code>composition</code> scope or within a <code>config</code> section.</p>
 <p>In a <code>composition</code> scope, only the name of the entity is registered, but the entity itself is not resolved, in other
 words, in <code>hello = my.func(a = 1);</code>, the name <code>hello</code> is registered but the function <code>my.func</code> is not resolved, so it can
 be declared later on.</p>
-<p>In a <code>config</code> section, nothing is resolved, this is because config names are not part of the id tree, they are virtual
+<p>In a <code>config</code> section, nothing is resolved; this is because config names are not part of the id tree, they are virtual
 entities that do not concretely translate into code. Parameters in <code>config</code> are only resolved when the corresponding
 entity is instantiated.</p>
 <h2 id="composition">Composition</h2>
 <p>The composition stage brings all components together to compose a running system.</p>
 <p>Components might come from the platform used, others are functional to perform tasks related to the application.</p>
-<p>During <code>composition</code> stage, all top level composition elements are being resolved. Nested composition elements are
+<p>During the <code>composition</code> stage, all top level composition elements are being resolved. Nested composition elements are
 only resolved if the corresponding component is instantiated. Unused components in the build tree are automatically removed.</p>
 <p>The composition stage is done in 2 sub-stages, the first one that only processes certain types of builtin expressions, such as <code>bind</code>
 for example. This assigns contracts to expressions before being evaluated.
