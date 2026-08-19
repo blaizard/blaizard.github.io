@@ -1534,14 +1534,22 @@
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
 </code></pre></div>
 <h2 id="dependencies">Dependencies</h2>
-<p>When a <code>bdl_library</code> declares <code>deps</code>, the generated Rust file re-exports the symbols of each dependency:</p>
+<p>When a <code>bdl_library</code> declares <code>deps</code>, the generated Rust file imports the symbols of each dependency privately:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">bdl_library</span><span class="p">(</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;file_b&quot;</span><span class="p">,</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;file_b.bdl&quot;</span><span class="p">],</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;:file_a&quot;</span><span class="p">],</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">)</span>
 </code></pre></div>
-<p>The generated code for <code>file_b</code> starts with <code>pub use file_a::*;</code>, exposing all of <code>file_a</code>'s symbols to downstream users.</p>
+<p>The generated code for <code>file_b</code> starts with <code>use file_a::*;</code>, importing <code>file_a</code>'s symbols for internal use without re-exporting them. Downstream users must depend on <code>file_a</code> directly to access its symbols.</p>
+<p>Rust dependencies provided through the <code>implementation</code> attribute are re-exported as part of the public API:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">bdl_library</span><span class="p">(</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;interface&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">srcs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;interface.bdl&quot;</span><span class="p">],</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">implementation</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;rust&quot;</span><span class="p">:</span> <span class="s2">&quot;:stream_impl&quot;</span><span class="p">},</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">)</span>
+</code></pre></div>
+<p>The generated code re-exports the implementation crate with <code>pub use stream_impl::*;</code>, publishing its symbols to downstream users.</p>
 
 
 
