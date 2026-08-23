@@ -1630,7 +1630,7 @@ be made available.</p>
 </code></pre></div>
 <p>This will build locally; it will fetch all tools needed to build on your machine.</p>
 <h3 id="remote">Remote</h3>
-<p>To build bazel targets simply run bazel appended with <code>--config=remote</code>.</p>
+<p>To build Bazel targets, simply run Bazel with <code>--config=remote</code> appended.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.
 To enable this configuration, run bazel with <code>--config=docker</code>.</p>
 <h2 id="documentation">Documentation</h2>
@@ -1639,14 +1639,14 @@ To enable this configuration, run bazel with <code>--config=docker</code>.</p>
 </code></pre></div>
 <h2 id="code-quality">Code Quality</h2>
 <p>All supported languages come with their set of code quality related tools.
-To run all static sanity checks at once, code formatters and documentation generators, run the following command:</p>
+To run all static sanity checks, code formatters and documentation generators at once, run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
 </code></pre></div>
 <p>To run all tests, run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
 </code></pre></div>
 <p>This is a non-exhaustive list of languages and their supported tools. In addition to that,
-formatters and linters for YAML, json and markdown are also available.</p>
+formatters and linters for YAML, JSON and Markdown are also available.</p>
 <table>
 <thead>
 <tr>

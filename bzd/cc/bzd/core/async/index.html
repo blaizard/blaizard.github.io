@@ -1753,7 +1753,7 @@ A coroutine function is created by the compiler when you call a new coroutine, f
 <p>To have multiple coroutines run in parallel, this can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">());</span>
 </code></pre></div>
-<p>This will execute myFunc (assuming it is a coroutine), 3 times and return the result as a tuple.</p>
+<p>This will execute <code>myFunc</code> three times and return the result as a tuple.</p>
 <h4 id="any">Any</h4>
 <p>You might also want to execute coroutines and return when the first one terminates; this is handy to implement
 timeouts for example. It can be done as follows:</p>
