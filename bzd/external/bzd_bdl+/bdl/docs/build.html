@@ -1505,7 +1505,7 @@
 <p>Resolving symbols within a <code>bdl</code> file is done at different build stages to allow lazy composition.</p>
 <h2 id="overview">Overview</h2>
 <p>The build process consists of 3 main stages, the <code>preprocess</code>, the <code>composition</code> and the <code>generators</code> stages.</p>
-<p>Both stages output artifacts, and the <code>composition</code> process consumes the <code>preprocess</code> artifact; this gives the possibility to cache and reuse outputs for various composition processes.</p>
+<p>The <code>preprocess</code> and <code>composition</code> stages output artifacts, and the <code>composition</code> process consumes the <code>preprocess</code> artifact; this gives the possibility to cache and reuse outputs for various composition processes.</p>
 <h2 id="preprocess">Preprocess</h2>
 <h3 id="parser">Parser</h3>
 <p>The parser analyzes a <code>bdl</code> file and extracts entities out of the file, decomposing the raw text into a visitable tree.
@@ -1517,7 +1517,7 @@ This is the only step in direct contact with the <code>bdl</code> file, it must 
 <p>A <code>Symbol Map</code> links symbols with their actual definition. It consists of a dictionary of fully qualified names to resolved elements. Elements that are unnamed get allocated a unique private fqn, which is visible only to this local compilation unit.</p>
 <p>A <code>Symbol Tree</code> is a hierarchical view of the file, it can be used to recreate a given file and should contain all the necessary
 information. It only uses symbols defined in the <code>Symbol Map</code>. In short it is a hierarchical view of a <code>Symbol Map</code>.</p>
-<p>A bdl file is serialized into a <code>.o</code> file for caching purposes. Each <code>.bdl</code> should have its corresponding <code>.o</code> file after the build process.</p>
+<p>A bdl file is serialized into a <code>.bdl.o</code> file for caching purposes. Each <code>.bdl</code> should have its corresponding <code>.bdl.o</code> file after the build process.</p>
 <h3 id="symbol-resolution">Symbol Resolution</h3>
 <p>During the file <code>preprocessing</code> stage, all symbols are resolved and are matched with the previously discovered symbols.
 These symbols are stored into the <code>Symbol Map</code>.
