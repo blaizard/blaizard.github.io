@@ -1626,21 +1626,21 @@ be made available.</p>
 <h2 id="build">Build</h2>
 <h3 id="locally">Locally</h3>
 <p>To build everything, just run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./tools/bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
 </code></pre></div>
 <p>This will build locally; it will fetch all tools needed to build on your machine.</p>
 <h3 id="remote">Remote</h3>
-<p>To build Bazel targets, simply run Bazel with <code>--config=remote</code> appended.</p>
+<p>To build Bazel targets, simply run <code>./tools/bazel</code> with <code>--config=remote</code> appended.</p>
 <p>For debugging purposes, toolchains can be run locally in a docker sandbox which is very similar to what runs on remote execution.
-To enable this configuration, run bazel with <code>--config=docker</code>.</p>
+To enable this configuration, run <code>./tools/bazel</code> with <code>--config=docker</code>.</p>
 <h2 id="documentation">Documentation</h2>
 <p>To build the full project documentation, run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//docs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>./tools/bazel<span class="w"> </span>run<span class="w"> </span>//docs
 </code></pre></div>
 <h2 id="code-quality">Code Quality</h2>
 <p>All supported languages come with their set of code quality related tools.
 To run all static sanity checks, code formatters and documentation generators at once, run the following command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./tools/bazel<span class="w"> </span>run<span class="w"> </span>//:sanitizer
 </code></pre></div>
 <p>To run all tests, run the following command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>./quality_gate.sh
@@ -1694,19 +1694,19 @@ formatters and linters for YAML, JSON and Markdown are also available.</p>
 </tbody>
 </table>
 <p>Update <code>compile_commands.json</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@bzd_sanitizer//aspects/compile_commands:build
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./tools/bazel<span class="w"> </span>run<span class="w"> </span>@bzd_sanitizer//aspects/compile_commands:build
 </code></pre></div>
 <p>Update <code>rust-project.json</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bazel<span class="w"> </span>run<span class="w"> </span>@rules_rust//tools/rust_analyzer:gen_rust_project<span class="w"> </span>--<span class="w"> </span>//rust/...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./tools/bazel<span class="w"> </span>run<span class="w"> </span>@rules_rust//tools/rust_analyzer:gen_rust_project<span class="w"> </span>--<span class="w"> </span>//rust/...
 </code></pre></div>
 <h2 id="naming-convention">Naming Convention</h2>
-<p>The code in this repository follows several principles regarding naming conventions. The following rules are applied cross languages.</p>
+<p>The code in this repository follows several principles regarding naming conventions. The following rules are applied across languages.</p>
 <ul>
 <li>Files and directories are named lower case <code>snake_case</code> using only the characters matching the regex: <code>[a-z0-9_/.]</code>. This is enforced by tools/bazel_build/modules/bzd_sanitizer/actions/structure.</li>
 <li>Variables, constants, functions, concepts, namespaces are named in <code>camelCase</code>.</li>
 <li>All types are named in <code>PascalCase</code>.</li>
 <li>Non-public members (variables, functions...) are appended with a <code>_</code> character.</li>
-<li>All namings try to avoid abbreviations.</li>
+<li>All names avoid abbreviations.</li>
 </ul>
 <h2 id="memory-footprint">Memory Footprint</h2>
 <p>All classes offered by this library have the same objective to have a fixed memory size. Their footprint or maximum size
