@@ -1387,22 +1387,12 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17888072712350552023277664235986362 = async (selectObject) => {
+    const redraw_1789066227137049203183719931445018 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "example.poller": {
-            "receive": {
-                "type": "sink",
-                "connections": [
-                    "example.emitter.send"
-                ],
-                "uid": "example.poller.receive",
-                "symbol": "const Integer"
-            }
-        },
         "example.emitter": {
             "send": {
                 "type": "source",
@@ -1412,11 +1402,33 @@
                 "uid": "example.emitter.send",
                 "symbol": "Integer"
             }
+        },
+        "example.poller": {
+            "receive": {
+                "type": "sink",
+                "connections": [
+                    "example.emitter.send"
+                ],
+                "uid": "example.poller.receive",
+                "symbol": "const Integer"
+            }
         }
     },
     "contexts": [
         {
             "registry": {
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component"
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "esp32.core0": {
                     "expression": {
                         "name": "core0",
@@ -1513,18 +1525,6 @@
                     "shutdown": [],
                     "deps": []
                 },
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component"
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "esp32.timer": {
                     "expression": {
                         "name": "timer",
@@ -1603,9 +1603,9 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
+                        "esp32.out",
                         "esp32.core0",
-                        "esp32.core1",
-                        "esp32.out"
+                        "esp32.core1"
                     ]
                 },
                 "example.poller": {
@@ -1619,8 +1619,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1803,8 +1803,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.timer",
-                        "hpc.out"
+                        "hpc.out",
+                        "hpc.timer"
                     ]
                 },
                 "hpc.executor": {
@@ -1890,20 +1890,20 @@
         }
     ]
 }];
-        if (redraw_17888072712350552023277664235986362.bdlToSvg === undefined) {
-            redraw_17888072712350552023277664235986362.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1789066227137049203183719931445018.bdlToSvg === undefined) {
+            redraw_1789066227137049203183719931445018.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17888072712350552023277664235986362.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17888072712350552023277664235986362").innerHTML = svg;
+        const svg = await redraw_1789066227137049203183719931445018.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1789066227137049203183719931445018").innerHTML = svg;
     };
-    window.onload = redraw_17888072712350552023277664235986362;
+    window.onload = redraw_1789066227137049203183719931445018;
 </script>
-<p><select onchange="redraw_17888072712350552023277664235986362(this)">
+<p><select onchange="redraw_1789066227137049203183719931445018(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17888072712350552023277664235986362">Diagram Loading...</div>
+<div id="diagram_1789066227137049203183719931445018">Diagram Loading...</div>
 
 
 
