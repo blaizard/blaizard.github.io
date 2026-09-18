@@ -1642,7 +1642,7 @@
 Thanks to this object you can, for example, resume the coroutine. The coroutine_handle is a templated type, where the Promise type is its template argument.</p>
 <h3 id="frame">Frame</h3>
 <p>The frame contains the current state of the coroutine.
-A coroutine function is created by the compiler when you call a new coroutine, for example <code>auto resumable_object = delay(10_ms);</code></p>
+A coroutine frame is created by the compiler when you call a coroutine function, for example <code>auto resumable_object = delay(10_ms);</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Async</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">delay</span><span class="p">(</span><span class="n">args</span><span class="p">...)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">auto</span><span class="o">*</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CoroDelayFrame</span><span class="p">{</span><span class="n">args</span><span class="p">...};</span>
@@ -1720,7 +1720,7 @@ A coroutine function is created by the compiler when you call a new coroutine, f
 <h2 id="async-implementation">Async implementation</h2>
 <h3 id="to-be-aware">To be aware</h3>
 <ul>
-<li>Coroutine in C++ together with lambda capture is nasty, better not use it: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cp51-do-not-use-capturing-lambdas-that-are-coroutines</li>
+<li>Coroutines in C++ together with lambda capture are nasty, better not use them: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#cp51-do-not-use-capturing-lambdas-that-are-coroutines</li>
 <li>Generators should not use the error propagation syntax, otherwise the generator async is considered terminated, while it might be reused.</li>
 </ul>
 <h3 id="task">Task</h3>
@@ -1749,8 +1749,8 @@ A coroutine function is created by the compiler when you call a new coroutine, f
 </code></pre></div>
 <h3 id="composition">Composition</h3>
 <h4 id="all">All</h4>
-<p>Coroutines can be composed and executed in parallel, depending on the executor used underneath.</p>
-<p>To have multiple coroutines run in parallel, this can be done as follows:</p>
+<p>Coroutines can be composed and executed concurrently on an executor; to run them in parallel across multiple cores, use <code>allParallel</code> instead.</p>
+<p>To have multiple coroutines run concurrently, this can be done as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">all</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">myFunc</span><span class="p">());</span>
 </code></pre></div>
 <p>This will execute <code>myFunc</code> three times and return the result as a tuple.</p>
@@ -1774,7 +1774,7 @@ is equivalent to the following:</p>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">}</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">();</span>
 </code></pre></div>
-<p>The error propagation goes to upper levels until an awaitable handling the error is found.</p>
+<p>The error propagation goes to upper levels until an awaitable that handles the error is found.</p>
 <p>Error propagation can also apply to <code>bzd::async::any</code> coroutines, and it will ensure the coroutine at a specific index
 returns a valid result, otherwise the error will be propagated to the caller.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="o">!</span><span class="n">bzd</span><span class="o">::</span><span class="n">async</span><span class="o">::</span><span class="n">any</span><span class="p">(</span><span class="n">myFunc</span><span class="p">(),</span><span class="w"> </span><span class="n">timeout</span><span class="p">(</span><span class="mi">1</span><span class="n">_s</span><span class="p">));</span>
@@ -1784,7 +1784,7 @@ returns a valid result, otherwise the error will be propagated to the caller.</p
 <h3 id="suspend">Suspend</h3>
 <p>Suspending the execution of an async can be done with <code>bzd::async::suspend(...)</code>. This function takes 2 callables as arguments:
 the first, which is guaranteed to be called, contains a movable-only suspended executable object as argument.
-The user needs to dispose it within this callback. Once the callback is completed, the suspended executable object
+The user needs to dispose of it within this callback. Once the callback completes, the suspended executable object
 cannot be moved anymore.
 It is also guaranteed that no cancellation can occur during the lifetime of this callback.</p>
 <p>The second argument is optional and provides a callback to deal with cancellation.</p>
