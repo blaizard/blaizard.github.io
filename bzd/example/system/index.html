@@ -1387,7 +1387,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17912292709024534007234585016998352 = async (selectObject) => {
+    const redraw_17913147580357475007246882719397596 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1417,6 +1417,19 @@
     "contexts": [
         {
             "registry": {
+                "esp32.out": {
+                    "expression": {
+                        "name": "out",
+                        "fqn": "esp32.out",
+                        "symbol": "bzd.components.std.Out",
+                        "category": "component",
+                        "parameters": []
+                    },
+                    "init": [],
+                    "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
                 "esp32.core1": {
                     "expression": {
                         "name": "core1",
@@ -1461,19 +1474,6 @@
                                 "value": 100
                             }
                         ]
-                    },
-                    "init": [],
-                    "intra": [],
-                    "shutdown": [],
-                    "deps": []
-                },
-                "esp32.out": {
-                    "expression": {
-                        "name": "out",
-                        "fqn": "esp32.out",
-                        "symbol": "bzd.components.std.Out",
-                        "category": "component",
-                        "parameters": []
                     },
                     "init": [],
                     "intra": [],
@@ -1610,8 +1610,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.core1",
                         "esp32.out",
+                        "esp32.core1",
                         "esp32.core0"
                     ]
                 },
@@ -1640,8 +1640,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1949,20 +1949,20 @@
         }
     ]
 }];
-        if (redraw_17912292709024534007234585016998352.bdlToSvg === undefined) {
-            redraw_17912292709024534007234585016998352.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17913147580357475007246882719397596.bdlToSvg === undefined) {
+            redraw_17913147580357475007246882719397596.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17912292709024534007234585016998352.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17912292709024534007234585016998352").innerHTML = svg;
+        const svg = await redraw_17913147580357475007246882719397596.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17913147580357475007246882719397596").innerHTML = svg;
     };
-    window.onload = redraw_17912292709024534007234585016998352;
+    window.onload = redraw_17913147580357475007246882719397596;
 </script>
-<p><select onchange="redraw_17912292709024534007234585016998352(this)">
+<p><select onchange="redraw_17913147580357475007246882719397596(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17912292709024534007234585016998352">Diagram Loading...</div>
+<div id="diagram_17913147580357475007246882719397596">Diagram Loading...</div>
 
 
 
