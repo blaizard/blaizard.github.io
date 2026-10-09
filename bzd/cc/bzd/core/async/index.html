@@ -1762,7 +1762,7 @@ timeouts, for example. It can be done as follows:</p>
 <p>This will return a result that is a tuple of optional results of the 2 coroutines executed.</p>
 <h3 id="error-propagation">Error propagation</h3>
 <p>Some errors cannot be treated at the caller level and might have to be propagated to the upper layers. For that the Async
-type provides a convenient operator to reduce boiler plate code:</p>
+type provides a convenient operator to reduce boilerplate code:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">co_await</span><span class="w"> </span><span class="o">!</span><span class="n">myFunc</span><span class="p">();</span>
 </code></pre></div>
 <p>The value is returned directly from the coroutine; any error is propagated to the caller of this coroutine. This piece of code

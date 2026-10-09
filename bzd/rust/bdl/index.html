@@ -1365,9 +1365,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies_1" class="md-nav__link">
+  <a href="#implementation-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      Dependencies
+      Implementation dependencies
     </span>
   </a>
   
@@ -1479,9 +1479,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dependencies_1" class="md-nav__link">
+  <a href="#implementation-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      Dependencies
+      Implementation dependencies
     </span>
   </a>
   
@@ -1615,7 +1615,7 @@
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
 </code></pre></div>
 <p>The component implementation provides the concrete struct and implements the trait. The runtime support crate <code>//rust/bdl/generator/impl/adapter:component</code> provides <code>LocalStatic</code> (single-threaded <code>&amp;'static mut</code> registry), <code>Wrapper</code>, and <code>Lifecycle</code>.</p>
-<h2 id="dependencies_1">Dependencies</h2>
+<h2 id="implementation-dependencies">Implementation dependencies</h2>
 <p>Rust dependencies provided through the <code>implementation</code> attribute are re-exported as part of the public API:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">bdl_library</span><span class="p">(</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;interface&quot;</span><span class="p">,</span>
