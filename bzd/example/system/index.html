@@ -1387,7 +1387,7 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_179235205122118402784308738341992 = async (selectObject) => {
+    const redraw_179243873994695280271561596798396 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -1640,8 +1640,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "esp32.timer",
-                        "esp32.out"
+                        "esp32.out",
+                        "esp32.timer"
                     ]
                 }
             },
@@ -1911,8 +1911,8 @@
                     "shutdown": [],
                     "deps": [
                         "hpc.executorProfiler",
-                        "hpc.out",
-                        "hpc.core1"
+                        "hpc.core1",
+                        "hpc.out"
                     ]
                 }
             },
@@ -1949,20 +1949,20 @@
         }
     ]
 }];
-        if (redraw_179235205122118402784308738341992.bdlToSvg === undefined) {
-            redraw_179235205122118402784308738341992.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_179243873994695280271561596798396.bdlToSvg === undefined) {
+            redraw_179243873994695280271561596798396.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_179235205122118402784308738341992.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_179235205122118402784308738341992").innerHTML = svg;
+        const svg = await redraw_179243873994695280271561596798396.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_179243873994695280271561596798396").innerHTML = svg;
     };
-    window.onload = redraw_179235205122118402784308738341992;
+    window.onload = redraw_179243873994695280271561596798396;
 </script>
-<p><select onchange="redraw_179235205122118402784308738341992(this)">
+<p><select onchange="redraw_179243873994695280271561596798396(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_179235205122118402784308738341992">Diagram Loading...</div>
+<div id="diagram_179243873994695280271561596798396">Diagram Loading...</div>
 
 
 
