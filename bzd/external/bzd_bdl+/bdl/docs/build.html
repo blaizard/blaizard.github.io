@@ -1510,7 +1510,7 @@
 <h3 id="parser">Parser</h3>
 <p>The parser analyzes a <code>bdl</code> file and extracts entities out of the file, decomposing the raw text into a visitable tree.
 This is the only step in direct contact with the <code>bdl</code> file, it must therefore extract all useful information from this file.</p>
-<p>Part of this process, the parser also goes through a basic validation step and a build step.</p>
+<p>As part of this process, the parser also performs basic validation and a build step.</p>
 <p>The build step has the responsibility to gather dependencies and resolve symbols if the dependency flag is set.</p>
 <h3 id="bdl-object">Bdl Object</h3>
 <p>The output of the preprocess stage is a <code>bdl</code> object which mainly consists of a <code>Symbol Map</code> and a <code>Symbol Tree</code>.</p>
@@ -1521,8 +1521,8 @@ information. It only uses symbols defined in the <code>Symbol Map</code>. In sho
 <h3 id="symbol-resolution">Symbol Resolution</h3>
 <p>During the file <code>preprocessing</code> stage, all symbols are resolved and are matched with the previously discovered symbols.
 These symbols are stored into the <code>Symbol Map</code>.
-In other words, all symbols used must have been previously defined. However, there are few exceptions that do
-not follow this rule, which are any symbol within a <code>composition</code> scope or within a <code>config</code> section.</p>
+In other words, all symbols used must have been previously defined. However, there are a few exceptions to this
+rule: any symbol within a <code>composition</code> scope or within a <code>config</code> section.</p>
 <p>In a <code>composition</code> scope, only the name of the entity is registered, but the entity itself is not resolved, in other
 words, in <code>hello = my.func(a = 1);</code>, the name <code>hello</code> is registered but the function <code>my.func</code> is not resolved, so it can
 be declared later on.</p>
@@ -1536,7 +1536,7 @@ entity is instantiated.</p>
 only resolved if the corresponding component is instantiated. Unused components in the build tree are automatically removed.</p>
 <p>The composition stage is done in 2 sub-stages, the first one that only processes certain types of builtin expressions, such as <code>bind</code>
 for example. This assigns contracts to expressions before being evaluated.
-The second stage processes all the rest of top level elements and their dependencies.</p>
+The second stage processes the remaining top-level elements and their dependencies.</p>
 <h2 id="generators">Generators</h2>
 <p>Generators can follow a <code>preprocess</code> or a <code>composition</code> stage and are responsible for generating additional output.
 For example, they are used to re-generate <code>bdl</code> files after being preprocessed or generate C++ code after the composition stage.</p>

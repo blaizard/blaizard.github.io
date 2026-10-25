@@ -1527,7 +1527,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">)</span>
 </code></pre></div>
 <h2 id="library">Library</h2>
-<p>The Rust generator converts BDL definitions into a <code>no_std</code> Rust file. Symbols are prefixed with the BDL namespace of the file, joined with <code>_</code>, and formatted as CamelCase. For example, given the following interface in <code>interface.bdl</code>:</p>
+<p>The Rust generator converts BDL definitions into a <code>no_std</code> Rust file. Symbols are prefixed with the BDL namespace of the file, with each namespace part capitalized and concatenated. For example, given the following interface in <code>interface.bdl</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>namespace bzd.test;
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>interface MyService {
@@ -1578,7 +1578,7 @@
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">deps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;:file_a&quot;</span><span class="p">],</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">)</span>
 </code></pre></div>
-<p>The generated code for <code>file_b</code> starts with <code>use file_a::*;</code>, importing <code>file_a</code>'s symbols for internal use without re-exporting them. Downstream users must depend on <code>file_a</code> directly to access its symbols.</p>
+<p>The generated code for <code>file_b</code> includes <code>use file_a::*;</code>, importing <code>file_a</code>'s symbols for internal use without re-exporting them. Downstream users must depend on <code>file_a</code> directly to access its symbols.</p>
 <h2 id="components">Components</h2>
 <p>Components generate an interface trait and a context struct holding the <code>config:</code> values. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>namespace bzd.components;
@@ -1602,7 +1602,7 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">age</span><span class="p">:</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
 </code></pre></div>
-<p>When a <code>config:</code> entry references another component or interface, the context is generic over a <code>ContextConstraint</code> trait and stores the dependency as <code>&amp;'static mut</code>:</p>
+<p>When a <code>config:</code> entry references another component or interface, the context is generic over a <code>ContextConstraint</code> trait and stores the dependency as a <code>component::ComponentHandle</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">pub</span><span class="w"> </span><span class="k">trait</span><span class="w"> </span><span class="n">BzdComponentsManagerContextConstraint</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nc">User</span><span class="p">:</span><span class="w"> </span><span class="nc">BzdComponentsUserInterface</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">&#39;</span><span class="nb">static</span><span class="p">;</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
@@ -1611,10 +1611,10 @@
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="k">where</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="n">C</span><span class="p">:</span><span class="w"> </span><span class="nc">BzdComponentsManagerContextConstraint</span><span class="p">,</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">{</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">user</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="o">&#39;</span><span class="nb">static</span><span class="w"> </span><span class="nc">mut</span><span class="w"> </span><span class="n">C</span><span class="p">::</span><span class="n">User</span><span class="p">,</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="n">user</span><span class="p">:</span><span class="w"> </span><span class="nc">component</span><span class="p">::</span><span class="n">ComponentHandle</span><span class="o">&lt;</span><span class="n">C</span><span class="p">::</span><span class="n">User</span><span class="o">&gt;</span><span class="p">,</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
 </code></pre></div>
-<p>The component implementation provides the concrete struct and implements the trait. The runtime support crate <code>//rust/bdl/generator/impl/adapter:component</code> provides <code>LocalStatic</code> (single-threaded <code>&amp;'static mut</code> registry), <code>Wrapper</code>, and <code>Lifecycle</code>.</p>
+<p>The component implementation provides the concrete struct and implements the trait. The runtime support crate <code>//rust/bdl/generator/impl/adapter:component</code> provides <code>Component</code>, <code>CompositionComponent</code>, <code>StaticComponent</code>, <code>ComponentHandle</code>, and the <code>Lifecycle</code> trait.</p>
 <h2 id="implementation-dependencies">Implementation dependencies</h2>
 <p>Rust dependencies provided through the <code>implementation</code> attribute are re-exported as part of the public API:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">bdl_library</span><span class="p">(</span>

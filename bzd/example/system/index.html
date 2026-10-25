@@ -1387,22 +1387,12 @@
 <p>This example shows how communication between 2 nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_1792782959089940303682674816512268 = async (selectObject) => {
+    const redraw_1792953860785053706379633932900832 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
     "target": "esp32",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -1411,6 +1401,16 @@
                 ],
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
+            }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
             }
         }
     },
@@ -1949,20 +1949,20 @@
         }
     ]
 }];
-        if (redraw_1792782959089940303682674816512268.bdlToSvg === undefined) {
-            redraw_1792782959089940303682674816512268.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_1792953860785053706379633932900832.bdlToSvg === undefined) {
+            redraw_1792953860785053706379633932900832.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_1792782959089940303682674816512268.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_1792782959089940303682674816512268").innerHTML = svg;
+        const svg = await redraw_1792953860785053706379633932900832.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_1792953860785053706379633932900832").innerHTML = svg;
     };
-    window.onload = redraw_1792782959089940303682674816512268;
+    window.onload = redraw_1792953860785053706379633932900832;
 </script>
-<p><select onchange="redraw_1792782959089940303682674816512268(this)">
+<p><select onchange="redraw_1792953860785053706379633932900832(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_1792782959089940303682674816512268">Diagram Loading...</div>
+<div id="diagram_1792953860785053706379633932900832">Diagram Loading...</div>
 
 
 
