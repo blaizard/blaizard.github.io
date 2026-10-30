@@ -1566,12 +1566,12 @@
 </code></pre></div>
 <p>Interfaces defined in the BDL language are guaranteed to be accessible and callable from any node in the system.</p>
 <h4 id="external-interfaces">External interfaces</h4>
-<p>Sometimes an interface must be defined in C++ directly, for example to benefit from features not available in the BDL language. This is done with an <code>extern</code> declaration:</p>
+<p>Sometimes, an interface must be defined in C++ directly, for example to benefit from features not available in the BDL language. This is done with an <code>extern</code> declaration:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>namespace bzd.example;
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>extern interface MyInterface;
 </code></pre></div>
-<p>The user is then tasked to provide the C++ symbol within the declared namespace. The interface must use the CRTP pattern. To also validate that the implementation signature matches the interface, use the checked helper:</p>
+<p>The user is then tasked to provide the C++ interface within the declared namespace. The interface must use the CRTP pattern. To also validate that the implementation signature matches the interface, use the checked helper:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">bzd</span><span class="o">::</span><span class="nn">example</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Impl</span><span class="o">&gt;</span>
@@ -1599,7 +1599,7 @@
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span><span class="w"> </span><span class="c1">// namespace bzd::example</span>
 </code></pre></div>
 <h4 id="casting">Casting</h4>
-<p>Objects which implement an interface are cast down to their interface when used in the composition; this is done automatically by the code generator and ensures that the object is only used through its interface.</p>
+<p>Objects which implement an interface are cast to their interface when used in the composition; this is done automatically by the code generator and ensures that the object is only used through its interface.</p>
 <p>The code generator specializes the <code>bzd::Interface</code> type with the fully qualified name of the interface. It can then be used like this:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">interface</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bzd</span><span class="o">::</span><span class="n">Interface</span><span class="o">&lt;</span><span class="s">&quot;bzd.example.MyInterface&quot;</span><span class="o">&gt;::</span><span class="n">cast</span><span class="p">(</span><span class="n">object</span><span class="p">);</span>
 </code></pre></div>

@@ -1284,9 +1284,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#builtins-utility-functions" class="md-nav__link">
+  <a href="#builtin-utility-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Builtins utility functions
+      Builtin utility functions
     </span>
   </a>
   
@@ -1488,9 +1488,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#builtins-utility-functions" class="md-nav__link">
+  <a href="#builtin-utility-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Builtins utility functions
+      Builtin utility functions
     </span>
   </a>
   
@@ -1543,7 +1543,7 @@
 <li>Support arrays and nested arrays, ex: <code>{{ a[b.c[d]].u }}</code></li>
 <li>Support a combination of all of this.</li>
 </ul>
-<p>Piped data can be of arbitrary type but the final substituted value must be either a number or a string.</p>
+<p>Piped data can be of arbitrary type but the final substituted value must be a number, a string, or a path.</p>
 <h3 id="for-loops">For loops</h3>
 <ul>
 <li>Simple iterable, ex: <code>{% for value in data %} ... {% end %}</code>.</li>
@@ -1556,7 +1556,7 @@
 <li>Bool evaluation of condition, ex: <code>{% if value %} ... {% end %}</code></li>
 <li>Comparison operators (<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>in</code>), ex: <code>{% if value == 12 %} ... {% end %}</code></li>
 <li>Negation operator (<code>not</code>), ex: <code>{% if not value %} ... {% end %}</code></li>
-<li>Consecutive <code>else</code> and <code>elif</code> statement, ex: <code>{% if value1 %} ... {% elif value2 %} ... {% else %} ... {% end %}</code></li>
+<li>Consecutive <code>else</code> and <code>elif</code> statements, ex: <code>{% if value1 %} ... {% elif value2 %} ... {% else %} ... {% end %}</code></li>
 </ul>
 <h3 id="macro-blocks">Macro blocks</h3>
 <ul>
@@ -1567,14 +1567,14 @@
 <ul>
 <li>Include another btl file as if it was part of the document, ex: <code>{% include "my/path.btl" %}</code></li>
 </ul>
-<h3 id="builtins-utility-functions">Builtins utility functions</h3>
+<h3 id="builtin-utility-functions">Builtin utility functions</h3>
 <ul>
 <li><code>btl.merge</code>: merge different types together, ex: <code>btl.merge(a, b, c)</code></li>
 <li><code>btl.set</code>: create a set from inputs passed into arguments, ex: <code>btl.set(a, b, c)</code></li>
-<li><code>btl.any</code>: checks that any of the argument evaluates to <code>true</code>, ex: <code>btl.any(a, b, c)</code></li>
-<li><code>btl.all</code>: checks that all of the argument evaluates to <code>true</code>, ex: <code>btl.all(a, b, c)</code></li>
-<li><code>btl.assertTrue</code>: asserts that a condition evaluates to <code>true</code> otherwise print an error message and terminates, ex: <code>btl.assertTrue(a == 1, "'a' is not equal to 1.")</code></li>
-<li><code>btl.error</code>: print an unconditional error message and terminates, ex: <code>btl.error("This path is unreachable.")</code></li>
+<li><code>btl.any</code>: checks that any of the arguments evaluates to <code>true</code>, ex: <code>btl.any(a, b, c)</code></li>
+<li><code>btl.all</code>: checks that all of the arguments evaluate to <code>true</code>, ex: <code>btl.all(a, b, c)</code></li>
+<li><code>btl.assertTrue</code>: asserts that a condition evaluates to <code>true</code>, otherwise prints an error message and terminates, ex: <code>btl.assertTrue(a == 1, "'a' is not equal to 1.")</code></li>
+<li><code>btl.error</code>: prints an unconditional error message and terminates, ex: <code>btl.error("This path is unreachable.")</code></li>
 </ul>
 
 

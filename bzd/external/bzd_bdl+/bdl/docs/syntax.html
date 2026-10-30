@@ -1640,10 +1640,10 @@
 
 
 <h1 id="syntax">Syntax</h1>
-<p>The following describes the syntax of the Bzd Description Language (BDL) used to describe interfaces to communicate between components.</p>
+<p>The following describes the syntax of the Bzd Description Language (BDL) used to describe components, interfaces, and compositions.</p>
 <h2 id="types">Types</h2>
 <h3 id="built-in-types">Built-in Types</h3>
-<p>The following built-in types are made available by the implementation as built-in types.</p>
+<p>The implementation provides the following built-in types.</p>
 <table>
 <thead>
 <tr>
@@ -1666,7 +1666,7 @@
 </tr>
 <tr>
 <td>Float</td>
-<td>Represents a 32-bit arithmetic floating point.</td>
+<td>Represents a 32-bit floating-point value.</td>
 </tr>
 <tr>
 <td>Byte</td>
@@ -1675,6 +1675,10 @@
 <tr>
 <td>String</td>
 <td>Type representing a string.</td>
+</tr>
+<tr>
+<td>Span<T></td>
+<td>A non-owning view over a contiguous sequence of values of type <code>T</code>.</td>
 </tr>
 <tr>
 <td>Result<T></td>
@@ -1690,13 +1694,13 @@
 </tr>
 <tr>
 <td>Vector<T></td>
-<td>A resizable and sequential container of type <code>T</code>. Its capacity may be defined with contracts.</td>
+<td>A sequential container of type <code>T</code>. Its capacity may be defined with contracts.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="literals">Literals</h3>
-<p>Literals are a notation of a value that may define an arbitrary type, written in the bdl format.
-Available literals in bdl are:</p>
+<p>Literals are a notation for a value that may define an arbitrary type, written in the BDL format.
+Available literals in BDL are:</p>
 <ul>
 <li>integers: <code>1</code>, <code>-4</code>, ...</li>
 <li>floats: <code>0.23</code>, <code>-3.14</code>, ...</li>
@@ -1737,7 +1741,7 @@ Only one namespace can be declared within a file and the namespace statement mus
 <p>An expression is defined as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[&lt;name&gt; [: &lt;interface&gt;] =] &lt;type&gt;[(&lt;values&gt;)] [[&lt;contracts&gt;...]];
 </code></pre></div>
-<p>where <code>values</code> can be an association of <code>value</code>, <code>symbol</code>, <code>regexpr</code> or <code>preset</code>.</p>
+<p>where <code>values</code> can be a combination of <code>value</code>, <code>symbol</code>, <code>regexpr</code> or <code>preset</code>.</p>
 <ul>
 <li><code>value</code> is a literal.</li>
 <li><code>symbol</code> is either a relative symbol to the current namespace <code>abc</code> or a fully qualified name <code>this.is.abc</code>.</li>
@@ -1752,9 +1756,9 @@ Only one namespace can be declared within a file and the namespace statement mus
 <p>Interfaces are used by components to expose their public interfaces, they are defined with the keyword <code>interface</code>.
 Note that the definition does not imply a specific interface implementation.</p>
 <h2 id="components">Components</h2>
-<p>A component is the implementation of one or multiple interfaces. It can be instantiated and exposes
-the functionality of the interface it inherits from.
-In addition it describes its configuration and composition to the description language.</p>
+<p>A component is the implementation of one or more interfaces. It can be instantiated and exposes
+the functionality of the interfaces it inherits from.
+In addition, it describes its configuration and composition to the description language.</p>
 <h3 id="configuration">Configuration</h3>
 <p>A component should tell how it is instantiated during composition, this is done under the <code>config</code> scope as follows:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>component MyModule
@@ -1770,7 +1774,7 @@ In addition it describes its configuration and composition to the description la
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>}
 </code></pre></div>
 <h3 id="composition">Composition</h3>
-<p>Similarly a predefined composition can be described for a component when instantiated. For example:</p>
+<p>Similarly, a predefined composition can be described for a component when instantiated. For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>component MyModule
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>{
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>interface:

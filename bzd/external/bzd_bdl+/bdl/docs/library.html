@@ -1400,7 +1400,7 @@
 
 
 <h1 id="library">Library</h1>
-<p>A library is a group of <code>bdl</code> files that are pre-compiled once into a language agnostic intermediate format, and made
+<p>A library is a group of <code>bdl</code> files that are pre-compiled once into a language-agnostic intermediate format, and made
 available to other rules, such as a composition or another library.</p>
 <h2 id="definition">Definition</h2>
 <p>Defining a library is done with Bazel through a rule, as follows:</p>
@@ -1429,7 +1429,7 @@ across files, and <code>presets</code> are JSON files referenced by <code>preset
 implementation of the entities declared in the BDL files, for example a C++ library defining the components. The
 implementation is added to the generated code of the corresponding language so that the generated interface can be
 linked against it.</p>
-<p>A library always exposes a <code>BdlInfo</code> provider, together with the language specific providers of the generated code for
+<p>A library always exposes a <code>BdlInfo</code> provider, together with the language-specific providers of the generated code for
 each registered language, for example <code>CcInfo</code> for C++.</p>
 <h2 id="process">Process</h2>
 <p>A library rule will perform the following operations to generate its outputs:</p>
@@ -1438,7 +1438,7 @@ each registered language, for example <code>CcInfo</code> for C++.</p>
     direction TB
     A[`bdl` tool parses each `srcs` file]
     B[Each file is validated and its symbols resolved]
-    C[Each file is serialized into a language agnostic `.bdl.o` object]
+    C[Each file is serialized into a language-agnostic `.bdl.o` object]
     end
     subgraph ide2 [Language specific generators]
     direction TB
@@ -1454,7 +1454,7 @@ each registered language, for example <code>CcInfo</code> for C++.</p>
     E --&gt; F
     C --&gt; G
     F --&gt; G</code></pre>
-<p>The precompile stage is language agnostic and happens only once per library. Its output, a <code>.bdl.o</code> object per input
+<p>The precompile stage is language-agnostic and happens only once per library. Its output, a <code>.bdl.o</code> object per input
 file, is cached and reused by every consumer. This stage is the same as the one described in the
 <a href="build.html">build</a> documentation.</p>
 <p>The generators stage is then run for each language extension registered with the <code>bdl_extension</code> module extension. The

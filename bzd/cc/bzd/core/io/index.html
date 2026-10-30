@@ -1406,7 +1406,7 @@
 <h2 id="key-points">Key Points</h2>
 <ul>
 <li><strong>Async</strong> - readers suspend until data is available.</li>
-<li><strong>Zero copy</strong> - data is accessed in-place, without intermediate copies.</li>
+<li><strong>In-place access</strong> - data is stored in a fixed-capacity ring buffer and read directly, without intermediate copies.</li>
 </ul>
 <h2 id="usage">Usage</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">bzd</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">Buffer</span><span class="o">&lt;</span><span class="n">bzd</span><span class="o">::</span><span class="n">Byte</span><span class="p">,</span><span class="w"> </span><span class="mi">64</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;buffer&quot;</span><span class="o">&gt;</span><span class="w"> </span><span class="n">buffer</span><span class="p">{};</span>

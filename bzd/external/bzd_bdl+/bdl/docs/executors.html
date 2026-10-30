@@ -1449,7 +1449,7 @@
 
 <h1 id="executors">Executors</h1>
 <p>An executor is a group of computation units (cores) that share the same work queue.
-A component gets executed on an arbitrary core.</p>
+A component is executed on an arbitrary core.</p>
 <pre class="mermaid"><code>classDiagram
    Executor "1" --&gt; "*" Core</code></pre>
 <p>Cores can be assigned specific attributes, such as stack size, CPU and priority.</p>
@@ -1469,7 +1469,7 @@ For example, a Linux machine can be composed as follows:</p>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   executor = bzd.components.generic.Executor(cores = list(core)) [executor];
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>}
 </code></pre></div>
-<p>Multiple executors can be created and deployed on the same process/binary; this can be useful to have different task priorities for example.</p>
+<p>Multiple executors can be created and deployed on the same process/binary; for example, this can be useful to have different task priorities.</p>
 <h2 id="thread-safety">Thread safety</h2>
 <p>By default a component or task is assigned to a specific core during its lifetime. This is done at runtime as the number of cores is not always known at build time.
 This ensures that all resources within a component are accessible safely.</p>
@@ -1480,11 +1480,11 @@ This ensures that all resources within a component are accessible safely.</p>
 <li>They can be passed as argument through their interface.</li>
 <li>They can use variables to communicate.</li>
 </ul>
-<p>To identify on which core a component should run, it depends on its dependency with others.
-If a non-thread safe component is a dependency of another component, they will both run on the same core.
+<p>The core on which a component runs depends on its dependencies on other components.
+If a non-thread-safe component is a dependency of another component, they will both run on the same core.
 A <code>[threadsafe]</code> tag to schedule a component on any available core is not implemented yet.</p>
-<p>If the only dependency is through variables, it is also considered as thread safe.</p>
-<p>An error will be raised if there is no possible combination. For example, if 2 workloads executed on different executors depend on a 3rd component that is not threadsafe.</p>
+<p>If the only dependency is through variables, it is also considered thread-safe.</p>
+<p>An error will be raised if there is no possible combination. For example, if two workloads executed on different executors depend on a third component that is not thread-safe.</p>
 <h2 id="default-executor">Default executor</h2>
 <p>When the system only has a single executor, it is automatically assigned to all workloads, therefore there is no need for specific assignment.</p>
 <h2 id="association">Association</h2>
@@ -1501,7 +1501,7 @@ A <code>[threadsafe]</code> tag to schedule a component on any available core is
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   bind(/comp1.*/) [executor(linux.executor)];
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>}
 </code></pre></div>
-<p>This tells that all fqn starting with <code>comp1</code> will be assigned to the executor <code>linux.executor</code>.</p>
+<p>This tells that all FQNs starting with <code>comp1</code> will be assigned to the executor <code>linux.executor</code>.</p>
 
 
 
