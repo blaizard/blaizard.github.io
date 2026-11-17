@@ -1744,7 +1744,7 @@
 <p>This example shows how communication between two nodes can be modeled.</p>
 <h2 id="architecture">Architecture</h2>
 <script>
-    const redraw_17948572448927205024260253987304004 = async (selectObject) => {
+    const redraw_17949420606582046598737990701766 = async (selectObject) => {
         const config = (selectObject)? selectObject.value : "apps";
         await loadScript("../../external/bzd_bdl+/diagram/library.output/library.umd.cjs");
         const bdls = [{
@@ -2037,16 +2037,6 @@
 },{
     "target": "hpc",
     "ios": {
-        "example.emitter": {
-            "send": {
-                "type": "source",
-                "connections": [
-                    "example.poller.receive"
-                ],
-                "uid": "example.emitter.send",
-                "symbol": "Integer"
-            }
-        },
         "example.poller": {
             "receive": {
                 "type": "sink",
@@ -2056,35 +2046,21 @@
                 "uid": "example.poller.receive",
                 "symbol": "const Integer"
             }
+        },
+        "example.emitter": {
+            "send": {
+                "type": "source",
+                "connections": [
+                    "example.poller.receive"
+                ],
+                "uid": "example.emitter.send",
+                "symbol": "Integer"
+            }
         }
     },
     "contexts": [
         {
             "registry": {
-                "hpc.proactor": {
-                    "expression": {
-                        "name": "proactor",
-                        "fqn": "hpc.proactor",
-                        "symbol": "bzd.components.linux.epoll.Proactor",
-                        "category": "component",
-                        "parameters": []
-                    },
-                    "init": [
-                        {
-                            "symbol": "hpc.proactor.init",
-                            "category": "method"
-                        }
-                    ],
-                    "intra": [
-                        {
-                            "symbol": "hpc.proactor.exec",
-                            "category": "method",
-                            "parameters": []
-                        }
-                    ],
-                    "shutdown": [],
-                    "deps": []
-                },
                 "hpc.core1": {
                     "expression": {
                         "name": "core1",
@@ -2125,6 +2101,30 @@
                     },
                     "init": [],
                     "intra": [],
+                    "shutdown": [],
+                    "deps": []
+                },
+                "hpc.proactor": {
+                    "expression": {
+                        "name": "proactor",
+                        "fqn": "hpc.proactor",
+                        "symbol": "bzd.components.linux.epoll.Proactor",
+                        "category": "component",
+                        "parameters": []
+                    },
+                    "init": [
+                        {
+                            "symbol": "hpc.proactor.init",
+                            "category": "method"
+                        }
+                    ],
+                    "intra": [
+                        {
+                            "symbol": "hpc.proactor.exec",
+                            "category": "method",
+                            "parameters": []
+                        }
+                    ],
                     "shutdown": [],
                     "deps": []
                 },
@@ -2267,8 +2267,8 @@
                     "intra": [],
                     "shutdown": [],
                     "deps": [
-                        "hpc.out",
                         "hpc.core1",
+                        "hpc.out",
                         "hpc.executorProfiler"
                     ]
                 }
@@ -2306,20 +2306,20 @@
         }
     ]
 }];
-        if (redraw_17948572448927205024260253987304004.bdlToSvg === undefined) {
-            redraw_17948572448927205024260253987304004.bdlToSvg = new BdlToSvg(bdls);
+        if (redraw_17949420606582046598737990701766.bdlToSvg === undefined) {
+            redraw_17949420606582046598737990701766.bdlToSvg = new BdlToSvg(bdls);
         }
-        const svg = await redraw_17948572448927205024260253987304004.bdlToSvg.render(config == "all");
-        document.getElementById("diagram_17948572448927205024260253987304004").innerHTML = svg;
+        const svg = await redraw_17949420606582046598737990701766.bdlToSvg.render(config == "all");
+        document.getElementById("diagram_17949420606582046598737990701766").innerHTML = svg;
     };
-    window.onload = redraw_17948572448927205024260253987304004;
+    window.onload = redraw_17949420606582046598737990701766;
 </script>
-<p><select onchange="redraw_17948572448927205024260253987304004(this)">
+<p><select onchange="redraw_17949420606582046598737990701766(this)">
 <br />
 <option value="all">All</option></p>
 <option value="apps" selected>Apps</option>
 <p></select></p>
-<div id="diagram_17948572448927205024260253987304004">Diagram Loading...</div>
+<div id="diagram_17949420606582046598737990701766">Diagram Loading...</div>
 
 
 
